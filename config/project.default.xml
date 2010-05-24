@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <defines>
+<!-- WARNING: this id must be unique -->
+    <define name="PROJECT_ID"></define>
+    <define name="DOCUMENT_ROOT">WEBEDIT_HOME . ''</define>
+    <define name="MOD_NOTIFICATION_SENDER"></define>
+    <define name="MOD_NOTIFICATION_SENDER_HOST"></define>
+    <define name="SOLR_INDEXER_URL"></define>
+    <define name="SOLR_INDEXER_CLIENT"></define>
+  </defines>
+  <config>
+    <general>
+      <entry name="server-fqdn"></entry>
+    </general>
+    <databases>
+      <webapp>
+        <entry name="protocol">mysql</entry>
+        <entry name="class">PDODatabase</entry>
+        <entry name="user"></entry>
+        <entry name="password"></entry>
+        <entry name="database"></entry>
+        <entry name="host">localhost</entry>
+        <entry name="port">3306</entry>
+      </webapp>
+    </databases>
+    <injection>
+      <entry name="MailService">NullMailService</entry>
+    </injection>
+    <mail>
+      <entry name="type">Sendmail</entry>
+      <entry name="host">localhost</entry>
+      <entry name="port">25</entry>
+      <entry name="sendmail_path">/usr/sbin/sendmail</entry>
+      <entry name="sendmail_args">-t -i</entry>
+    </mail>
+  </config>
+</project>

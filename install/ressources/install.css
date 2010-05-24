@@ -1,0 +1,291 @@
+html {
+	background: #4e4a49;
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}
+
+body {
+	background: -moz-linear-gradient(90deg, #4e4a49, #383433) no-repeat;
+	font-family: "Trebuchet MS", verdana, arial, sans-serif;
+	font-size: 0.8em;
+	font-weight: normal;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+	font-style: normal;
+}
+
+.header {
+	height: 39px;
+	background: url(/install/ressources/login-header-bg.png) repeat-x;
+}
+
+.header span {
+	line-height: 39px;
+}
+
+h1 {
+	color: #393534;
+	text-transform: uppercase;
+	margin: 0 auto;
+	padding: 0;
+	font-size: 18px;
+	line-height: 39px;
+	text-align: center;
+	line-height: 39px;
+	text-align: center;
+	text-shadow: 1px 2px 1px #b4b0af;
+}
+
+img.logo {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+pre.license {
+	width: 560px;
+	height: 25em;
+	max-height: 25em;
+	overflow: auto;
+	border: solid 1px #B9B7B8;
+	font-size: 10px;
+}
+
+.content {
+	width: 100%;
+	text-align: center;
+	color: white;
+}
+
+.content div.panel {
+	width: 600px;
+	margin: auto;
+	text-align: justify;
+}
+
+div.stepheader {
+	width: 600px;
+	margin-bottom: 2px;
+}
+
+div.stepcontent {
+	border: solid 1px #B9B7B8;
+	background: url(/install/ressources/content_bg.png) repeat-y;
+	width: 600px;
+	color: black;
+	padding-bottom: 15px;
+}
+
+div.stepfooter {
+	border: solid 1px #B9B7B8;
+	width: 600px;
+}
+
+div.success {
+	clear: both;
+	background: url(/install/ressources/positive.png) no-repeat #C9E37E;
+	background-position: 5px 8px;
+	color: #435702;
+	font-weight: bold;
+	margin: 5px 10px 5px 35px;
+	padding: 2px 5px 2px 45px;
+	width: 505px;
+	min-height: 40px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px #A0CE0B solid;
+	vertical-align: middle;
+}
+
+div.error {
+	clear: both;
+	background: url(/install/ressources/negative.png) no-repeat #FA9F9C;
+	background-position: 5px 8px;
+	color: #741819;
+	font-weight: bold;
+	margin: 5px 10px 5px 35px;
+	padding: 2px 5px 2px 45px;
+	width: 505px;
+	min-height: 40px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px #D94541 solid;
+	vertical-align: middle;
+}
+
+p.download {
+	margin: 25px auto;
+	text-align: center;
+}
+
+p.download a {
+	background: #CCC;
+	color: #333;
+	font-weight: bold;
+	padding: 5px 10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px #999 solid;
+}
+
+p.download a:hover {
+	color: #444;
+	background: #DDD;
+	text-shadow: 0px 0px 20px #FFF;
+	text-decoration: none;
+}
+
+p.copyright {
+	margin-top: 50px;
+	text-align: center;
+	font-size: 10px;
+}
+
+.content a {
+	color: #AAA;
+	text-decoration: none;
+}
+
+.content a:hover {
+	color: #CCC;
+	text-decoration: underline;
+}
+
+form.cmxform {
+	text-align: left;
+	margin-left: 10px;
+	width: 590px;
+}
+
+form.cmxform ol li {
+	clear: both;
+	float: none;
+	list-style: none outside none;
+	margin: 4px 0;
+}
+
+form.cmxform div.section {
+	background: url(/install/ressources/section_bg.png) no-repeat;
+	background-position: left top;
+	margin-top: 5px;
+	margin-left: 18px;
+	padding: 0;
+	clear: both;
+	min-height: 50px;
+}
+
+div.section img {
+	display: inline;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+div.sectionfield {
+	width: 535px;
+	float: right;
+}
+
+form.cmxform label {
+	display: block;
+	float: left;
+	vertical-align: top;
+	line-height: 1.6;
+	text-align: right;
+	padding-right: 12px;
+	width: 25%;
+}
+
+form.cmxform p.help {
+	font-style: italic;
+	font-size: 0.8em;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	margin-left: 25%;
+	padding-left: 12px;
+}
+
+form.cmxform label.nocmx {
+	width: auto;
+	float: left;
+}
+
+form.cmxform input.nocmx {
+	width: auto;
+	float: left;
+}
+
+form.cmxform input.textfield,form.cmxform textarea,form.cmxform select {
+	font-size: 1em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc;
+	background-color: #fff;
+}
+
+form.cmxform input.textfield:hover,form.cmxform textarea:hover,form.cmxform select:hover
+	{
+	background-color: #ddd;
+}
+
+form.cmxform option,option {
+	color: #000;
+	background-color: #fff;
+}
+
+form.cmxform input.button {
+	background-color: #b9c101;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc;
+	color: #696a12;
+	font-weight: bold;
+	background-image: ;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+form.cmxform em {
+	font-weight: bold;
+	font-style: normal;
+	color: red;
+}
+
+div.cmdresult {
+	color: white;
+	background-color: black;
+	width: 560px;
+	height: 25em;
+	max-height: 25em;
+	overflow: auto;
+	cursor: wait;
+}
+
+span.row_std {
+	
+}
+
+span.row_31 {
+	color: red;
+}
+
+span.row_32 {
+	color: green;
+}
+
+span.row_35 {
+	color: yellow;
+}
+
+#readytouse table {
+	margin-left: 30px;
+	width: 570px;
+}
+
+#readytouse table td {
+	text-align: center;
+	width: 285px;
+}

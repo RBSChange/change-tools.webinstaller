@@ -1,0 +1,41 @@
+<IfModule mod_cgi.c>
+#   OVH
+	SetEnv PHP_VER 5_TEST
+	SetEnv REGISTER_GLOBALS 0
+	SetEnv ZEND_OPTIMIZER 1
+	SetEnv MAGIC_QUOTES 0
+</IfModule>
+
+<IfModule mod_php5.c>
+	php_value default_charset utf-8
+	
+	php_flag short_open_tag off
+	php_flag magic_quotes_gpc off
+	php_flag register_globals off
+	php_flag register_long_arrays off
+	php_flag register_argc_argv off
+	php_flag always_populate_raw_post_data off
+	
+	php_value max_execution_time 60
+	php_value memory_limit 128M
+	
+	php_value post_max_size 100M
+	php_value upload_max_filesize 100M
+</IfModule>
+
+<IfModule mod_php.c>
+	php_value default_charset utf-8
+	
+	php_flag short_open_tag off
+	php_flag magic_quotes_gpc off
+	php_flag register_globals off
+	php_flag register_long_arrays off
+	php_flag register_argc_argv off
+	php_flag always_populate_raw_post_data off
+	
+	php_value max_execution_time 60
+	php_value memory_limit 128M
+	
+	php_value post_max_size 100M
+	php_value upload_max_filesize 100M
+</IfModule>

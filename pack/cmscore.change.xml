@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<change xmlns="http://www.rbs.fr/schema/change-project/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
+	<name>cmscore</name>
+	<type>change-project</type>
+	<version>3.0.2</version>
+	<description>CMS Core</description>
+	<dependencies>
+		<framework>3.0.2</framework>
+		<modules>
+			<!-- Core modules -->
+			<module>contactcard-3.0.2</module>
+			<module>dashboard-3.0.2</module>
+			<module>form-3.0.2</module>
+			<module>generic-3.0.2</module>
+			<module>list-3.0.2</module>
+			<module>mailbox-3.0.2</module>
+			<module>markergas-3.0.2</module>
+			<module>media-3.0.2</module>
+			<module>mysqlindexer-3.0.2</module>
+			<module>notification-3.0.2</module>
+			<module>preferences-3.0.2</module>
+			<module>referencing-3.0.2</module>
+			<module>skin-3.0.2</module>
+			<module>solrsearch-3.0.2</module>
+			<module>task-3.0.2</module>
+			<module>uixul-3.0.2</module>
+			<module>useractionlogger-3.0.2</module>
+			<module>users-3.0.2</module>
+			<module>website-3.0.2</module>
+			<module>workflow-3.0.2</module>
+		</modules>
+		<libs />
+	</dependencies>
+</change>
