@@ -210,6 +210,11 @@ class c_ChangeBootStrap
 		}
 		return $this->name;
 	}
+	
+	function normalizePath($path)
+	{
+		return (DIRECTORY_SEPARATOR === '/') ? $path : str_replace('/', DIRECTORY_SEPARATOR, $path);
+	}
 
 	/**
 	 * @param String $name
@@ -374,7 +379,7 @@ class c_ChangeBootStrap
 		
 		$repo = array_keys($this->getLocalRepositories());
 		$computedComponents["LOCAL_REPOSITORY"] = $repo[0];
-		$computedComponents["WWW_GROUP"] = $this->getProperties()->getProperty("WWW_GROUP", "www-data");
+		$computedComponents["WWW_GROUP"] = $this->getProperties()->getProperty("WWW_GROUP", "");
 		$proxy = $this->getProxy();
 		if ($proxy !== null)
 		{
@@ -483,14 +488,12 @@ class c_ChangeBootStrap
 
 	function setAutoloadPath($autoloadPath = ".change/autoload")
 	{
-		if ($autoloadPath[0] != "/")
+		if ($autoloadPath === '.change/autoload')
 		{
-			$this->autoloadPath = $this->wd."/".$autoloadPath;
+			$autoloadPath =  $this->wd."/".$autoloadPath;
 		}
-		else
-		{
-			$this->autoloadPath = $autoloadPath;
-		}
+		
+		$this->autoloadPath = $this->normalizePath($autoloadPath);
 		if (!is_dir($this->autoloadPath) && !mkdir($this->autoloadPath, 0777, true))
 		{
 			throw new Exception("Could not create autoload directory ".$this->autoloadPath);
@@ -514,8 +517,7 @@ class c_ChangeBootStrap
 	function appendToAutoload($componentPath, $followDeps = true)
 	{
 		$autoloadPath = $this->getAutoloadPath();
-		$autoloadedFlag = $autoloadPath."/".str_replace('/', '_', $componentPath).".autoloaded";
-
+		$autoloadedFlag = $this->normalizePath($autoloadPath."/".md5($componentPath).".autoloaded");
 		if (!$this->autoloadRegistered)
 		{
 			if (!is_dir($autoloadPath) && !@mkdir($autoloadPath, 0777, true))
@@ -553,14 +555,14 @@ class c_ChangeBootStrap
 
 		foreach ($classes as $className => $relPath)
 		{
-			$linkPath = $autoloadPath."/".str_replace('_', '/', $className).'/to_include';
+			$linkPath = $this->normalizePath($autoloadPath."/".str_replace('_', '/', $className).'/to_include');
 			$linkDir = dirname($linkPath);
 			if (!is_dir($linkDir) && !mkdir($linkDir, 0777, true))
 			{
 				throw new Exception("Could not create $linkDir");
 			}
-			$linkTarget = $componentPath."/".$relPath;
-			if ((!is_link($linkPath) || (readlink($linkPath) != $linkTarget && unlink($linkPath)))
+			$linkTarget = $this->normalizePath($componentPath."/".$relPath);
+			if ((!is_file($linkPath) || (readlink($linkPath) != $linkTarget && unlink($linkPath)))
 			&& !symlink($linkTarget, $linkPath))
 			{
 				throw new Exception("Could not symlink ".$componentPath."/".$relPath." to $linkPath");
@@ -2430,7 +2432,7 @@ class cboot_Properties
 		else
 		{
 			$valLength = strlen($val);
-			if ($val[0] == "'" && $val[$valLength-1] == "'" || $val[0] == "\"" && $val[$valLength-1] == "\"")
+			if ($valLength > 0 && $val[0] == "'" && $val[$valLength-1] == "'" || $val[0] == "\"" && $val[$valLength-1] == "\"")
 			{
 				$val = substr($val, 1, -1);
 			}
@@ -2861,175 +2863,6 @@ class cboot_StringUtils
 	}
 }
 /** End lib/StringUtils.php **/ ?>
-<?php /** Begin lib/PeclZip.php **/ ?>
-<?php
-class cboot_PeclZip implements cboot_Zipper
-{
-	/**
-	 * @var ZipArchive
-	 */
-	private $zip;
-	/**
-	 * @var String
-	 */
-	private $zipPath;
-	/**
-	 * @var Integer
-	 */
-	private static $addCountLimit = 100;
-	/**
-	 * @var Integer
-	 */
-	private $addCount = 0;
-
-	function __construct($zipPath)
-	{
-		$zip = new ZipArchive();
-		$flags = null;
-		if (!file_exists($zipPath))
-		{
-			$flags = ZIPARCHIVE::CREATE;
-		}
-		if ($flags === null)
-		{
-			$res = $zip->open($zipPath);
-		}
-		else
-		{
-			$res = $zip->open($zipPath, $flags);
-		}
-		if ($res !== true)
-		{
-			switch ($res)
-			{
-				case ZIPARCHIVE::ER_EXISTS : $resString = "ER_EXISTS"; break;
-				case ZIPARCHIVE::ER_INCONS : $resString = "ER_INCONS"; break;
-				case ZIPARCHIVE::ER_INVAL : $resString = "ER_INVAL"; break;
-				case ZIPARCHIVE::ER_MEMORY : $resString = "ER_MEMORY"; break;
-				case ZIPARCHIVE::ER_NOENT : $resString = "ER_NOENT"; break;
-				case ZIPARCHIVE::ER_NOZIP : $resString = "ER_NOZIP"; break;
-				case ZIPARCHIVE::ER_OPEN : $resString = "ER_OPEN"; break;
-				case ZIPARCHIVE::ER_READ : $resString = "ER_READ"; break;
-				case ZIPARCHIVE::ER_SEEK : $resString = "ER_SEEK"; break;
-				default: $resString = "Unknown error";
-			}
-			throw new Exception("Could not open $zipPath: $resString");
-		}
-		$this->zip = $zip;
-		$this->zipPath = $zipPath;
-	}
-
-	/**
-	 * @param String $path
-	 * @param String[] $entries
-	 */
-	function extractTo($path, $entries = null)
-	{
-		if ($entries !== null)
-		{
-			if ($this->zip->extractTo($path, $entries) === false)
-			{
-				throw new Exception("Could not extract ".$this->zipPath." to $path");
-			}
-		}
-		else
-		{
-			if ($this->zip->extractTo($path) === false)
-			{
-				throw new Exception("Could not extract ".$this->zipPath." to $path");
-			}
-		}
-	}
-
-	function close()
-	{
-		$this->zip->close();
-		$this->zip = null;
-	}
-
-	/**
-	 * @param cboot_ZipContent $content
-	 */
-	function add($content)
-	{
-		foreach ($content->getEntries() as $path => $localPath)
-		{
-			if (is_dir($path))
-			{
-				$this->addDir($path, $localPath);
-			}
-			else
-			{
-				$this->addFile($path, $localPath);
-			}
-		}
-	}
-
-	function __destruct()
-	{
-		if ($this->zip !== null)
-		{
-			$this->close();
-		}
-	}
-
-	// private content
-
-	private function addFile($path, $localPath = null)
-	{
-		$this->addCount++;
-		if ($this->addCount > self::$addCountLimit)
-		{
-			if (!$this->zip->close())
-			{
-				throw new Exception("Could not close archive");
-			}
-			$this->zip->open($this->zipPath, ZipArchive::CREATE);
-			$this->addCount = 0;
-		}
-		$this->zip->addFile($path, $localPath);
-	}
-
-	private function addDir($path, $localPath = null)
-	{
-		if ($localPath !== null)
-		{
-			$this->zip->addEmptyDir($localPath);
-		}
-		else
-		{
-			$this->zip->addEmptyDir($path);
-		}
-		foreach (glob($path.'/*') as $file)
-		{
-			if ($localPath !== null)
-			{
-				// TODO: test
-				$fileLocalPath = str_replace($path, $localPath, $file);
-				if (is_dir($file))
-				{
-					$this->addDir($file, $fileLocalPath);
-				}
-				else
-				{
-					$this->addFile($file, $fileLocalPath);
-				}
-			}
-			else
-			{
-				if (is_dir($file))
-				{
-					$this->addDir($file);
-				}
-				else
-				{
-					$this->addFile($file);
-				}
-			}
-		}
-	}
-}
-/** End lib/PeclZip.php **/ ?>
 <?php /** Begin lib/PclZip.php **/ ?>
 <?php
 if (!defined("PCLZIP_TEMPORARY_DIR"))

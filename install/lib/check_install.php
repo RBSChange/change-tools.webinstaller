@@ -15,7 +15,9 @@ $systemCheck['php_conf_home_writable'] = assert_writable(PROJECT_HOME_PATH);
 $systemCheck['php_conf_global_writable'] = assert_writable(PROJECT_HOME_PATH . '/change.xml');
 $systemCheck['php_conf_project_writable'] = assert_writable(PROJECT_HOME_PATH . '/config/project.default.xml');
 
-$systemCheck['php_ext_posix'] = assert_ext('posix') || assert_function('posix_getuid');
+//$systemCheck['php_ext_posix'] = assert_ext('posix') || assert_function('posix_getuid');
+$systemCheck['php_ext_spl'] = assert_ext('SPL') || assert_class('ArrayObject');
+$systemCheck['php_ext_reflection'] = assert_ext('Reflection');
 $systemCheck['php_ext_curl'] = assert_ext('curl') || assert_function('curl_init');
 $systemCheck['php_ext_pdo'] = assert_class('PDO') && assert_ext('pdo_mysql');
 
@@ -100,6 +102,12 @@ function generateErrorReporting($systemCheck)
 				
 			case 'php_ext_posix':
 				$result[] = 'l\'extension [posix] n\'est pas installée';
+				break;
+			case 'php_ext_spl':
+				$result[] = 'l\'extension [SPL] n\'est pas installée';
+				break;
+			case 'php_ext_reflection':
+				$result[] = 'l\'extension [Reflection] n\'est pas installée';
 				break;
 			case 'php_ext_curl':
 				$result[] = 'l\'extension [curl] n\'est pas installée';

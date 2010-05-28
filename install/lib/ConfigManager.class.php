@@ -75,11 +75,18 @@ class ConfigManager
 	public function initialise()
 	{	
 		$this->parameters['FQDN'] = $_SERVER['SERVER_NAME'];
-		$grpInfos = posix_getgrgid(posix_getegid());
-		$grpName = $grpInfos['name'];
-		if (empty($grpName))
+		if (function_exists('posix_getgrgid'))
 		{
-			$grpName = 'www-data';
+			$grpInfos = posix_getgrgid(posix_getegid());
+			$grpName = $grpInfos['name'];
+			if (empty($grpName))
+			{
+				$grpName = 'www-data';
+			}
+		}
+		else
+		{
+			$grpName = '';
 		}
 
 		$this->parameters['WWW_GROUP'] = $grpName;
@@ -192,7 +199,14 @@ class ConfigManager
 		{
 			if (strpos($line, 'LOCAL_REPOSITORY=') === 0)
 			{
-				$lines[] = 'LOCAL_REPOSITORY=' . implode(DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'repository'));
+				if (defined('DEV_LOCAL_REPOSITORY'))
+				{
+					$lines[] = 'LOCAL_REPOSITORY=' . DEV_LOCAL_REPOSITORY;
+				}
+				else
+				{
+					$lines[] = 'LOCAL_REPOSITORY=' . implode(DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'repository'));
+				}
 			}
 			else if (strpos($line, 'WWW_GROUP=') === 0)
 			{
@@ -471,7 +485,7 @@ class ConfigManager
 			$this->errors['DOMAIN'] = 'Le nom de domaine saisi n\'est pas un domaine valide pour ce projet';
 			return false;
 		}
-		unlink($testFilePath);
+		@unlink($testFilePath);
 		return true;
 	}
 	

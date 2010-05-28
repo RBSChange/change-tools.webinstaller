@@ -5,6 +5,7 @@ define("WEBEDIT_HOME", dirname(dirname(dirname(realpath(__FILE__)))));
 chdir(WEBEDIT_HOME);
 set_time_limit(0);
 ignore_user_abort(true);
+error_reporting(E_ALL);
 
 define("C_DEBUG", false);
 
