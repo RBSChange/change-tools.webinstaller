@@ -117,6 +117,7 @@ var cmds = [
 
 function addSamples(sampleType)
 {
+	cmds.push({cmd: "theme.install webfactory", label:"Import du thème webfactory"});
 	cmds.push({cmd: "import-data website sample.xml", label:"Création du site d'exemple"});
 	cmds.push({cmd: "import-data form sample.xml", label:"Création de formulaires d'exemples"});	
 	cmds.push({cmd: "import-data users sample.xml", label:"Création d'utilisateurs d'exemples"});
