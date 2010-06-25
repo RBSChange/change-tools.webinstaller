@@ -51,7 +51,12 @@ function registerCommands($script, $computedDeps)
 	$script->addGhostCommandDir($frameworkInfo["path"].'/changedev-commands');
 		
 	$path = WEBEDIT_HOME . "/modules/";
-	foreach (new DirectoryIterator($path) as $filePath => $fileInfo)
+	if (!is_dir($path))
+	{
+		return;
+	}
+	
+	foreach (new DirectoryIterator($path) as $fileInfo)
 	{
 		if (!$fileInfo->isDot() && $fileInfo->isDir())
 		{
