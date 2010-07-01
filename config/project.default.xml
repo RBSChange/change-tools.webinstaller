@@ -8,6 +8,7 @@
     <define name="MOD_NOTIFICATION_SENDER_HOST"></define>
     <define name="SOLR_INDEXER_URL"></define>
     <define name="SOLR_INDEXER_CLIENT"></define>
+    <define name="TMP_PATH"></define>
   </defines>
   <config>
     <general>

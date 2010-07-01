@@ -273,6 +273,9 @@ class ConfigManager
 		$nl = $xpath->query( '/project/defines/define[@name="PROJECT_ID"]' );
 		$nl->item( 0 )->nodeValue = $this->getProjectId();
 		
+		$nl = $xpath->query( '/project/defines/define[@name="TMP_PATH"]' );
+		$nl->item( 0 )->nodeValue = $this->parameters['TMP_PATH'];
+		
 		$nl = $xpath->query( '/project/config/general/entry[@name="server-fqdn"]' );
 		$nl->item( 0 )->nodeValue = $this->parameters['FQDN'];
 		
