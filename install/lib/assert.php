@@ -36,9 +36,28 @@ function assert_class($className)
        return class_exists($className, false);
 }
 
-function assert_writable($path)
+function assert_writable($path, $recursive = false)
 {
-       return file_exists($path) && is_writeable($path);
+       if (!file_exists($path) || !is_writeable($path))
+       {
+       		return false;
+       }
+       if (is_dir($path) && $recursive)
+       {
+       		$ite = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
+       		foreach($ite as $fileName => $fileInfo)
+       		{
+       			if ($ite->isDot())
+       			{
+       				continue;
+       			}
+       			if ($fileInfo->isDir() && !$fileInfo->isWritable())
+       			{
+       				return false;
+       			}
+       		}
+       }
+       return true;
 }
 
 function assert_symlink($path)
