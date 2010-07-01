@@ -15,6 +15,11 @@ $systemCheck['php_conf_home_writable'] = assert_writable(PROJECT_HOME_PATH);
 $systemCheck['php_conf_global_writable'] = assert_writable(PROJECT_HOME_PATH . '/change.xml');
 $systemCheck['php_conf_project_writable'] = assert_writable(PROJECT_HOME_PATH . '/config/project.default.xml');
 
+if ($systemCheck['php_conf_home_writable'])
+{
+	$systemCheck['system_symlink'] = assert_symlink(PROJECT_HOME_PATH);
+}
+
 //$systemCheck['php_ext_posix'] = assert_ext('posix') || assert_function('posix_getuid');
 $systemCheck['php_ext_spl'] = assert_ext('SPL') || assert_class('ArrayObject');
 $systemCheck['php_ext_reflection'] = assert_ext('Reflection');
@@ -31,6 +36,15 @@ $systemCheck['php_ext_string_mbstring'] = assert_ext('mbstring') || assert_funct
 $systemCheck['php_ext_string_iconv'] = assert_ext('iconv') || assert_function('iconv_strlen');
 
 $systemCheck['php_ext_gd'] = assert_ext('gd') || assert_ext('imagick') || assert_function('getimagesize');
+
+if ($systemCheck['php_ext_curl'])
+{
+	$systemCheck['system_selfview'] = assert_selfview();
+	if ($systemCheck['system_selfview'])
+	{
+		$systemCheck['system_rewrite'] = assert_rewrite();
+	}
+}
 
 //$systemCheck['error'] = false;
 
@@ -138,7 +152,16 @@ function generateErrorReporting($systemCheck)
 				break;					
 			case 'php_ext_gd':
 				$result[] = 'l\'extension [gd] n\'est pas installée';
-				break;					
+				break;			
+			case 'system_symlink':
+				$result[] = 'Votre système ne permet pas la création de liens symboliques';
+				break;
+			case 'system_selfview':
+				$result[] = "Le serveur n'a pu faire de requête vers lui même : assurez-vous que ".$_SERVER["HTTP_HOST"]." soit accessible à votre serveur";
+				break;
+			case 'system_rewrite':
+				$result[] = "Le module mod_rewrite n'a pas l'air activé. Veuillez activer mod_rewrite";
+				break;
 		}
 		
 	}

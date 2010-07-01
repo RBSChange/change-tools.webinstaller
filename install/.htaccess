@@ -39,3 +39,8 @@
 	php_value post_max_size 100M
 	php_value upload_max_filesize 100M
 </IfModule>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule ^rewrite_ok$ /install/rewrite_ok.txt [QSA,L]
+</IfModule>

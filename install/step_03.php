@@ -24,15 +24,15 @@ else
 		</div>
 		<div class="error" id="erroroninstall" style="display: none;"><p>Une erreur est survenue lors de l'installation.</p></div>
 		<div id="readytouse" style="display: none;">	
-			<div class="success" id="readytousesuccess" ><p>Pour des raisons de securité, penser à supprimer le dossier 'install' de votre projet.</p></div>			
+			<div class="success" id="readytousesuccess" ><p>Pour des raisons de securité, penser à supprimer le dossier 'install' de votre projet.<br/>Pensez également à accéder rapidement à <a href="http://<?php echo $config->getParameter('FQDN')?>/admin" target="_blank">l'interface d'administration</a> pour y définir votre mot de passe principal.</p></div>			
 			<table>
 				<tbody>
 					<tr>
 						<td>
-							<a href="/" target="_blank"><img src="./ressources/button_index.png" /><br />Accueil du site</a>
+							<a href="http://<?php echo $config->getParameter('FQDN')?>/" target="_blank"><img src="./ressources/button_index.png" /><br />Accueil du site</a>
 						</td>
 						<td>
-							<a href="/admin" target="_blank"><img src="./ressources/button_admin.png" /><br />Interface d'administration</a>
+							<a href="http://<?php echo $config->getParameter('FQDN')?>/admin" target="_blank"><img src="./ressources/button_admin.png" /><br />Interface d'administration</a>
 						</td>
 					</tr>	
 				</tbody>
@@ -43,5 +43,5 @@ else
 </form>
 <script type="text/javascript">
 var projectURL = "http://<?php echo $config->getParameter('FQDN')?>";
-window.onload = function() {createProject("<?php echo $config->getParameter('SAMPLES') == 'checked' ? $productType : '';?>");}
+addOnload(function() {createProject("<?php echo $config->getParameter('SAMPLES') == 'checked' ? $productType : '';?>");});
 </script>

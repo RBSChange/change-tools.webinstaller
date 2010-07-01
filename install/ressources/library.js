@@ -2,11 +2,11 @@
 function submitForm0()
 {
 	var form = document.forms[0];
-	if (!form.hasAttribute('submited'))
+	if (form.getAttribute('submited') != 'true')
 	{
 		form.setAttribute('submited', 'true');
 		form.submit();
-	}	
+	}
 }
 
 function gotoStep(stepName)
@@ -52,14 +52,7 @@ function submitStep02()
 function initselectServermail()
 {
 	var mailSelect = document.getElementById('install_SERVER_MAIL');
-	if ('attachEvent' in mailSelect)
-	{
-		mailSelect.attachEvent('onchange', selectServermail);
-	}
-	else
-	{
-		mailSelect.addEventListener('change', selectServermail, false);
-	}
+	addOnchange(mailSelect, selectServermail);
 	selectServermail(null);
 }
 
@@ -218,4 +211,28 @@ function readyToUse()
 		}
 	};
 	req.send(null);
+}
+
+function addOnload(func) 
+{
+	if ('attachEvent' in window)
+	{
+		window.attachEvent('onload', func);
+	}
+	else
+	{
+		window.addEventListener('load', func, false);
+	}
+}
+
+function addOnchange(item, func) 
+{ 
+	if ('attachEvent' in item)
+	{
+		item.attachEvent('onchange', func);
+	}
+	else
+	{
+		item.addEventListener('change', func, false);
+	}
 }
