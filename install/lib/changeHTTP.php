@@ -8,6 +8,7 @@ ignore_user_abort(true);
 error_reporting(E_ALL);
 
 define("C_DEBUG", false);
+
 $C_BOOT_STRAP_AS_LIB = true;
 ob_start();
 require_once 'httpbootstrap.php';
@@ -51,10 +52,11 @@ function registerCommands($script, $computedDeps)
 		
 	$path = WEBEDIT_HOME . "/modules/";
 	if (!is_dir($path))
-    {
-       return;
-    }
-	foreach (new DirectoryIterator($path) as $filePath => $fileInfo)
+	{
+		return;
+	}
+	
+	foreach (new DirectoryIterator($path) as $fileInfo)
 	{
 		if (!$fileInfo->isDot() && $fileInfo->isDir())
 		{
