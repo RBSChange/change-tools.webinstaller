@@ -6,9 +6,7 @@ $systemCheck['php_version'] = assert_php_version('5.1.6');
 $systemCheck['php_ini_safe_mode'] = assert_ini('safe_mode', false);
 //$systemCheck['php_ini_short_open_tag'] = assert_ini('short_open_tag', false);
 //$systemCheck['php_ini_default_charset'] = assert_ini('default_charset', 'utf-8');
-$systemCheck['php_ini_allow_url_fopen'] = assert_ini('allow_url_fopen');
 $systemCheck['php_ini_file_uploads'] = assert_ini('file_uploads');
-$systemCheck['php_ini_magic_quotes_gpc'] = assert_ini('magic_quotes_gpc', false);
 $systemCheck['php_ini_memory_limit'] = assert_ini_size_gt('memory_limit', 64);
 
 $systemCheck['php_conf_home_writable'] = assert_writable(PROJECT_HOME_PATH, true);
