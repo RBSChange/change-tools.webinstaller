@@ -561,11 +561,6 @@ class ConfigManager
 			$this->errors['TMP_PATH'] = "Veuillez renseigner le dossier temporaire";
 			return false;
 		}
-		if (!is_readable($tmpPath) && !@mkdir($tmpPath))
-		{
-			$this->errors['TMP_PATH'] = $tmpPath." n'est pas accessible en lecture";
-			return false;
-		}
 		if (!is_writable($tmpPath))
 		{
 			$this->errors['TMP_PATH'] = $tmpPath." n'est pas accessible en écriture";
