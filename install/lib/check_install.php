@@ -35,7 +35,7 @@ $systemCheck['php_ext_string_iconv'] = assert_ext('iconv') || assert_function('i
 
 $systemCheck['php_ext_gd'] = assert_ext('gd') || assert_ext('imagick') || assert_function('getimagesize');
 
-if ($systemCheck['php_ext_curl'])
+if ($systemCheck['php_ext_curl'] && $systemCheck['php_conf_home_writable'])
 {
 	$systemCheck['system_selfview'] = assert_selfview();
 	if ($systemCheck['system_selfview'])

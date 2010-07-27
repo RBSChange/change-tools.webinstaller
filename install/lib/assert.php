@@ -59,7 +59,7 @@ function assert_writable($path, $recursive = false, $ignore = null)
                                 }
                                 if ($ignore === null || !in_array($fileInfo->getFilename(), $ignore))
                                 {
-                                        $ret = assert_writable($fileInfo->getPathInfo(), true, null);
+                                		$ret = assert_writable($fileInfo->getPath().DIRECTORY_SEPARATOR.$fileInfo->getFilename(), true, null);
                                         if ($ret === false)
                                         {
                                                 return false;
@@ -111,7 +111,7 @@ function assert_url($url, $data)
 function assert_selfview()
 {
 	$data = strval( time() );
-	if (!file_put_contents(PROJECT_HOME_PATH."/install/rewrite_ok.txt", $data))
+	if (!@file_put_contents(PROJECT_HOME_PATH."/install/rewrite_ok.txt", $data))
 	{
 		return false;
 	}
@@ -124,7 +124,7 @@ function assert_selfview()
 function assert_rewrite()
 {
 	$data = strval( time() );
-	if (!file_put_contents(PROJECT_HOME_PATH."/install/rewrite_ok.txt", $data))
+	if (!@file_put_contents(PROJECT_HOME_PATH."/install/rewrite_ok.txt", $data))
 	{
 		return false;
 	}
