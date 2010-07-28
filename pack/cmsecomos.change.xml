@@ -7,7 +7,7 @@
 	<version>3.0.3</version>
 	<description>Open Source CMS e-Commerce</description>
 	<dependencies>
-		<framework>3.0.3</framework>
+		<framework hotfixes="1">3.0.3</framework>
 		<modules>
 			<!-- Core modules -->
 			<module>contactcard-3.0.3</module>
@@ -29,7 +29,7 @@
 			<module>uixul-3.0.3</module>
 			<module>useractionlogger-3.0.3</module>
 			<module>users-3.0.3</module>
-			<module>website-3.0.3</module>
+			<module hotfixes="2">website-3.0.3</module>
 			<module>workflow-3.0.3</module>
 			
 			<!-- e-Commerce modules -->		
