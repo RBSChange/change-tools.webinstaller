@@ -111,13 +111,13 @@ function assert_url($url, $data)
 function assert_selfview()
 {
 	$data = strval( time() );
-	if (!@file_put_contents(PROJECT_HOME_PATH."/install/rewrite_ok.txt", $data))
+	if (!@file_put_contents(PROJECT_HOME_PATH."/install/selfview_ok.txt", $data))
 	{
 		return false;
 	}
 	// 'off' can be a value. Cf. http://php.net/manual/en/reserved.variables.server.php
 	$https = isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off";
-	$srcUrl = "http".(($https) ? "s" : "")."://".$_SERVER["HTTP_HOST"]."/install/rewrite_ok.txt";
+	$srcUrl = "http".(($https) ? "s" : "")."://".$_SERVER["HTTP_HOST"]."/install/selfview_ok.txt";
 	return assert_url($srcUrl, $data);
 }
 
