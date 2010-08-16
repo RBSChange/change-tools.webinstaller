@@ -122,6 +122,7 @@ function addSamples(sampleType)
 	 	case "ecommercecore":
 	 		cmds.push({cmd: "import-data catalog default.xml", label:"Création d'un catalogue d'exemple"});
 	 		cmds.push({cmd: "import-data customer default.xml", label:"Création de clients d'exemple"});
+	 		cmds.push({cmd: "import-data order default.xml", label:"Création des pages du processus de commande"});
 			break;
 	}
 }
