@@ -9,7 +9,7 @@ $systemCheck['php_ini_safe_mode'] = assert_ini('safe_mode', false);
 $systemCheck['php_ini_file_uploads'] = assert_ini('file_uploads');
 $systemCheck['php_ini_memory_limit'] = assert_ini_size_gt('memory_limit', 64);
 
-$systemCheck['php_conf_home_writable'] = assert_writable(PROJECT_HOME_PATH, true, array("repository", "themes"));
+$systemCheck['php_conf_home_writable'] = assert_writable(PROJECT_HOME_PATH);
 $systemCheck['php_conf_global_writable'] = assert_writable(PROJECT_HOME_PATH . '/change.xml');
 $systemCheck['php_conf_project_writable'] = assert_writable(PROJECT_HOME_PATH . '/config/project.default.xml');
 
