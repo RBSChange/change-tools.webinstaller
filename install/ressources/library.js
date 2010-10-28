@@ -190,12 +190,12 @@ function readyToUse()
 	cmdElem.scrollTop = cmdElem.scrollHeight;
 	
 	var req = new XMLHttpRequest();
-	req.open('GET', projectURL + '/test_availability.php', true);
+	req.open('GET', projectURL + '/changecron.php', true);
 	req.onreadystatechange = function (aEvt) 
 	{
 		if (req.readyState == 4) 
 		{
-			if (req.status == 200 && req.responseText == 'OK')
+			if (req.status == 200)
 			{
 				stepTitel.innerHTML = 'Installation terminé';			
 				var readytouse = document.getElementById("readytouse");

@@ -2,34 +2,33 @@
 <change xmlns="http://www.rbs.fr/schema/change-project/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>cmscore</name>
 	<type>change-project</type>
-	<version>3.0.3</version>
+	<version>3.0.4</version>
 	<description>CMS Core</description>
 	<dependencies>
-		<framework hotfixes="1,3,12">3.0.3</framework>
+		<framework>3.0.4</framework>
 		<modules>
 			<!-- Core modules -->
-			<module>contactcard-3.0.3</module>
-			<module>dashboard-3.0.3</module>
-			<module hotfixes="15">form-3.0.3</module>
-			<module hotfixes="16">generic-3.0.3</module>
-			<module>list-3.0.3</module>
-			<module>mailbox-3.0.3</module>
-			<module hotfixes="8">markergas-3.0.3</module>
-			<module hotfixes="11,17">media-3.0.3</module>
-			<module>mysqlindexer-3.0.3</module>
-			<module>notification-3.0.3</module>
-			<module>preferences-3.0.3</module>
-			<module hotfixes="19">referencing-3.0.3</module>
-			<module>skin-3.0.3</module>
-			<module>solrsearch-3.0.3</module>
-			<module>task-3.0.3</module>
-			<module>theme-3.0.3</module>
-			<module hotfixes="6,18">uixul-3.0.3</module>
-			<module>useractionlogger-3.0.3</module>
-			<module>users-3.0.3</module>
-			<module hotfixes="2,9,14">website-3.0.3</module>
-			<module>workflow-3.0.3</module>
+			<module>contactcard-3.0.4</module>
+			<module>dashboard-3.0.4</module>
+			<module>form-3.0.4</module>
+			<module>generic-3.0.4</module>
+			<module>list-3.0.4</module>
+			<module>mailbox-3.0.4</module>
+			<module>markergas-3.0.4</module>
+			<module>media-3.0.4</module>
+			<module>mysqlindexer-3.0.4</module>
+			<module>notification-3.0.4</module>
+			<module>preferences-3.0.4</module>
+			<module>referencing-3.0.4</module>
+			<module>skin-3.0.4</module>
+			<module>solrsearch-3.0.4</module>
+			<module>task-3.0.4</module>
+			<module>theme-3.0.4</module>
+			<module>uixul-3.0.4</module>
+			<module>useractionlogger-3.0.4</module>
+			<module>users-3.0.4</module>
+			<module>website-3.0.4</module>
+			<module>workflow-3.0.4</module>
 		</modules>
-		<libs />
 	</dependencies>
 </change>
