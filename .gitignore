@@ -1,3 +1,6 @@
 themes/*
 repository/*
 build/*
+/.buildpath
+/.project
+.settings/*
