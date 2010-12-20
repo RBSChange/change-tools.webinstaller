@@ -5,7 +5,7 @@
 	<version>3.0.4</version>
 	<description>CMS Core</description>
 	<dependencies>
-		<framework>3.0.4</framework>
+		<framework>3.0.4-42</framework>
 		<modules>
 			<!-- Core modules -->
 			<module>contactcard-3.0.4</module>
@@ -15,7 +15,7 @@
 			<module>list-3.0.4</module>
 			<module>mailbox-3.0.4</module>
 			<module>markergas-3.0.4</module>
-			<module>media-3.0.4</module>
+			<module>media-3.0.4-29</module>
 			<module>mysqlindexer-3.0.4</module>
 			<module>notification-3.0.4</module>
 			<module>preferences-3.0.4</module>
@@ -24,10 +24,10 @@
 			<module>solrsearch-3.0.4</module>
 			<module>task-3.0.4</module>
 			<module>theme-3.0.4</module>
-			<module>uixul-3.0.4</module>
+			<module>uixul-3.0.4-47</module>
 			<module>useractionlogger-3.0.4</module>
 			<module>users-3.0.4</module>
-			<module>website-3.0.4</module>
+			<module>website-3.0.4-43</module>
 			<module>workflow-3.0.4</module>
 		</modules>
 	</dependencies>
