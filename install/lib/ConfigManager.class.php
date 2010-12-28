@@ -513,7 +513,7 @@ class ConfigManager
 	{
 		if ($this->parameters['SERVER_MAIL'] != 'NOMAIL')
 		{
-			if (count( explode( '@', $this->parameters['NO_REPLY'] ) ) != 2)
+			if (!preg_match('/^[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9.-]*\.[a-z]{2,}$/i', $this->parameters['NO_REPLY']))
 			{
 				$this->errors['MAIL'] = 'L\'adresse  de l\'expéditeur du site n\'est pas valide';
 				return false;

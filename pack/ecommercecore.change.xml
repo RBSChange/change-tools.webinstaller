@@ -7,7 +7,7 @@
 	<version>3.0.4</version>
 	<description>e-Commerce Core</description>
 	<dependencies>
-		<framework>3.0.4-42</framework>
+		<framework hotfixes="57">3.0.4</framework>
 		<modules>
 			<!-- Core modules -->
 			<module>contactcard-3.0.4</module>
@@ -17,7 +17,7 @@
 			<module>list-3.0.4</module>
 			<module>mailbox-3.0.4</module>
 			<module>markergas-3.0.4</module>
-			<module>media-3.0.4-29</module>
+			<module hotfixes="56">media-3.0.4</module>
 			<module>mysqlindexer-3.0.4</module>
 			<module>notification-3.0.4</module>
 			<module>preferences-3.0.4</module>
@@ -26,20 +26,20 @@
 			<module>solrsearch-3.0.4</module>
 			<module>task-3.0.4</module>
 			<module>theme-3.0.4</module>
-			<module>uixul-3.0.4-47</module>
+			<module hotfixes="47">uixul-3.0.4</module>
 			<module>useractionlogger-3.0.4</module>
 			<module>users-3.0.4</module>
-			<module>website-3.0.4-43</module>
+			<module hotfixes="43">website-3.0.4</module>
 			<module>workflow-3.0.4</module>
 			
 			<!-- e-Commerce modules -->		
 			<module>brand-3.0.4</module>
-			<module>catalog-3.0.4-49</module>
-			<module>comment-3.0.4-40</module>
-			<module>customer-3.0.4-46</module>
+			<module hotfixes="49">catalog-3.0.4</module>
+			<module hotfixes="40">comment-3.0.4</module>
+			<module hotfixes="46">customer-3.0.4</module>
 			<module>filter-3.0.4</module>
-			<module>order-3.0.4-54</module>
-			<module>payment-3.0.4-38</module>
+			<module hotfixes="54">order-3.0.4</module>
+			<module hotfixes="38">payment-3.0.4</module>
 			<module>rss-3.0.4</module>
 			<module>shipping-3.0.4</module>
 			<module>zone-3.0.4</module>
