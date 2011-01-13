@@ -26,7 +26,15 @@ else
 	</div>
 	<div class="stepcontent">
 		<?php if ($config->hasError()) { ?>
-			<div class="error"><p>Votre configuration comporte des erreurs. Veuillez les corriger.</p></div>
+			<div class="error">
+				<p>Votre configuration comporte des erreurs. Veuillez les corriger.
+				<?php if ($config->getError('others')) {
+					echo "<br/>";
+					foreach ($config->getError('others') as $other) {
+						echo "- ".$other . "<br/>\n";
+					}
+				} ?></p>
+			</div>
 		<?php } elseif ($config->isChecked()) { ?>
 			<div class="success"><p>Votre configuration a été validée, vous pouvez désormais installer le projet.</p></div>
 			<script type="text/javascript">
@@ -96,7 +104,7 @@ else
 					<li><label for="install_WWW_GROUP">WWW Groupe :</label>
 						<input name="install[WWW_GROUP]" class="textfield" id="install_WWW_GROUP" size="20" spellcheck="false"
 						value="<?php echo $config->getParameter('WWW_GROUP');?>" type="text">
-						<p class="help">Nom du groupe ayant les accès en lecture / écriture sur les fichiers du projet.</p>
+						<p class="help">Nom du groupe ayant les accès en lecture / écriture sur les fichiers du projet. Dans le doute, laissez le champ vide.</p>
 					</li>
 					<li><label for="install_TMP_PATH">Dossier temporaire :</label>
 						<input name="install[TMP_PATH]" class="textfield" id="install_TMP_PATH" size="20" spellcheck="false"
@@ -212,6 +220,7 @@ else
 				</ol>
 			</div>
 		</div>
+		
 	</div>	
 	<div class="stepfooter"><img src="./ressources/content_footer_bg.png" /></div>	
 	<p class="download">

@@ -98,8 +98,8 @@ class ConfigManager
 		
 		$this->parameters['DB_HOST'] = 'localhost';
 		$this->parameters['DB_PORT'] = '3306';
-		$this->parameters['DB_USER'] = 'admin-webedit';
-		$this->parameters['DB_PASSWORD'] = 'admin-webedit';
+		$this->parameters['DB_USER'] = 'root';
+		$this->parameters['DB_PASSWORD'] = '';
 		$this->parameters['DB_DATABASE'] = 'C4_' . str_replace( array('www.', '.'), array('', '_'), $this->parameters['FQDN'] ) . '_default';
 		
 		$this->parameters['SERVER_MAIL'] = 'NOMAIL';
@@ -220,7 +220,7 @@ class ConfigManager
 		$content = '<' . '?php' . "\n\t" . '$dataconfig = ' . var_export( $this->parameters, true ) . ';';
 		if (file_put_contents( $this->getInstallParametersFilePath(), $content ) === false)
 		{
-			$this->errors[] = 'Path ' . $this->getWebeditHome() . ' is not writable.';
+			$this->errors['others'][] = 'Le fichier ' . $this->getInstallParametersFilePath() . ' n\'a pu être écrit.';
 			return false;
 		}
 		return true;
@@ -255,7 +255,7 @@ class ConfigManager
 		}
 		if (file_put_contents( $this->getChangePropertiesFilePath(), implode( "\n", $lines ) ) === false)
 		{
-			$this->errors[] = 'Unable to write  ' . $this->getChangePropertiesFilePath() . ' file.';
+			$this->errors['others'][] = 'Le fichier ' . $this->getChangePropertiesFilePath() . ' n\'a pu être écrit.';
 			return false;
 		}
 		
@@ -265,7 +265,7 @@ class ConfigManager
 		
 		if ($doc->load( $this->getProjectConfigFilePath() ) === false)
 		{
-			$this->errors[] = 'Unable to load  ' . $this->getProjectConfigFilePath() . ' file.';
+			$this->errors['others'][] = 'Le fichier ' . $this->getProjectConfigFilePath() . ' n\'a pu être lu comme XML valide.';
 			return false;
 		}
 		
@@ -411,7 +411,7 @@ class ConfigManager
 		
 		if ($doc->save( $this->getProjectConfigFilePath() ) === false)
 		{
-			$this->errors[] = 'Unable to write  ' . $this->getProjectConfigFilePath() . ' file.';
+			$this->errors['others'][] = 'Le fichier ' . $this->getProjectConfigFilePath() . ' n\'a pu être écrit.';
 			return false;
 		}
 		
@@ -488,10 +488,9 @@ class ConfigManager
 	
 	private function checkFQDN()
 	{
-		$data = strval( time() );
-		$testFilePath = implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'install', 'checkFQDN.txt') );
-		$url = 'http://' . $this->parameters['FQDN'] . '/install/checkFQDN.txt';
-		file_put_contents( $testFilePath, $data );
+		$data = "checkFQDNOK".md5((isset($_SERVER["HTTPS"]) ? "on":"")."/".$_SERVER["HTTP_HOST"]."/".dirname(dirname(__FILE__)));
+		$testFilePath = implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'install', 'checkFQDN.php') );
+		$url = 'http://' . $this->parameters['FQDN'] . '/install/checkFQDN.php';
 		$cr = curl_init();
 		$options = array(CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 5, CURLOPT_FOLLOWLOCATION => false, CURLOPT_URL => $url, CURLOPT_POSTFIELDS => null, CURLOPT_POST => false);
 		curl_setopt_array( $cr, $options );
@@ -505,18 +504,22 @@ class ConfigManager
 			$this->errors['DOMAIN'] = 'Le nom de domaine saisi n\'est pas un domaine valide pour ce projet. Assurez-vous que http://'.$this->parameters['FQDN'].' soit accessible à votre serveur';
 			return false;
 		}
-		@unlink( $testFilePath );
 		return true;
 	}
 	
 	private function checkMail()
 	{
-		if ($this->parameters['SERVER_MAIL'] != 'NOMAIL')
+		if (!preg_match('/^[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9.-]*\.[a-z]{2,}$/i', $this->parameters['NO_REPLY']))
 		{
-			if (!preg_match('/^[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9.-]*\.[a-z]{2,}$/i', $this->parameters['NO_REPLY']))
+			if ($this->parameters['SERVER_MAIL'] != 'NOMAIL')
 			{
 				$this->errors['MAIL'] = 'L\'adresse  de l\'expéditeur du site n\'est pas valide';
 				return false;
+			}
+			else
+			{
+				// Address is used to populate notifications...
+				$this->parameters['NO_REPLY'] = 'noreply@noreply.fr';
 			}
 		}
 		

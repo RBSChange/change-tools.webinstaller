@@ -11,7 +11,21 @@ $systemCheck['php_ini_memory_limit'] = assert_ini_size_gt('memory_limit', 64);
 
 $systemCheck['php_conf_home_writable'] = assert_writable(PROJECT_HOME_PATH);
 $systemCheck['php_conf_global_writable'] = assert_writable(PROJECT_HOME_PATH . '/change.xml');
+$systemCheck['php_conf_change_properties_writable'] = assert_writable(PROJECT_HOME_PATH . '/change.properties');
 $systemCheck['php_conf_project_writable'] = assert_writable(PROJECT_HOME_PATH . '/config/project.default.xml');
+
+foreach (scandir(PROJECT_HOME_PATH) as $dir)
+{
+	if ($dir == "." || $dir == ".." || !is_dir(PROJECT_HOME_PATH .'/'.$dir))
+	{
+		continue;
+	}
+	if (!assert_writable(PROJECT_HOME_PATH .'/'.$dir))
+	{
+		$systemCheck['php_conf_subdir_home_writable'] = false;
+		break;
+	}
+}
 
 if ($systemCheck['php_conf_home_writable'])
 {
@@ -105,13 +119,18 @@ function generateErrorReporting($systemCheck)
 			case 'php_conf_home_writable':
 				$result[] = 'le dossier [' . PROJECT_HOME_PATH . '] n\'est pas accessible en écriture';
 				break;
+			case 'php_conf_subdir_home_writable':
+				$result[] = 'l\'ensemble des sous-dossiers de [' . PROJECT_HOME_PATH . '] ne sont pas accessibles en écriture';
+				break;
 			case 'php_conf_global_writable':
 				$result[] = 'le fichier [' . PROJECT_HOME_PATH . '/change.xml] n\'est pas accessible en écriture';
+				break;
+			case 'php_conf_change_properties_writable':
+				$result[] = 'le fichier [' . PROJECT_HOME_PATH . '/change.properties] n\'est pas accessible en écriture';
 				break;
 			case 'php_conf_project_writable':
 				$result[] = 'le fichier [' . PROJECT_HOME_PATH . '/config/project.default.xml] n\'est pas accessible en écriture';
 				break;
-				
 			case 'php_ext_posix':
 				$result[] = 'l\'extension [posix] n\'est pas installée';
 				break;

@@ -1,5 +1,19 @@
+#!/bin/bash
+
+if [ ! -d themes/webfactory ]; then
+	echo "Missing themes/webfactory directory. Please run get-theme.sh"
+	exit 1
+fi
+
+if [ ! -d repository ]; then
+	echo "Missing repository directory. Please run gen-repository.sh"
+	exit 1
+fi
+
 rm -rf build
 mkdir build
+
+cp pack/change.properties change.properties
 
 cp pack/cmscore.change.xml change.xml
 tar --exclude .git -czf build/cmscore-downloader-3.0.4.tgz change.properties change.xml profile config install themes index.php

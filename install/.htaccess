@@ -42,5 +42,5 @@
 
 <IfModule mod_rewrite.c>
 	RewriteEngine on
-	RewriteRule ^rewrite_ok$ /install/rewrite_ok.txt [QSA,L]
+	RewriteRule ^rewrite_ok$ /install/rewrite_ok.php [QSA,L]
 </IfModule>

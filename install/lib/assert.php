@@ -110,24 +110,16 @@ function assert_url($url, $data)
 
 function assert_selfview()
 {
-	$data = strval( time() );
-	if (!@file_put_contents(PROJECT_HOME_PATH."/install/selfview_ok.txt", $data))
-	{
-		return false;
-	}
+	$data = "selfviewOK".md5((isset($_SERVER["HTTPS"]) ? "on":"")."/".$_SERVER["HTTP_HOST"]."/".dirname(dirname(__FILE__)));
 	// 'off' can be a value. Cf. http://php.net/manual/en/reserved.variables.server.php
 	$https = isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off";
-	$srcUrl = "http".(($https) ? "s" : "")."://".$_SERVER["HTTP_HOST"]."/install/selfview_ok.txt";
+	$srcUrl = "http".(($https) ? "s" : "")."://".$_SERVER["HTTP_HOST"]."/install/selfview_ok.php";
 	return assert_url($srcUrl, $data);
 }
 
 function assert_rewrite()
 {
-	$data = strval( time() );
-	if (!@file_put_contents(PROJECT_HOME_PATH."/install/rewrite_ok.txt", $data))
-	{
-		return false;
-	}
+	$data = "rewriteOK".md5((isset($_SERVER["HTTPS"]) ? "on":"")."/".$_SERVER["HTTP_HOST"]."/".dirname(dirname(__FILE__)));
 	// 'off' can be a value. Cf. http://php.net/manual/en/reserved.variables.server.php
 	$https = isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off";
 	$rewriteUrl = "http".(($https) ? "s" : "")."://".$_SERVER["HTTP_HOST"]."/install/rewrite_ok";

@@ -1,11 +1,19 @@
 <?php
-if (!defined('PROJECT_HOME_PATH') || $systemCheckOk)
+if (!defined('PROJECT_HOME_PATH'))
 {
-	header('Location: /install/index.php');
-	die();
+	$msgClass = "error";
+	$msgText = "Veuillez suivre <a href=\"/install/index.php\">ce lien</a> pour continuer.";
 }
-$msgClass = "error";
-$msgText = "Votre hébergement est incompatible";	
+elseif ($systemCheckOk)
+{
+	$msgClass = "success";
+	$msgText = "Votre hébergement est compatible. Suivez <a href=\"/install/index.php\">ce lien</a> pour continuer.";
+}
+else
+{
+	$msgClass = "error";
+	$msgText = "Votre hébergement est incompatible";
+}
 ?>
 <form class="cmxform" action="" method="post">
 	<div class="stepheader"><img src="./ressources/thread_01.png" usemap="#mapping_thread"/>
