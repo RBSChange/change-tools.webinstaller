@@ -47,6 +47,8 @@ $systemCheck['php_ext_xsl'] = assert_ext('xsl');
 $systemCheck['php_ext_string_mbstring'] = assert_ext('mbstring') || assert_function('mb_strtolower');
 $systemCheck['php_ext_string_iconv'] = assert_ext('iconv') || assert_function('iconv_strlen');
 
+$systemCheck['php_ext_json'] = assert_ext('json');
+
 $systemCheck['php_ext_gd'] = assert_ext('gd') || assert_ext('imagick') || assert_function('getimagesize');
 
 if ($systemCheck['php_ext_curl'] && $systemCheck['php_conf_home_writable'])
@@ -169,7 +171,10 @@ function generateErrorReporting($systemCheck)
 				break;					
 			case 'php_ext_gd':
 				$result[] = 'l\'extension [gd] n\'est pas installée';
-				break;			
+				break;
+			case 'php_ext_json':
+				$result[] = "l'extension [json] n'est pas installée";
+				break;
 			case 'system_symlink':
 				$result[] = 'Votre système ne permet pas la création de liens symboliques';
 				break;
@@ -177,7 +182,7 @@ function generateErrorReporting($systemCheck)
 				$result[] = "Le serveur n'a pu faire de requête vers lui même : assurez-vous que ".$_SERVER["HTTP_HOST"]." soit accessible à votre serveur";
 				break;
 			case 'system_rewrite':
-				$result[] = "Le module mod_rewrite n'a pas l'air activé. Veuillez activer mod_rewrite";
+				$result[] = "Le module mod_rewrite n'a pas l'air activé. Veuillez activer mod_rewrite ou vous assurer que ces directives peuvent être placées dans un fichier .htaccess";
 				break;
 		}
 		
