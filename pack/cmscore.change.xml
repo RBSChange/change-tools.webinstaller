@@ -5,30 +5,30 @@
 	<version>3.0.4</version>
 	<description>CMS Core</description>
 	<dependencies>
-		<framework hotfixes="57">3.0.4</framework>
+		<framework hotfixes="82">3.0.4</framework>
 		<modules>
 			<!-- Core modules -->
 			<module>contactcard-3.0.4</module>
-			<module>dashboard-3.0.4</module>
-			<module>form-3.0.4</module>
-			<module>generic-3.0.4</module>
+			<module hotfixes="94">dashboard-3.0.4</module>
+			<module hotfixes="74">form-3.0.4</module>
+			<module hotfixes="91">generic-3.0.4</module>
 			<module>list-3.0.4</module>
 			<module>mailbox-3.0.4</module>
 			<module>markergas-3.0.4</module>
-			<module hotfixes="56">media-3.0.4</module>
+			<module hotfixes="86">media-3.0.4</module>
 			<module>mysqlindexer-3.0.4</module>
 			<module>notification-3.0.4</module>
 			<module>preferences-3.0.4</module>
 			<module>referencing-3.0.4</module>
-			<module>skin-3.0.4</module>
-			<module>solrsearch-3.0.4</module>
-			<module>task-3.0.4</module>
-			<module>theme-3.0.4</module>
-			<module hotfixes="47">uixul-3.0.4</module>
+			<module hotfixes="76">skin-3.0.4</module>
+			<module hotfixes="87">solrsearch-3.0.4</module>
+			<module hotfixes="83">task-3.0.4</module>
+			<module hotfixes="90">theme-3.0.4</module>
+			<module hotfixes="81">uixul-3.0.4</module>
 			<module>useractionlogger-3.0.4</module>
-			<module>users-3.0.4</module>
-			<module hotfixes="43">website-3.0.4</module>
-			<module>workflow-3.0.4</module>
+			<module hotfixes="93">users-3.0.4</module>
+			<module hotfixes="75">website-3.0.4</module>
+			<module hotfixes="92">workflow-3.0.4</module>
 		</modules>
 	</dependencies>
 </change>
