@@ -1,14 +1,13 @@
 <?php
-if (!defined('PROJECT_HOME_PATH') || !$systemCheckOk)
+if (!defined('PROJECT_HOME_PATH'))
 {
 	header('Location: /install/index.php');
 	die();
 }
-include PROJECT_HOME_PATH . '/install/lib/ConfigManager.class.php';
-$config = ConfigManager::getInstance();
-if ($config->isChecked())
+
+if ($configManager->isChecked())
 {
-	$config->applyConfiguration();
+	$configManager->applyConfiguration();
 }
 else
 {
@@ -24,15 +23,15 @@ else
 		</div>
 		<div class="error" id="erroroninstall" style="display: none;"><p>Une erreur est survenue lors de l'installation.</p></div>
 		<div id="readytouse" style="display: none;">	
-			<div class="success" id="readytousesuccess" ><p>Pour des raisons de securité, penser à supprimer le dossier 'install' de votre projet.<br/>Pensez également à accéder rapidement à <a href="http://<?php echo $config->getParameter('FQDN')?>/admin" target="_blank">l'interface d'administration</a> pour y définir votre mot de passe principal.</p></div>			
+			<div class="success" id="readytousesuccess" ><p>Pour des raisons de securité, penser à supprimer le dossier 'install' de votre projet.<br/>Pensez également à accéder rapidement à <a href="http://<?php echo $configManager->getParameter('FQDN')?>/admin" target="_blank">l'interface d'administration</a> pour y définir votre mot de passe principal.</p></div>			
 			<table>
 				<tbody>
 					<tr>
 						<td>
-							<a href="http://<?php echo $config->getParameter('FQDN')?>/" target="_blank"><img src="./ressources/button_index.png" /><br />Accueil du site</a>
+							<a href="http://<?php echo $configManager->getParameter('FQDN')?>/" target="_blank"><img src="./ressources/button_index.png" /><br />Accueil du site</a>
 						</td>
 						<td>
-							<a href="http://<?php echo $config->getParameter('FQDN')?>/admin" target="_blank"><img src="./ressources/button_admin.png" /><br />Interface d'administration</a>
+							<a href="http://<?php echo $configManager->getParameter('FQDN')?>/admin" target="_blank"><img src="./ressources/button_admin.png" /><br />Interface d'administration</a>
 						</td>
 					</tr>	
 				</tbody>
@@ -42,6 +41,6 @@ else
 	<div class="stepfooter"><img src="./ressources/content_footer_bg.png" /></div>
 </form>
 <script type="text/javascript">
-var projectURL = "http://<?php echo $config->getParameter('FQDN')?>";
-addOnload(function() {createProject("<?php echo $config->getParameter('SAMPLES') == 'checked' ? $productType : '';?>");});
+var projectURL = "http://<?php echo $configManager->getParameter('FQDN')?>";
+addOnload(function() {createProject("<?php echo $configManager->getParameter('SAMPLES') == 'checked' ? $productType : '';?>");});
 </script>

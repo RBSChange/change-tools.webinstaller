@@ -86,6 +86,18 @@ function assert_symlink($path)
 	return false;
 }
 
+function assert_frameworksymlink($frameworksRepoVersion = '3.5.0')
+{
+	$source = PROJECT_HOME_PATH . DIRECTORY_SEPARATOR . 'repository' .DIRECTORY_SEPARATOR. 'framework' .DIRECTORY_SEPARATOR. 'framework-' . $frameworksRepoVersion;
+	$link = PROJECT_HOME_PATH . DIRECTORY_SEPARATOR . 'framework';
+	@unlink($link);
+	if (symlink($source, $link))
+	{
+		return true;
+	}
+	return false;
+}
+
 function wget($url, &$curldata, &$errno)
 {
 	$cr = curl_init();

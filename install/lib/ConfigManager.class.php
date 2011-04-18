@@ -1,4 +1,10 @@
 <?php
+if (!defined('PROJECT_HOME_PATH'))
+{
+	header('Location: /install/index.php');
+	die();
+}
+
 class ConfigManager
 {
 	/**
@@ -10,9 +16,36 @@ class ConfigManager
 	 * @var array
 	 */
 	private $parameters = array();
-	
+
+	/**
+	 * @var array
+	 */
 	private $errors = array();
 	
+	/**
+	 * @var string
+	 */
+	public $productName = "CMS Core";
+
+	/**
+	 * @var string
+	 */
+	public $productType = "";
+	
+	/**
+	 * @var string
+	 */
+	public $productVersion = "3.5.0";
+
+	/**
+	 * @var string
+	 */
+	public $frameworkRepo = "3.5.0";
+	
+	public function getProductTitle()
+	{
+		return $this->productName . ' ' . $this->productVersion;
+	}
 	/**
 	 * @return ConfigManager
 	 */
@@ -20,17 +53,52 @@ class ConfigManager
 	{
 		if (self::$instance === null)
 		{
-			self::$instance = new self( );
+			self::$instance = new self(PROJECT_HOME_PATH);
 		}
-		self::$instance->parameters['WEBEDIT_HOME'] = PROJECT_HOME_PATH;
-		$savedConfig = self::$instance->getInstallParametersFilePath();
-		if (file_exists( $savedConfig ))
+
+		return self::$instance;
+	}
+	
+	
+	protected function __construct($projectHomePath)
+	{
+		$this->parameters['WEBEDIT_HOME'] = $projectHomePath;
+		$savedConfig = $this->getInstallParametersFilePath();
+		if (file_exists($savedConfig))
 		{
 			$dataconfig = array();
 			include $savedConfig;
-			self::$instance->parameters = $dataconfig;
+			$this->parameters = $dataconfig;
+			$this->parameters['WEBEDIT_HOME'] = $projectHomePath;
+		}	
+		$this->loadProductVersion();
+	}
+	
+	private function loadProductVersion()
+	{
+		$path = $this->getChangePath();
+		if (is_readable($path) && class_exists('DOMDocument', false))
+		{
+			$doc = new DOMDocument('1.0', 'UTF-8');
+			$doc->load($path);
+			$productName = $doc->getElementsByTagName('description')->item(0)->textContent;
+			$productType = $doc->getElementsByTagName('name')->item(0)->textContent;
+			$frameworkNode = $doc->getElementsByTagName('dependencies')->item(0)->getElementsByTagName('framework')->item(0);
+			$productVersion = $frameworkNode->textContent;
+			$frameworkRepo = $frameworkNode->hasAttribute('hotfixes') ? $productVersion . '-' . $frameworkNode->getAttribute('hotfixes') : $productVersion;	
 		}
-		return self::$instance;
+		else
+		{
+			$productName = "CMS Core";	
+			$productVersion = "3.5.0";
+			$productType = "cmscore";
+			$frameworkRepo = "3.5.0";
+		}
+
+		$this->productName = $productName;
+		$this->productType = $productType;
+		$this->productVersion = $productVersion;
+		$this->frameworkRepo = $frameworkRepo;
 	}
 	
 	/**
@@ -157,7 +225,9 @@ class ConfigManager
 	 */
 	public function check()
 	{
+		
 		$checked = $this->checkFQDN();
+		$checked = $this->checkFrameworkPath();
 		$checked = $this->checkDb() && $checked;
 		$checked = $this->checkMail() && $checked;
 		$checked = $this->checkTmpPath() && $checked;
@@ -208,6 +278,11 @@ class ConfigManager
 	private function getChangePropertiesFilePath()
 	{
 		return implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'change.properties') );
+	}
+	
+	private function getChangePath()
+	{
+		return implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'change.xml') );
 	}
 	
 	private function getProjectConfigFilePath()
@@ -505,6 +580,24 @@ class ConfigManager
 			return false;
 		}
 		return true;
+	}
+	
+	private function checkFrameworkPath()
+	{
+		$target = implode(DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'repository', 'framework', 'framework-' . $this->frameworkRepo));
+		if (is_dir($target))
+		{
+			$link = implode(DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'framework'));
+			@unlink($link);
+			if (symlink($target, $link))
+			{
+				return true;
+			}
+			$this->errors['DOMAIN'] = 'Imposible de créer le lien symbolique ' .  $target . ' -> ' . $link;
+			return false;
+		}
+		$this->errors['DOMAIN'] = 'la version ' .  $this->frameworkRepo . ' du framework n\est pas disponible';
+		return false;
 	}
 	
 	private function checkMail()

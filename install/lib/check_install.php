@@ -4,8 +4,6 @@ include PROJECT_HOME_PATH . '/install/lib/assert.php';
 
 $systemCheck['php_version'] = assert_php_version('5.1.6');
 $systemCheck['php_ini_safe_mode'] = assert_ini('safe_mode', false);
-//$systemCheck['php_ini_short_open_tag'] = assert_ini('short_open_tag', false);
-//$systemCheck['php_ini_default_charset'] = assert_ini('default_charset', 'utf-8');
 $systemCheck['php_ini_file_uploads'] = assert_ini('file_uploads');
 $systemCheck['php_ini_memory_limit'] = assert_ini_size_gt('memory_limit', 64);
 
@@ -32,7 +30,6 @@ if ($systemCheck['php_conf_home_writable'])
 	$systemCheck['system_symlink'] = assert_symlink(PROJECT_HOME_PATH);
 }
 
-//$systemCheck['php_ext_posix'] = assert_ext('posix') || assert_function('posix_getuid');
 $systemCheck['php_ext_spl'] = assert_ext('SPL') || assert_class('ArrayObject');
 $systemCheck['php_ext_reflection'] = assert_ext('Reflection');
 $systemCheck['php_ext_curl'] = assert_ext('curl') || assert_function('curl_init');
@@ -68,20 +65,6 @@ foreach ($systemCheck as $key => $isOk)
 	{
 		break;
 	}
-}
-if ($systemCheckOk || assert_class('DOMDocument'))
-{
-	$doc = new DOMDocument('1.0', 'UTF-8');
-	$doc->load(PROJECT_HOME_PATH .'/change.xml');
-	$productName = $doc->getElementsByTagName('description')->item(0)->textContent;
-	$productType = $doc->getElementsByTagName('name')->item(0)->textContent;
-	$productVersion = $doc->getElementsByTagName('version')->item(0)->textContent;
-}
-else
-{
-	$productName = "CMS Core";	
-	$productVersion = "";
-	$productType = "cmscore";
 }
 
 function generateErrorReporting($systemCheck)

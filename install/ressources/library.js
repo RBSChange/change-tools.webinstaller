@@ -29,14 +29,6 @@ function submitStep01()
 	}
 }
 
-function submitStep01Error() 
-{
-	var nextStep = document.getElementById('NEXTSTEP');
-	nextStep.setAttribute("value", "01ERR");
-	submitForm0();
-}
-
-
 function testStep02() 
 {
 	var nextStep = document.getElementById('NEXTSTEP');
@@ -79,9 +71,8 @@ function selectServermail(event)
 	}
 }
 
-
-var cmds = [
-		{cmd: "init-project", label:"Initialisation du projet (peut prendre quelques minutes)"},
+var cmds = [    
+		{cmd: "init-project --clear", label:"Initialisation du projet (peut prendre quelques minutes)"},
 		{cmd: "init-generic-modules", label:"Initialisation des modules"},
 		{cmd: "init-webapp", label:"Initialisation des fichiers du site web"},
 		{cmd: "compile-config", label:"Compilation de la configuration"},
@@ -104,13 +95,13 @@ var cmds = [
 		{cmd: "compile-htaccess", label:"Compilation des règles d'accès du serveur apache"},
 
 		{cmd: "import-init-data", label:"Import des données systèmes des modules"},
+		{cmd: "theme.install webfactory", label:"Import du thème webfactory"},
 		{cmd: "init-patch-db", label:"Initialisation de la base des patchs"},
 		{cmd: "reset-root-user", label:"Initialisation de l'utilisateur wwwadmin"}
 ]
 
 function addSamples(sampleType)
 {
-	cmds.push({cmd: "theme.install webfactory", label:"Import du thème webfactory"});
 	cmds.push({cmd: "import-data website sample.xml", label:"Création du site d'exemple"});
 	cmds.push({cmd: "import-data form sample.xml", label:"Création de formulaires d'exemples"});	
 	cmds.push({cmd: "import-data users sample.xml", label:"Création d'utilisateurs d'exemples"});
