@@ -42,5 +42,5 @@ else
 </form>
 <script type="text/javascript">
 var projectURL = "http://<?php echo $configManager->getParameter('FQDN')?>";
-addOnload(function() {createProject("<?php echo $configManager->getParameter('SAMPLES') == 'checked' ? $productType : '';?>");});
+addOnload(function() {createProject("<?php echo $configManager->getParameter('SAMPLES') == 'checked' ? $configManager->productType : '';?>");});
 </script>

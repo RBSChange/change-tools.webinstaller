@@ -96,8 +96,7 @@ var cmds = [
 
 		{cmd: "import-init-data", label:"Import des données systèmes des modules"},
 		{cmd: "theme.install webfactory", label:"Import du thème webfactory"},
-		{cmd: "init-patch-db", label:"Initialisation de la base des patchs"},
-		{cmd: "reset-root-user", label:"Initialisation de l'utilisateur wwwadmin"}
+		{cmd: "init-patch-db", label:"Initialisation de la base des patchs"}
 ]
 
 function addSamples(sampleType)
