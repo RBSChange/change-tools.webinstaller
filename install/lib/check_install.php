@@ -2,7 +2,7 @@
 $systemCheck = array();
 include PROJECT_HOME_PATH . '/install/lib/assert.php';
 
-$systemCheck['php_version'] = assert_php_version('5.1.6');
+$systemCheck['php_version'] = assert_php_version('5.2.4');
 $systemCheck['php_ini_safe_mode'] = assert_ini('safe_mode', false);
 $systemCheck['php_ini_file_uploads'] = assert_ini('file_uploads');
 $systemCheck['php_ini_memory_limit'] = assert_ini_size_gt('memory_limit', 64);

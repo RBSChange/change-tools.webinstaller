@@ -62,7 +62,7 @@ else
 	</div>	
 	<div class="stepfooter"><img src="./ressources/content_footer_bg.png" /></div>
 	<p class="download">
-		<a href="javascript:gotoStep('01'); void 0;" title="Rafraichire">Rafraichire</a>
+		<a href="javascript:gotoStep('01'); void 0;" title="Rafraîchir">Rafraichire</a>
 	</p>
 </form>
 <?php
