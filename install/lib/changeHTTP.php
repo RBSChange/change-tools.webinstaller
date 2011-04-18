@@ -17,13 +17,10 @@ if ($profile === false || empty($profile))
 	echo 'Profile not defined. Please define a profile in file ./profile.';
 	exit(-1);
 }
-else
-{
-	define('PROFILE', trim($profile));
-}
 
-require_once WEBEDIT_HOME . "/framework/Framework.php";
-RequestContext::getInstance()->setMode(RequestContext::BACKOFFICE_MODE);
+define('PROFILE', trim($profile));
+define('FRAMEWORK_HOME', WEBEDIT_HOME . DIRECTORY_SEPARATOR . 'framework');
+define('AG_CACHE_DIR', WEBEDIT_HOME . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR . PROFILE);
 	
 require_once FRAMEWORK_HOME . '/bin/bootstrap.php';
 
@@ -32,5 +29,4 @@ $bootStrap->setAutoloadPath(WEBEDIT_HOME."/cache/autoload");
 
 $argv = explode(' ', $_GET['cmd']);
 $script = new c_Changescripthttp(__FILE__, FRAMEWORK_HOME, 'change');
-
-require_once FRAMEWORK_HOME . '/bin/change_script.inc'';
+require_once FRAMEWORK_HOME . '/bin/change_script.inc';

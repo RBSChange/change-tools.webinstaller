@@ -28,20 +28,22 @@
 	     			<entry name="default">media_DisplaySecuremediaDefaultStrategy</entry>
 	     		</secureMediaStrategyClass>
 	     	</media>
-	     </modules> 
+	     </modules>
+	     
+	    <!-- Web browsers compatibility -->
+	    <browsers>
+	    	<frontoffice>
+	    		<browser name="ie">
+	    			<version>7.0</version>
+	    			<version>8.0</version>
+	    			<version>9.0</version>
+	    		</browser>	
+	    		<browser name="firefox">
+	    			<version>3.5</version>
+	    			<version>3.6</version>
+	    			<version>4.0</version>
+	    		</browser>	
+	    	</frontoffice>
+	    </browsers>  	    
 	</config>
-	
-    <!-- Web browsers compatibility -->
-    <browsers>
-    	<frontoffice>
-    		<browser name="ie">
-    			<version>7.0</version>
-    			<version>8.0</version>
-    		</browser>	
-    		<browser name="firefox">
-    			<version>3.5</version>
-    			<version>3.6</version>
-    		</browser>	
-    	</frontoffice>
-    </browsers>    
 </project>
