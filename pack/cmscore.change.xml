@@ -2,33 +2,33 @@
 <change xmlns="http://www.rbs.fr/schema/change-project/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>cmscore</name>
 	<type>change-project</type>
-	<version>3.0.4</version>
+	<version>3.5.0</version>
 	<description>CMS Core</description>
 	<dependencies>
-		<framework hotfixes="57">3.0.4</framework>
+		<framework hotfixes="57">3.5.0</framework>
 		<modules>
 			<!-- Core modules -->
-			<module>contactcard-3.0.4</module>
-			<module>dashboard-3.0.4</module>
-			<module>form-3.0.4</module>
-			<module>generic-3.0.4</module>
-			<module>list-3.0.4</module>
-			<module>mailbox-3.0.4</module>
-			<module>markergas-3.0.4</module>
-			<module hotfixes="56">media-3.0.4</module>
-			<module>mysqlindexer-3.0.4</module>
-			<module>notification-3.0.4</module>
-			<module>preferences-3.0.4</module>
-			<module>referencing-3.0.4</module>
-			<module>skin-3.0.4</module>
-			<module>solrsearch-3.0.4</module>
-			<module>task-3.0.4</module>
-			<module>theme-3.0.4</module>
-			<module hotfixes="47">uixul-3.0.4</module>
-			<module>useractionlogger-3.0.4</module>
-			<module>users-3.0.4</module>
-			<module hotfixes="43">website-3.0.4</module>
-			<module>workflow-3.0.4</module>
+			<module>contactcard-3.5.0</module>
+			<module>dashboard-3.5.0</module>
+			<module>form-3.5.0</module>
+			<module>generic-3.5.0</module>
+			<module>list-3.5.0</module>
+			<module>mailbox-3.5.0</module>
+			<module>markergas-3.5.0</module>
+			<module>media-3.5.0</module>
+			<module>mysqlindexer-3.5.0</module>
+			<module>notification-3.5.0</module>
+			<module>preferences-3.5.0</module>
+			<module>referencing-3.5.0</module>
+			<module>skin-3.5.0</module>
+			<module>solrsearch-3.5.0</module>
+			<module>task-3.5.0</module>
+			<module>theme-3.5.0</module>
+			<module>uixul-3.5.0</module>
+			<module>useractionlogger-3.5.0</module>
+			<module>users-3.5.0</module>
+			<module>website-3.5.0</module>
+			<module>workflow-3.5.0</module>
 		</modules>
 	</dependencies>
 </change>
