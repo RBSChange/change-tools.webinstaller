@@ -7,7 +7,6 @@
     	<define name="AG_UI_SUPPORTED_LANGUAGES">fr en</define>
     	
     	<define name="AG_LOGGING_LEVEL">WARN</define>
-    	<define name="AG_DEVELOPMENT_MODE">false</define>
     	
 		<define name="CHANGE_USE_WORKFLOW">true</define>
 		
