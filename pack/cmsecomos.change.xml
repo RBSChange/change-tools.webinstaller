@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<change xmlns="http://www.rbs.fr/schema/change-project/1.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
+<change xmlns="http://www.rbs.fr/schema/change-project/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>cmsecomos</name>
 	<type>change-project</type>
 	<version>3.0.4</version>
 	<description>Open Source CMS e-Commerce</description>
 	<dependencies>
-		<framework hotfixes="82">3.0.4</framework>
+		<framework hotfixes="104">3.0.4</framework>
 		<modules>
 			<!-- Core modules -->
 			<module>contactcard-3.0.4</module>
-			<module hotfixes="94">dashboard-3.0.4</module>
-			<module hotfixes="74">form-3.0.4</module>
-			<module hotfixes="91">generic-3.0.4</module>
-			<module>list-3.0.4</module>
+			<module hotfixes="124">dashboard-3.0.4</module>
+			<module hotfixes="96">form-3.0.4</module>
+			<module hotfixes="125">generic-3.0.4</module>
+			<module hotfixes="63">list-3.0.4</module>
 			<module>mailbox-3.0.4</module>
-			<module>markergas-3.0.4</module>
-			<module hotfixes="86">media-3.0.4</module>
+			<module hotfixes="108">markergas-3.0.4</module>
+			<module hotfixes="105">media-3.0.4</module>
 			<module>mysqlindexer-3.0.4</module>
-			<module>notification-3.0.4</module>
+			<module hotfixes="118">notification-3.0.4</module>
 			<module>preferences-3.0.4</module>
-			<module>referencing-3.0.4</module>
+			<module hotfixes="110">referencing-3.0.4</module>
 			<module hotfixes="76">skin-3.0.4</module>
 			<module hotfixes="87">solrsearch-3.0.4</module>
-			<module hotfixes="83">task-3.0.4</module>
-			<module hotfixes="90">theme-3.0.4</module>
-			<module hotfixes="81">uixul-3.0.4</module>
+			<module hotfixes="112">task-3.0.4</module>
+			<module hotfixes="98">theme-3.0.4</module>
+			<module hotfixes="107">uixul-3.0.4</module>
 			<module>useractionlogger-3.0.4</module>
-			<module hotfixes="93">users-3.0.4</module>
-			<module hotfixes="75">website-3.0.4</module>
-			<module hotfixes="92">workflow-3.0.4</module>
+			<module hotfixes="99">users-3.0.4</module>
+			<module hotfixes="111">website-3.0.4</module>
+			<module hotfixes="95">workflow-3.0.4</module>
 			
 			<!-- e-Commerce modules -->		
-			<module>brand-3.0.4</module>
-			<module hotfixes="69">catalog-3.0.4</module>
-			<module hotfixes="73">comment-3.0.4</module>
-			<module hotfixes="89">customer-3.0.4</module>
-			<module>filter-3.0.4</module>
-			<module hotfixes="80">order-3.0.4</module>
-			<module hotfixes="88">payment-3.0.4</module>
-			<module>rss-3.0.4</module>
+			<module hotfixes="122">brand-3.0.4</module>
+			<module hotfixes="97">catalog-3.0.4</module>
+			<module hotfixes="109">comment-3.0.4</module>
+			<module hotfixes="120">customer-3.0.4</module>
+			<module hotfixes="113">filter-3.0.4</module>
+			<module hotfixes="115">order-3.0.4</module>
+			<module hotfixes="101">payment-3.0.4</module>
+			<module hotfixes="117">rss-3.0.4</module>
 			<module>shipping-3.0.4</module>
 			<module>zone-3.0.4</module>
 			<module>productupdater-3.0.4</module>
@@ -49,9 +47,9 @@
 			<module>blog-3.0.4</module>
 			<module>bookmark-3.0.4</module>
 			<module>documentcard-3.0.4</module>
-			<module hotfixes="53">forums-3.0.4</module>
-			<module>photoalbum-3.0.4</module>
-			<module>sharethis-3.0.4</module>	
+			<module hotfixes="119">forums-3.0.4</module>
+			<module hotfixes="121">photoalbum-3.0.4</module>
+			<module hotfixes="123">sharethis-3.0.4</module>	
 		</modules>
 	</dependencies>
 </change>
