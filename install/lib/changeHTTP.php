@@ -6,6 +6,7 @@ header('Pragma' .': '. 'no-cache');
 ignore_user_abort(true);
 set_time_limit(0);
 umask(0002);
+session_start();
 
 define("WEBEDIT_HOME", dirname(dirname(dirname(realpath(__FILE__)))));
 chdir(WEBEDIT_HOME);
