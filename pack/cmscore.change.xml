@@ -5,7 +5,7 @@
 	<version>3.5.0</version>
 	<description>CMS Core</description>
 	<dependencies>
-		<framework hotfixes="57">3.5.0</framework>
+		<framework>3.5.0</framework>
 		<modules>
 			<!-- Core modules -->
 			<module>contactcard-3.5.0</module>
@@ -29,6 +29,7 @@
 			<module>users-3.5.0</module>
 			<module>website-3.5.0</module>
 			<module>workflow-3.5.0</module>
+			<module>i18n-3.5.0</module>
 		</modules>
 	</dependencies>
 </change>

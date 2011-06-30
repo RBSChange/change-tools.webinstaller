@@ -31,6 +31,7 @@
 			<module>users-3.5.0</module>
 			<module>website-3.5.0</module>
 			<module>workflow-3.5.0</module>
+			<module>i18n-3.5.0</module>
 			
 			<!-- e-Commerce modules -->		
 			<module>brand-3.5.0</module>
