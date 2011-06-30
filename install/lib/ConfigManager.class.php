@@ -657,7 +657,7 @@ class ConfigManager
 			$this->errors['TMP_PATH'] = "Veuillez renseigner le dossier temporaire";
 			return false;
 		}
-		if (!is_writable($tmpPath))
+		if (!is_dir($tmpPath) || realpath(dirname(tempnam($tmpPath, "change-webinstall"))) != realpath($tmpPath))
 		{
 			$this->errors['TMP_PATH'] = $tmpPath." n'est pas accessible en écriture";
 			return false;
