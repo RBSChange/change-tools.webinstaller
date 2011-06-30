@@ -1,10 +1,16 @@
 #!/bin/bash
 
-cp pack/cmsecomos.change.xml change.xml
+rm -rf buildproject
+mkdir buildproject
+
+cp pack/cmsecomos.change.xml buildproject/change.xml
+
+REMOTE_REPO=http://osrepo.rbschange.fr
+VERSION=3.5.0
 
 echo "
 # Change remote repositories
-REMOTE_REPOSITORIES=http://osrepo.rbschange.fr
+REMOTE_REPOSITORIES=$REMOTE_REPO
 
 # Local repository
 # This is a repository stored in the current user's home
@@ -15,7 +21,22 @@ PEAR_INCLUDE_PATH=$PWD/pear
 
 # By default, WWW_GROUP is setted to 'www-data'.
 # This value is ok for debian and ubuntu distributions for instance
-WWW_GROUP=" > change.properties
+WWW_GROUP=" > buildproject/change.properties
 
-echo "*** Running change.php, please wait until command listing ***"
-change.php
+cd buildproject
+
+echo "build" > profile
+
+echo "*** Download framework-$VERSION from $REMOTE_REPO ***"
+wget $REMOTE_REPO/framework/framework-$VERSION.zip -O framework-$VERSION.zip 2>/dev/null
+
+if [ $? -ne 0 ]; then
+  echo "Error downloading framework-$VERSION.zip"
+  exit 1
+fi
+
+unzip -o "framework-$VERSION.zip" >/dev/null 2>&1
+ln -s framework-$VERSION framework
+
+echo "*** Running change.php update-dependencies, please wait until command listing ***"
+php framework/bin/change.php update-dependencies
