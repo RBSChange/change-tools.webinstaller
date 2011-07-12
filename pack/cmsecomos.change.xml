@@ -30,29 +30,35 @@
 			<module>useractionlogger-3.5.0</module>
 			<module>users-3.5.0</module>
 			<module>website-3.5.0</module>
+			<module>webservices-3.5.0</module>
 			<module>workflow-3.5.0</module>
 			<module>i18n-3.5.0</module>
+			<module>rss-3.5.0</module>
+			<module>comment-3.5.0</module>
 			
 			<!-- e-Commerce modules -->		
 			<module>brand-3.5.0</module>
 			<module>catalog-3.5.0</module>
-			<module>comment-3.5.0</module>
 			<module>customer-3.5.0</module>
 			<module>filter-3.5.0</module>
 			<module>order-3.5.0</module>
 			<module>payment-3.5.0</module>
-			<module>rss-3.5.0</module>
 			<module>shipping-3.5.0</module>
 			<module>zone-3.5.0</module>
 			<module>productupdater-3.5.0</module>
 			
 			<!-- Open Source modules -->
+			
 			<module>blog-3.5.0</module>
-			<module>bookmark-3.5.0</module>
-			<module>documentcard-3.5.0</module>
+			<module>bookmarks-3.5.0</module>
+			<module>event-3.5.0</module>
 			<module>forums-3.5.0</module>
+			<module>joboffer-3.5.0</module>			
 			<module>photoalbum-3.5.0</module>
-			<module>sharethis-3.5.0</module>	
+			
+			<module>sharethis-3.5.0</module>		
+			<module>privatemessaging-3.5.0</module>
+			<module>twitterconnect-3.5.0</module>
 		</modules>
 	</dependencies>
 </change>

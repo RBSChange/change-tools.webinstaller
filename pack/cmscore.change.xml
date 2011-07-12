@@ -28,8 +28,11 @@
 			<module>useractionlogger-3.5.0</module>
 			<module>users-3.5.0</module>
 			<module>website-3.5.0</module>
+			<module>webservices-3.5.0</module>
 			<module>workflow-3.5.0</module>
 			<module>i18n-3.5.0</module>
+			<module>rss-3.5.0</module>
+			<module>comment-3.5.0</module>
 		</modules>
 	</dependencies>
 </change>

@@ -93,9 +93,10 @@ var cmds = [
 		{cmd: "compile-blocks", label:"Compilation des blocs d'affichage"},
 		{cmd: "compile-editors-config", label:"Compilation des éditeurs de documents"},
 		{cmd: "compile-htaccess", label:"Compilation des règles d'accès du serveur apache"},
+		{cmd: "website.compile-bbcodes", label:"Compilation des tag bbcodes"},
 
 		{cmd: "import-init-data", label:"Import des données systèmes des modules"},
-		{cmd: "theme.install webfactory", label:"Import du thème webfactory"},
+		{cmd: "theme.install", label:"Import des thèmes"},
 		{cmd: "init-patch-db", label:"Initialisation de la base des patchs"}
 ]
 
