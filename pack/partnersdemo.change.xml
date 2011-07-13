@@ -2,10 +2,10 @@
 <change xmlns="http://www.rbs.fr/schema/change-project/1.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
-	<name>cmsecomos</name>
+	<name>partnersdemo</name>
 	<type>change-project</type>
 	<version>3.5.0</version>
-	<description>Open Source CMS e-Commerce</description>
+	<description>Partners demo</description>
 	<dependencies>
 		<framework>3.5.0</framework>
 		<modules>
@@ -65,7 +65,31 @@
 			<module>privatemessaging-3.5.0</module>			
 			<module>joboffer-3.5.0</module>			
 			<module>sharethis-3.5.0</module>		
-			<module>videos-3.5.0</module>		
-		</modules>
+			<module>videos-3.5.0</module>	
+			
+			<!-- Commercial modules -->		
+			<module>googleshopping-3.5.0</module>
+			<module>mysqlstock-3.5.0</module>
+			<module>dashstat-3.5.0</module>
+			<module>emailing-3.5.0</module>
+			<module>productexporter-3.5.0</module>
+			<module>facebookconnect-3.5.0</module>
+			<module>ads-3.5.0</module>
+			<module>survey-3.5.0</module>
+			<module>loyalty-3.5.0</module>
+			<module>productreturns-3.5.0</module>			
+			<module>preview-3.5.0</module>
+			<module>marketing-3.5.0</module>
+			<module>ecomextended-3.5.0</module>
+			
+			<!-- Pack Performance modules -->
+			<module>atosserver-3.5.0</module>
+			<module>support-3.5.0</module>	
+			<module>synchronizer-3.5.0</module>			
+			<module>privatesales-3.5.0</module>		
+			<module>clustersafe-3.5.0</module>
+			<module>clusterscale-3.5.0</module>		
+			<module>ecomwebservices-3.5.0</module>				
+        </modules>
 	</dependencies>
 </change>
