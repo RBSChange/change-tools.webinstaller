@@ -3,7 +3,7 @@
 rm -rf buildproject
 mkdir buildproject
 
-cp pack/cmsecomos.change.xml buildproject/change.xml
+cp pack/ecommercecore.change.xml buildproject/change.xml
 
 REMOTE_REPO=http://osrepo.rbschange.fr
 VERSION=3.5.0
@@ -17,7 +17,7 @@ REMOTE_REPOSITORIES=$REMOTE_REPO
 LOCAL_REPOSITORY=$PWD/repository
 
 # PEAR installation. It is recommanded to manage a pear repository dedicated to your Change installations
-PEAR_INCLUDE_PATH=$PWD/pear
+PEAR_INCLUDE_PATH=$PWD/buildproject/pear
 
 # By default, WWW_GROUP is setted to 'www-data'.
 # This value is ok for debian and ubuntu distributions for instance
