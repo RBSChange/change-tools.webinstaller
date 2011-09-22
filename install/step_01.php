@@ -22,7 +22,7 @@ if ($systemCheckOk)
 	<div class="stepcontent">
 		<div class="<?php echo $msgClass; ?>"><p><?php echo $msgText; ?></p></div>
 		<div style="margin-left:30px">
-			<p>Vous êtes sur le point de démarrer l'installation du pack RBS Change <?php echo $configManager->getProductTitle() ?>. 
+			<p>Vous êtes sur le point de démarrer l'installation de RBS Change <?php echo $configManager->getProductTitle() ?>. 
 			Pour passer à l'étape suivante, merci de lire et d'accepter les termes de la licence.</p>
 			<pre class="license"><?php echo $LICENSE; ?></pre>
 			<br />
@@ -62,7 +62,7 @@ else
 	</div>	
 	<div class="stepfooter"><img src="./ressources/content_footer_bg.png" /></div>
 	<p class="download">
-		<a href="javascript:gotoStep('01'); void 0;" title="Rafraîchir">Rafraichire</a>
+		<a href="javascript:gotoStep('01'); void 0;" title="Rafraîchir">Rafraîchir</a>
 	</p>
 </form>
 <?php

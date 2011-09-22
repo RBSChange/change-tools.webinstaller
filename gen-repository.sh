@@ -5,7 +5,7 @@ mkdir buildproject
 
 cp pack/cmsecomos.change.xml buildproject/change.xml
 
-REMOTE_REPO=http://devrepo.rbschange.fr
+REMOTE_REPO=http://osrepo.rbschange.fr
 VERSION=3.5.1
 
 echo "
