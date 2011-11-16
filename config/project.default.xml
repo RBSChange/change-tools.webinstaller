@@ -9,6 +9,7 @@
     <define name="SOLR_INDEXER_URL"></define>
     <define name="SOLR_INDEXER_CLIENT"></define>
     <define name="TMP_PATH"></define>
+    <define name="DEFAULT_UI_PROTOCOL"></define>
   </defines>
   <config>
     <general>

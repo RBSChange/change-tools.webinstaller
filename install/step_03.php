@@ -23,15 +23,15 @@ else
 		</div>
 		<div class="error" id="erroroninstall" style="display: none;"><p>Une erreur est survenue lors de l'installation.</p></div>
 		<div id="readytouse" style="display: none;">	
-			<div class="success" id="readytousesuccess" ><p>Pour des raisons de securité, penser à supprimer le dossier 'install' de votre projet.<br/>Pensez également à accéder rapidement à <a href="http://<?php echo $configManager->getParameter('FQDN')?>/admin" target="_blank">l'interface d'administration</a> pour y définir votre mot de passe principal.</p></div>			
+			<div class="success" id="readytousesuccess" ><p>Pour des raisons de securité, penser à supprimer le dossier 'install' de votre projet.<br/>Pensez également à accéder rapidement à <a href="<?php echo $configManager->getParameter('BASEURL')?>/admin" target="_blank">l'interface d'administration</a> pour y définir votre mot de passe principal.</p></div>			
 			<table>
 				<tbody>
 					<tr>
 						<td>
-							<a href="http://<?php echo $configManager->getParameter('FQDN')?>/" target="_blank"><img src="./ressources/button_index.png" /><br />Accueil du site</a>
+							<a href="<?php echo $configManager->getParameter('BASEURL')?>/" target="_blank"><img src="./ressources/button_index.png" /><br />Accueil du site</a>
 						</td>
 						<td>
-							<a href="http://<?php echo $configManager->getParameter('FQDN')?>/admin" target="_blank"><img src="./ressources/button_admin.png" /><br />Interface d'administration</a>
+							<a href="<?php echo $configManager->getParameter('BASEURL')?>/admin" target="_blank"><img src="./ressources/button_admin.png" /><br />Interface d'administration</a>
 						</td>
 					</tr>	
 				</tbody>
@@ -41,6 +41,6 @@ else
 	<div class="stepfooter"><img src="./ressources/content_footer_bg.png" /></div>
 </form>
 <script type="text/javascript">
-var projectURL = "http://<?php echo $configManager->getParameter('FQDN')?>";
+var projectURL = "<?php echo $configManager->getParameter('BASEURL')?>";
 addOnload(function() {createProject("<?php echo $configManager->getParameter('SAMPLES') == 'checked' ? $configManager->productType : '';?>");});
 </script>

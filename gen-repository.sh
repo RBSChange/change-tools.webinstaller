@@ -6,7 +6,7 @@ mkdir buildproject
 cp pack/cmsecomos.change.xml buildproject/change.xml
 
 REMOTE_REPO=http://osrepo.rbschange.fr
-VERSION=3.5.1
+VERSION=3.5.2
 
 echo "
 # Change remote repositories
@@ -28,7 +28,7 @@ cd buildproject
 echo "build" > profile
 
 echo "*** Download framework-$VERSION from $REMOTE_REPO ***"
-curl $REMOTE_REPO/framework/framework-$VERSION.zip -o framework-$VERSION.zip 2>/dev/null
+wget $REMOTE_REPO/framework/framework-$VERSION.zip -O framework-$VERSION.zip 2>/dev/null
 
 if [ $? -ne 0 ]; then
   echo "Error downloading framework-$VERSION.zip"

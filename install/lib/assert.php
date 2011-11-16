@@ -101,7 +101,9 @@ function assert_frameworksymlink($frameworksRepoVersion = '3.5.0')
 function wget($url, &$curldata, &$errno)
 {
 	$cr = curl_init();
-	$options = array(CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 5, CURLOPT_FOLLOWLOCATION => false, CURLOPT_URL => $url, CURLOPT_POSTFIELDS => null, CURLOPT_POST => false);
+	$options = array(CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 5,
+	 CURLOPT_FOLLOWLOCATION => false, CURLOPT_URL => $url, CURLOPT_POSTFIELDS => null, 
+	 CURLOPT_POST => false, CURLOPT_SSL_VERIFYPEER =>false);
 	curl_setopt_array( $cr, $options );
 	$curldata = curl_exec( $cr );
 	$errno = curl_errno( $cr );

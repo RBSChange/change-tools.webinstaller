@@ -73,7 +73,6 @@ function selectServermail(event)
 
 var cmds = [    
 		{cmd: "init-project --clear", label:"Initialisation du projet (peut prendre quelques minutes)"},
-		{cmd: "init-generic-modules", label:"Initialisation des modules"},
 		{cmd: "init-webapp", label:"Initialisation des fichiers du site web"},
 		{cmd: "compile-config", label:"Compilation de la configuration"},
 		{cmd: "compile-documents", label:"Génération des classes de persistance des documents"},

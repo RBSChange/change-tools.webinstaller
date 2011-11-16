@@ -114,6 +114,9 @@ class ConfigManager
 			$this->parameters = array();
 		}
 		$this->parameters['WEBEDIT_HOME'] = PROJECT_HOME_PATH;
+		$this->parameters['USEHTTPS'] = isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off";
+		$this->parameters['BASEURL'] = 'http'.(($this->parameters['USEHTTPS']) ? "s" : "").'://' . $this->parameters['FQDN'];
+		
 	}
 	
 	/**
@@ -149,6 +152,9 @@ class ConfigManager
 	public function initialise()
 	{
 		$this->parameters['FQDN'] = $_SERVER['SERVER_NAME'];
+		$this->parameters['USEHTTPS'] = isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off";
+		$this->parameters['BASEURL'] = 'http'.(($this->parameters['USEHTTPS']) ? "s" : "").'://' . $this->parameters['FQDN'];
+		
 		if (function_exists( 'posix_getgrgid' ))
 		{
 			$grpInfos = posix_getgrgid( posix_getegid() );
@@ -178,7 +184,7 @@ class ConfigManager
 		$this->parameters['SENDMAIL_PATH'] = '/usr/sbin/sendmail';
 		$this->parameters['SENDMAIL_ARGS'] = '-t -i';
 		
-		$this->parameters['SOLR_URL'] = 'http://' . $this->parameters['FQDN'] . '/mysqlindexer';
+		$this->parameters['SOLR_URL'] = $this->parameters['BASEURL'] . '/mysqlindexer';
 		
 		$this->parameters['SAMPLES'] = 'checked';
 		
@@ -347,6 +353,9 @@ class ConfigManager
 		$xpath = new DOMXPath( $doc );
 		$nl = $xpath->query( '/project/defines/define[@name="PROJECT_ID"]' );
 		$nl->item( 0 )->nodeValue = $this->getProjectId();
+		
+		$nl = $xpath->query( '/project/defines/define[@name="DEFAULT_UI_PROTOCOL"]' );
+		$nl->item( 0 )->nodeValue = $this->parameters['USEHTTPS'] ? 'https' : 'http';		
 		
 		$nl = $xpath->query( '/project/defines/define[@name="TMP_PATH"]' );
 		$nl->item( 0 )->nodeValue = $this->parameters['TMP_PATH'];
@@ -565,9 +574,11 @@ class ConfigManager
 	{
 		$data = "checkFQDNOK".md5((isset($_SERVER["HTTPS"]) ? "on":"")."/".$_SERVER["HTTP_HOST"]."/".dirname(dirname(__FILE__)));
 		$testFilePath = implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'install', 'checkFQDN.php') );
-		$url = 'http://' . $this->parameters['FQDN'] . '/install/checkFQDN.php';
+		$url = $this->parameters['BASEURL'] . '/install/checkFQDN.php';
 		$cr = curl_init();
-		$options = array(CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 5, CURLOPT_FOLLOWLOCATION => false, CURLOPT_URL => $url, CURLOPT_POSTFIELDS => null, CURLOPT_POST => false);
+		$options = array(CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 5, 
+			CURLOPT_FOLLOWLOCATION => false, CURLOPT_URL => $url, CURLOPT_POSTFIELDS => null, 
+			CURLOPT_POST => false, CURLOPT_SSL_VERIFYPEER =>false);
 		curl_setopt_array( $cr, $options );
 		
 		$curldata = curl_exec( $cr );
@@ -576,7 +587,7 @@ class ConfigManager
 		
 		if ($errno || $data != $curldata)
 		{
-			$this->errors['DOMAIN'] = 'Le nom de domaine saisi n\'est pas un domaine valide pour ce projet. Assurez-vous que http://'.$this->parameters['FQDN'].' soit accessible à votre serveur';
+			$this->errors['DOMAIN'] = 'Le nom de domaine saisi n\'est pas un domaine valide pour ce projet. Assurez-vous que '.$this->parameters['BASEURL'].' soit accessible à votre serveur';
 			return false;
 		}
 		return true;
