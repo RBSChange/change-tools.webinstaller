@@ -5,6 +5,8 @@ if (!defined('PROJECT_HOME_PATH'))
 	die();
 }
 
+include PROJECT_HOME_PATH . '/install/i18n/'.$localeManager->getLang().'.php';
+
 if ($configManager->isChecked())
 {
 	$configManager->applyConfiguration();
@@ -18,20 +20,20 @@ else
 	<div class="stepheader"><img src="./ressources/thread_03.png"/></div>
 	<div class="stepcontent">
 		<div style="margin-left:30px">
-			<h3 id="stepTitle">Création du projet</h3>
+			<h3 id="stepTitle"><?php echo $localeManager->getLocales('webinstaller.step3.title'); ?></h3>
 			<div class="cmdresult" id="cmdresult"></div>
 		</div>
-		<div class="error" id="erroroninstall" style="display: none;"><p>Une erreur est survenue lors de l'installation.</p></div>
+		<div class="error" id="erroroninstall" style="display: none;"><p><?php echo $localeManager->getLocales('webinstaller.step3.installError'); ?></p></div>
 		<div id="readytouse" style="display: none;">	
-			<div class="success" id="readytousesuccess" ><p>Pour des raisons de securité, penser à supprimer le dossier 'install' de votre projet.<br/>Pensez également à accéder rapidement à <a href="<?php echo $configManager->getParameter('BASEURL')?>/admin" target="_blank">l'interface d'administration</a> pour y définir votre mot de passe principal.</p></div>			
+			<div class="success" id="readytousesuccess" ><p><?php echo str_replace("{fqdn}", $configManager->getParameter('BASEURL'), $localeManager->getLocales('webinstaller.step3.installOk'));?></p></div>			
 			<table>
 				<tbody>
 					<tr>
 						<td>
-							<a href="<?php echo $configManager->getParameter('BASEURL')?>/" target="_blank"><img src="./ressources/button_index.png" /><br />Accueil du site</a>
+							<a href="<?php echo $configManager->getParameter('BASEURL')?>/" target="_blank"><img src="./ressources/button_index.png" /><br /><?php echo $localeManager->getLocales('webinstaller.step3.homePage'); ?></a>
 						</td>
 						<td>
-							<a href="<?php echo $configManager->getParameter('BASEURL')?>/admin" target="_blank"><img src="./ressources/button_admin.png" /><br />Interface d'administration</a>
+							<a href="<?php echo $configManager->getParameter('BASEURL')?>/admin" target="_blank"><img src="./ressources/button_admin.png" /><br /><?php echo $localeManager->getLocales('webinstaller.step3.adminPage'); ?></a>
 						</td>
 					</tr>	
 				</tbody>

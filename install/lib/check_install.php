@@ -71,6 +71,8 @@ foreach ($systemCheck as $key => $isOk)
 
 function generateErrorReporting($systemCheck)
 {
+	$localeManager = LocaleManager::getInstance();
+	
 	$result = array();
 	foreach ($systemCheck as $key => $isOk) 
 	{
@@ -78,94 +80,95 @@ function generateErrorReporting($systemCheck)
 		switch ($key) 
 		{
 			case 'php_version':
-				$result[] = 'La version de php minimum est 5.1.6';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_version');
 				break;
 			case 'php_ini_safe_mode':
-				$result[] = 'la valeur de la variable de configuration [safe_mode] doit être à off';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_safe_mode');
 				break;
 			case 'php_ini_short_open_tag':
-				$result[] = 'la valeur de la variable de configuration [short_open_tag] doit être à off';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_short_open_tag');
 				break;
 			case 'php_ini_default_charset':
-				$result[] = 'la valeur de la variable de configuration [default_charset] doit être à utf-8';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_default_charset');
 				break;
 			case 'php_ini_allow_url_fopen':
-				$result[] = 'la valeur de la variable de configuration [allow_url_fopen] doit être à on';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_allow_url_fopen');
 				break;
 			case 'php_ini_file_uploads':
-				$result[] = 'la valeur de la variable de configuration [file_uploads] doit être à on';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_file_uploads');
 				break;
 			case 'php_ini_magic_quotes_gpc':
-				$result[] = 'la valeur de la variable de configuration [magic_quotes_gpc] doit être à off';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_magic_quotes_gpc');
 				break;
 			case 'php_ini_memory_limit':
-				$result[] = 'la valeur de la variable de configuration [memory_limit] doit être à 64M minimum';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_memory_limit');
 				break;	
 			case 'php_conf_home_writable':
-				$result[] = 'le dossier [' . PROJECT_HOME_PATH . '] n\'est pas accessible en écriture';
+				echo "#1";
+				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_home_writable'));
 				break;
 			case 'php_conf_subdir_home_writable':
-				$result[] = 'l\'ensemble des sous-dossiers de [' . PROJECT_HOME_PATH . '] ne sont pas accessibles en écriture';
+				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_subdir_home_writable'));
 				break;
 			case 'php_conf_global_writable':
-				$result[] = 'le fichier [' . PROJECT_HOME_PATH . '/change.xml] n\'est pas accessible en écriture';
+				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_global_writable'));
 				break;
 			case 'php_conf_change_properties_writable':
-				$result[] = 'le fichier [' . PROJECT_HOME_PATH . '/change.properties] n\'est pas accessible en écriture';
+				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_change_properties_writable'));
 				break;
 			case 'php_conf_project_writable':
-				$result[] = 'le fichier [' . PROJECT_HOME_PATH . '/config/project.default.xml] n\'est pas accessible en écriture';
+				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_project_writable'));
 				break;
 			case 'php_ext_posix':
-				$result[] = 'l\'extension [posix] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_posix');
 				break;
 			case 'php_ext_spl':
-				$result[] = 'l\'extension [SPL] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_spl');
 				break;
 			case 'php_ext_reflection':
-				$result[] = 'l\'extension [Reflection] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_reflection');
 				break;
 			case 'php_ext_curl':
-				$result[] = 'l\'extension [curl] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_curl');
 				break;
 			case 'php_ext_pdo':
-				$result[] = 'l\'extension [pdo] [pdo_mysql] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_pdo');
 				break;
 			case 'php_ext_xml_dom':
-				$result[] = 'l\'extension [dom] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xml_dom');
 				break;
 			case 'php_ext_xml_w':
-				$result[] = 'l\'extension [xmlwriter] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xml_w');
 				break;				
 			case 'php_ext_xml_r':
-				$result[] = 'l\'extension [xmlreader] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xml_r');
 				break;				
 			case 'php_ext_xml_sxml':
-				$result[] = 'l\'extension [SimpleXML] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xml_sxml');
 				break;					
 			case 'php_ext_xsl':
-				$result[] = 'l\'extension [xsl] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xsl');
 				break;
 			case 'php_ext_string_mbstring':
-				$result[] = 'l\'extension [mbstring] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_string_mbstring');
 				break;					
 			case 'php_ext_string_iconv':
-				$result[] = 'l\'extension [iconv] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_string_iconv');
 				break;					
 			case 'php_ext_gd':
-				$result[] = 'l\'extension [gd] n\'est pas installée';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_gd');
 				break;
 			case 'php_ext_json':
-				$result[] = "l'extension [json] n'est pas installée";
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_json');
 				break;
 			case 'system_symlink':
-				$result[] = 'Votre système ne permet pas la création de liens symboliques';
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.system_symlink');
 				break;
 			case 'system_selfview':
-				$result[] = "Le serveur n'a pu faire de requête vers lui même : assurez-vous que ".$_SERVER["HTTP_HOST"]." soit accessible à votre serveur";
+				$result[] = str_replace("{SERVER_HTTP_HOST}", $_SERVER["HTTP_HOST"], $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.system_selfview'));
 				break;
 			case 'system_rewrite':
-				$result[] = "Le module mod_rewrite n'a pas l'air activé. Veuillez activer mod_rewrite ou vous assurer que ces directives peuvent être placées dans un fichier .htaccess";
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.system_rewrite');
 				break;
 		}
 		

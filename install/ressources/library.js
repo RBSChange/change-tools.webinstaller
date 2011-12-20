@@ -25,7 +25,7 @@ function submitStep01()
 	}
 	else
 	{
-		alert("Vous devez accepter la licence");
+		alert(i18nLocale.submitStep01_agreementRequired);
 	}
 }
 
@@ -72,47 +72,47 @@ function selectServermail(event)
 }
 
 var cmds = [    
-		{cmd: "init-project --clear", label:"Initialisation du projet (peut prendre quelques minutes)"},
-		{cmd: "init-webapp", label:"Initialisation des fichiers du site web"},
-		{cmd: "compile-config", label:"Compilation de la configuration"},
-		{cmd: "compile-documents", label:"Génération des classes de persistance des documents"},
-		{cmd: "generate-database", label:"Génération de la structure de la base de données"},
-		{cmd: "compile-document-filters", label:"Compilation des filtres de documents"},
-		{cmd: "compile-roles", label:"Compilation des rôles"},
-		{cmd: "compile-permissions", label:"Compilation des permissions"},
-		{cmd: "compile-locales", label:"Compilation des traductions"},
-		{cmd: "compile-tags", label:"Compilation des définitions de tags"},
-		{cmd: "compile-listeners", label:"Compilation des événements php"},
-		{cmd: "compile-js-dependencies", label:"Compilations des dépendances javascript"},
-		{cmd: "compile-phptal", label:"Compilation des balises PHPTAL spécifiques"},
-		{cmd: "compile-db-schema", label:"Initialisation des relations de base de données"},
-		{cmd: "compile-aop", label:"Compilation AOP"},
+		{cmd: "init-project --clear", label:i18nLocale.cmd_init_project},
+		{cmd: "init-webapp", label:i18nLocale.cmd_init_webapp},
+		{cmd: "compile-config", label:i18nLocale.cmd_compile_config},
+		{cmd: "compile-documents", label:i18nLocale.cmd_compile_documents},
+		{cmd: "generate-database", label:i18nLocale.cmd_generate_database},
+		{cmd: "compile-document-filters", label:i18nLocale.cmd_compile_document_filters},
+		{cmd: "compile-roles", label:i18nLocale.cmd_compile_roles},
+		{cmd: "compile-permissions", label:i18nLocale.cmd_compile_permissions},
+		{cmd: "compile-locales", label:i18nLocale.cmd_compile_locales},
+		{cmd: "compile-tags", label:i18nLocale.cmd_compile_tags},
+		{cmd: "compile-listeners", label:i18nLocale.cmd_compile_listeners},
+		{cmd: "compile-js-dependencies", label:i18nLocale.cmd_compile_js_dependencies},
+		{cmd: "compile-phptal", label:i18nLocale.cmd_compile_phptal},
+		{cmd: "compile-db-schema", label:i18nLocale.cmd_compile_db_schema},
+		{cmd: "compile-aop", label:i18nLocale.cmd_compile_aop},
 		
-		{cmd: "compile-url-rewriting", label:"Compilation des règles de réécriture"},
-		{cmd: "compile-blocks", label:"Compilation des blocs d'affichage"},
-		{cmd: "compile-editors-config", label:"Compilation des éditeurs de documents"},
-		{cmd: "compile-htaccess", label:"Compilation des règles d'accès du serveur apache"},
-		{cmd: "website.compile-bbcodes", label:"Compilation des tag bbcodes"},
+		{cmd: "compile-url-rewriting", label:i18nLocale.cmd_compile_url_rewriting},
+		{cmd: "compile-blocks", label:i18nLocale.cmd_compile_blocks},
+		{cmd: "compile-editors-config", label:i18nLocale.cmd_compile_editors_config},
+		{cmd: "compile-htaccess", label:i18nLocale.cmd_compile_htaccess},
+		{cmd: "website.compile-bbcodes", label:i18nLocale.cmd_website_compile_bbcodes},
 
-		{cmd: "import-init-data", label:"Import des données systèmes des modules"},
-		{cmd: "theme.install", label:"Import des thèmes"},
-		{cmd: "init-patch-db", label:"Initialisation de la base des patchs"}
+		{cmd: "import-init-data", label:i18nLocale.cmd_import_init_data},
+		{cmd: "theme.install", label:i18nLocale.cmd_theme_install},
+		{cmd: "init-patch-db", label:i18nLocale.cmd_init_patch_db}
 ]
 
 function addSamples(sampleType)
 {
-	cmds.push({cmd: "import-data website sample.xml", label:"Création du site d'exemple"});
-	cmds.push({cmd: "import-data form sample.xml", label:"Création de formulaires d'exemples"});	
-	cmds.push({cmd: "import-data users sample.xml", label:"Création d'utilisateurs d'exemples"});
+	cmds.push({cmd: "import-data website sample.xml", label:i18nLocale.cmd_import_data_website_sample_xml});
+	cmds.push({cmd: "import-data form sample.xml", label:i18nLocale.cmd_import_data_form_sample_xml});	
+	cmds.push({cmd: "import-data users sample.xml", label:i18nLocale.cmd_import_data_users_sample_xml});
 	
 	switch (sampleType) 
 	{
 	 	case "cmsecomos":
-	 		cmds.push({cmd: "import-data sharethis sample.xml", label:"Création d'un formulaire de partage de lien"});
+	 		cmds.push({cmd: "import-data sharethis sample.xml", label:i18nLocale.cmd_import_data_sharethis_sample_xml});
 	 	case "ecommercecore":
-	 		cmds.push({cmd: "import-data catalog default.xml", label:"Création d'un catalogue d'exemple"});
-	 		cmds.push({cmd: "import-data customer default.xml", label:"Création de clients d'exemple"});
-	 		cmds.push({cmd: "import-data order default.xml", label:"Création des pages du processus de commande"});
+	 		cmds.push({cmd: "import-data catalog default.xml", label:i18nLocale.cmd_import_data_catalog_default_xml});
+	 		cmds.push({cmd: "import-data customer default.xml", label:i18nLocale.cmd_import_data_customer_default_xml});
+	 		cmds.push({cmd: "import-data order default.xml", label:i18nLocale.cmd_import_data_order_default_xml});
 			break;
 	}
 }
@@ -132,7 +132,7 @@ function executeCmd(cmdindex)
 	var cmd = cmdInfo.cmd;
 	
 	var stepTitel = document.getElementById('stepTitle');
-	stepTitel.innerHTML = 'Action ' + (cmdindex + 1) + ' / ' + cmds.length + ': ' + cmdInfo.label;
+	stepTitel.innerHTML = i18nLocale.cmdAction + ' ' + (cmdindex + 1) + ' / ' + cmds.length + ': ' + cmdInfo.label;
 	
 	var cmdElem = document.getElementById('cmdresult');
 	cmdElem.innerHTML += "<span class=\"row_std\">change:" + cmd + "</span>";
@@ -173,7 +173,7 @@ function executeCmd(cmdindex)
 function readyToUse()
 {
 	var stepTitel = document.getElementById('stepTitle');
-	stepTitel.innerHTML = 'Installation terminée : Test de disponibilité ...';
+	stepTitel.innerHTML = i18nLocale.installFinishTesting;
 	
 	var cmdElem = document.getElementById('cmdresult');
 	cmdElem.innerHTML += "<span class=\"row_std\">change:test_availability.php</span><br />";
@@ -187,13 +187,13 @@ function readyToUse()
 		{
 			if (req.status == 200)
 			{
-				stepTitel.innerHTML = 'Installation terminé';			
+				stepTitel.innerHTML = i18nLocale.installFinish;			
 				var readytouse = document.getElementById("readytouse");
 				readytouse.style.display = 'block';
 			}
 			else
 			{	
-				stepTitel.innerHTML = 'Installation échouée';
+				stepTitel.innerHTML = i18nLocale.installFailed;
 				cmdElem.innerHTML += "<span class=\"row_31\">http status :" + req.status +"</span><br />" +
 				"<span class=\"row_31\">" + req.responseText +"</span><br />";			
 			}

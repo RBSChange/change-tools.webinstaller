@@ -10,6 +10,8 @@
     <define name="SOLR_INDEXER_CLIENT"></define>
     <define name="TMP_PATH"></define>
     <define name="DEFAULT_UI_PROTOCOL"></define>
+    <define name="SUPPORTED_LANGUAGES">fr</define>
+	<define name="UI_SUPPORTED_LANGUAGES">fr</define>
   </defines>
   <config>
     <general>

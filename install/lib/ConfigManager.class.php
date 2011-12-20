@@ -11,7 +11,7 @@ class ConfigManager
 	 * @var ConfigManager
 	 */
 	private static $instance;
-	
+
 	/**
 	 * @var array
 	 */
@@ -21,7 +21,7 @@ class ConfigManager
 	 * @var array
 	 */
 	private $errors = array();
-	
+
 	/**
 	 * @var string
 	 */
@@ -31,17 +31,17 @@ class ConfigManager
 	 * @var string
 	 */
 	public $productType = "";
-	
-	/**
-	 * @var string
-	 */
-	public $productVersion = "3.5.0";
 
 	/**
 	 * @var string
 	 */
-	public $frameworkRepo = "3.5.0";
-	
+	public $productVersion = "3.5.3";
+
+	/**
+	 * @var string
+	 */
+	public $frameworkRepo = "3.5.3";
+
 	public function getProductTitle()
 	{
 		return $this->productName . ' ' . $this->productVersion;
@@ -58,8 +58,8 @@ class ConfigManager
 
 		return self::$instance;
 	}
-	
-	
+
+
 	protected function __construct($projectHomePath)
 	{
 		$this->parameters['WEBEDIT_HOME'] = $projectHomePath;
@@ -70,10 +70,10 @@ class ConfigManager
 			include $savedConfig;
 			$this->parameters = $dataconfig;
 			$this->parameters['WEBEDIT_HOME'] = $projectHomePath;
-		}	
+		}
 		$this->loadProductVersion();
 	}
-	
+
 	private function loadProductVersion()
 	{
 		$path = $this->getChangePath();
@@ -85,14 +85,14 @@ class ConfigManager
 			$productType = $doc->getElementsByTagName('name')->item(0)->textContent;
 			$frameworkNode = $doc->getElementsByTagName('dependencies')->item(0)->getElementsByTagName('framework')->item(0);
 			$productVersion = $frameworkNode->textContent;
-			$frameworkRepo = $frameworkNode->hasAttribute('hotfixes') ? $productVersion . '-' . $frameworkNode->getAttribute('hotfixes') : $productVersion;	
+			$frameworkRepo = $frameworkNode->hasAttribute('hotfixes') ? $productVersion . '-' . $frameworkNode->getAttribute('hotfixes') : $productVersion;
 		}
 		else
 		{
-			$productName = "CMS Core";	
-			$productVersion = "3.5.0";
+			$productName = "CMS Core";
+			$productVersion = "3.5.3";
 			$productType = "cmscore";
-			$frameworkRepo = "3.5.0";
+			$frameworkRepo = "3.5.3";
 		}
 
 		$this->productName = $productName;
@@ -100,7 +100,7 @@ class ConfigManager
 		$this->productVersion = $productVersion;
 		$this->frameworkRepo = $frameworkRepo;
 	}
-	
+
 	/**
 	 * @param array $parameters
 	 */
@@ -116,9 +116,9 @@ class ConfigManager
 		$this->parameters['WEBEDIT_HOME'] = PROJECT_HOME_PATH;
 		$this->parameters['USEHTTPS'] = isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off";
 		$this->parameters['BASEURL'] = 'http'.(($this->parameters['USEHTTPS']) ? "s" : "").'://' . $this->parameters['FQDN'];
-		
+
 	}
-	
+
 	/**
 	 * @return boolean
 	 */
@@ -126,12 +126,12 @@ class ConfigManager
 	{
 		return isset( $this->parameters['checked'] ) && $this->parameters['checked'];
 	}
-	
+
 	public function getErrors()
 	{
 		return $this->errors;
 	}
-	
+
 	/**
 	 * @return boolean
 	 */
@@ -139,7 +139,7 @@ class ConfigManager
 	{
 		return count($this->errors) > 0;
 	}
-	
+
 	public function getError($name)
 	{
 		if (isset( $this->errors[$name] ))
@@ -148,13 +148,13 @@ class ConfigManager
 		}
 		return false;
 	}
-	
+
 	public function initialise()
 	{
 		$this->parameters['FQDN'] = $_SERVER['SERVER_NAME'];
 		$this->parameters['USEHTTPS'] = isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off";
 		$this->parameters['BASEURL'] = 'http'.(($this->parameters['USEHTTPS']) ? "s" : "").'://' . $this->parameters['FQDN'];
-		
+
 		if (function_exists( 'posix_getgrgid' ))
 		{
 			$grpInfos = posix_getgrgid( posix_getegid() );
@@ -167,40 +167,42 @@ class ConfigManager
 		{
 			$grpName = '';
 		}
-		
+
 		$this->parameters['WWW_GROUP'] = $grpName;
-		
+
 		$this->parameters['DB_HOST'] = 'localhost';
 		$this->parameters['DB_PORT'] = '3306';
 		$this->parameters['DB_USER'] = 'root';
 		$this->parameters['DB_PASSWORD'] = '';
 		$this->parameters['DB_DATABASE'] = 'C4_' . str_replace( array('www.', '.'), array('', '_'), $this->parameters['FQDN'] ) . '_default';
-		
+
 		$this->parameters['SERVER_MAIL'] = 'NOMAIL';
 		$this->parameters['NO_REPLY'] = 'noreply@' . str_replace( 'www.', '', $this->parameters['FQDN'] );
 		$this->parameters['SMTP_HOST'] = 'localhost';
 		$this->parameters['SMTP_PORT'] = '25';
-		
+
 		$this->parameters['SENDMAIL_PATH'] = '/usr/sbin/sendmail';
 		$this->parameters['SENDMAIL_ARGS'] = '-t -i';
-		
+
 		$this->parameters['SOLR_URL'] = $this->parameters['BASEURL'] . '/mysqlindexer';
-		
+
 		$this->parameters['SAMPLES'] = 'checked';
-		
+
 		$this->parameters['checked'] = false;
-		
+
 		$this->parameters['TMP_PATH'] = $this->getTmpPath();
-	
+
+		$this->parameters['DEFAULT_LANG'] = "fr";
+
 	}
-	
+
 	private function getTmpPath()
 	{
 		if (function_exists( 'sys_get_temp_dir' ))
 		{
 			return sys_get_temp_dir();
 		}
-		
+
 		$tmpfile = @tempnam( null, 'loc_' );
 		if ($tmpfile)
 		{
@@ -220,18 +222,18 @@ class ConfigManager
 			return '/tmp';
 		}
 	}
-	
+
 	public function save()
 	{
 		$this->writeConfiguration();
 	}
-	
+
 	/**
 	 * @return boolean
 	 */
 	public function check()
 	{
-		
+
 		$checked = $this->checkFQDN();
 		$checked = $this->checkFrameworkPath();
 		$checked = $this->checkDb() && $checked;
@@ -241,7 +243,7 @@ class ConfigManager
 		$this->writeConfiguration();
 		return $this->isChecked();
 	}
-	
+
 	/**
 	 * @return string
 	 */
@@ -249,7 +251,7 @@ class ConfigManager
 	{
 		return str_replace( array('www.', '.'), array('', '_'), $this->parameters['FQDN'] ) . '_default';
 	}
-	
+
 	/**
 	 * @param string $name
 	 * @return mixed
@@ -262,7 +264,7 @@ class ConfigManager
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @return array
 	 */
@@ -270,45 +272,48 @@ class ConfigManager
 	{
 		return $this->parameters;
 	}
-	
+
 	private function getWebeditHome()
 	{
 		return $this->parameters['WEBEDIT_HOME'];
 	}
-	
+
 	private function getInstallParametersFilePath()
 	{
 		return implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'install', 'configdatas.php') );
 	}
-	
+
 	private function getChangePropertiesFilePath()
 	{
 		return implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'change.properties') );
 	}
-	
+
 	private function getChangePath()
 	{
 		return implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'change.xml') );
 	}
-	
+
 	private function getProjectConfigFilePath()
 	{
 		return implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'config', 'project.default.xml') );
 	}
-	
+
 	private function writeConfiguration()
 	{
+		$localeManager = LocaleManager::getInstance();
 		$content = '<' . '?php' . "\n\t" . '$dataconfig = ' . var_export( $this->parameters, true ) . ';';
 		if (file_put_contents( $this->getInstallParametersFilePath(), $content ) === false)
 		{
-			$this->errors['others'][] = 'Le fichier ' . $this->getInstallParametersFilePath() . ' n\'a pu être écrit.';
+			$this->errors['others'][] = str_replace("{filePath}", $this->getInstallParametersFilePath(), $localeManager->getLocales('webinstaller.configmanager.writeFileError'));
 			return false;
 		}
 		return true;
 	}
-	
+
 	public function applyConfiguration()
 	{
+		$localeManager = LocaleManager::getInstance();
+
 		$changeProperties = file_get_contents( $this->getChangePropertiesFilePath() );
 		$lines = array();
 		$oldlines = explode( "\n", $changeProperties );
@@ -336,48 +341,66 @@ class ConfigManager
 		}
 		if (file_put_contents( $this->getChangePropertiesFilePath(), implode( "\n", $lines ) ) === false)
 		{
-			$this->errors['others'][] = 'Le fichier ' . $this->getChangePropertiesFilePath() . ' n\'a pu être écrit.';
+			$this->errors['others'][] = str_replace("{filePath}", $this->getChangePropertiesFilePath(), $localeManager->getLocales('webinstaller.configmanager.writeFileError'));
 			return false;
 		}
-		
+
 		$doc = new DOMDocument( '1.0', 'UTF-8' );
 		$doc->formatOutput = true;
 		$doc->preserveWhiteSpace = false;
-		
+
 		if ($doc->load( $this->getProjectConfigFilePath() ) === false)
 		{
-			$this->errors['others'][] = 'Le fichier ' . $this->getProjectConfigFilePath() . ' n\'a pu être lu comme XML valide.';
+			$this->errors['others'][] = str_replace("{filePath}", $this->getProjectConfigFilePath(), $localeManager->getLocales('webinstaller.configmanager.readXmlFileError'));
 			return false;
 		}
-		
+
 		$xpath = new DOMXPath( $doc );
 		$nl = $xpath->query( '/project/defines/define[@name="PROJECT_ID"]' );
 		$nl->item( 0 )->nodeValue = $this->getProjectId();
-		
+
 		$nl = $xpath->query( '/project/defines/define[@name="DEFAULT_UI_PROTOCOL"]' );
-		$nl->item( 0 )->nodeValue = $this->parameters['USEHTTPS'] ? 'https' : 'http';		
-		
+		$nl->item( 0 )->nodeValue = $this->parameters['USEHTTPS'] ? 'https' : 'http';
+
 		$nl = $xpath->query( '/project/defines/define[@name="TMP_PATH"]' );
 		$nl->item( 0 )->nodeValue = $this->parameters['TMP_PATH'];
+
+		$langs = array($this->parameters['DEFAULT_LANG']);
+		if (isset($this->parameters['OTHER_LANG1'])){
+			$langs[] = $this->parameters['OTHER_LANG1'];
+		}
+		if (isset($this->parameters['OTHER_LANG2'])){
+			$langs[] = $this->parameters['OTHER_LANG2'];
+		}
+		if (isset($this->parameters['OTHER_LANG3'])){
+			$langs[] = $this->parameters['OTHER_LANG3'];
+		}
+		$langs = array_unique($langs);
+
+		$nl = $xpath->query( '/project/defines/define[@name="SUPPORTED_LANGUAGES"]' );
+		$nl->item( 0 )->nodeValue = implode(" ", array_intersect($langs, array("fr", "en", "de")));
 		
+		$nl = $xpath->query( '/project/defines/define[@name="UI_SUPPORTED_LANGUAGES"]' );
+		$nl->item( 0 )->nodeValue = implode(" ", array_intersect($langs, array("fr", "en")));
+
 		$nl = $xpath->query( '/project/config/general/entry[@name="server-fqdn"]' );
 		$nl->item( 0 )->nodeValue = $this->parameters['FQDN'];
-		
+
 		$nl = $xpath->query( '/project/config/databases/webapp/entry[@name="user"]' );
 		$nl->item( 0 )->nodeValue = $this->parameters['DB_USER'];
-		
+
 		$nl = $xpath->query( '/project/config/databases/webapp/entry[@name="password"]' );
 		$nl->item( 0 )->nodeValue = $this->parameters['DB_PASSWORD'];
-		
+
 		$nl = $xpath->query( '/project/config/databases/webapp/entry[@name="database"]' );
 		$nl->item( 0 )->nodeValue = $this->parameters['DB_DATABASE'];
-		
+
 		$nl = $xpath->query( '/project/config/databases/webapp/entry[@name="host"]' );
 		$nl->item( 0 )->nodeValue = $this->parameters['DB_HOST'];
-		
+
 		$nl = $xpath->query( '/project/config/databases/webapp/entry[@name="port"]' );
 		$nl->item( 0 )->nodeValue = $this->parameters['DB_PORT'];
-		
+
 		$nl = $xpath->query( '/project/config/injection/entry[@name="MailService"]' );
 		switch ($this->parameters['SERVER_MAIL'])
 		{
@@ -388,10 +411,10 @@ class ConfigManager
 				}
 				$nl = $xpath->query( '/project/config/mail/entry[@name="type"]' );
 				$nl->item( 0 )->nodeValue = "Sendmail";
-				
+
 				$nl = $xpath->query( '/project/config/mail/entry[@name="sendmail_path"]' );
 				$nl->item( 0 )->nodeValue = $this->parameters['SENDMAIL_PATH'];
-				
+
 				$nl = $xpath->query( '/project/config/mail/entry[@name="sendmail_args"]' );
 				$nl->item( 0 )->nodeValue = $this->parameters['SENDMAIL_ARGS'];
 				break;
@@ -402,10 +425,10 @@ class ConfigManager
 				}
 				$nl = $xpath->query( '/project/config/mail/entry[@name="type"]' );
 				$nl->item( 0 )->nodeValue = "Smtp";
-				
+
 				$nl = $xpath->query( '/project/config/mail/entry[@name="host"]' );
 				$nl->item( 0 )->nodeValue = $this->parameters['SMTP_HOST'];
-				
+
 				if (empty( $this->parameters['SMTP_PORT'] ))
 				{
 					$this->parameters['SMTP_PORT'] = "25";
@@ -424,7 +447,7 @@ class ConfigManager
 				}
 				break;
 		}
-		
+
 		$nl = $xpath->query( '/project/defines/define[@name="SOLR_INDEXER_URL"]' );
 		if (! empty( $this->parameters['SOLR_URL'] ))
 		{
@@ -440,7 +463,7 @@ class ConfigManager
 		{
 			$nl->item( 0 )->parentNode->removeChild( $nl->item( 0 ) );
 		}
-		
+
 		$nl = $xpath->query( '/project/defines/define[@name="SOLR_INDEXER_CLIENT"]' );
 		if (! empty( $this->parameters['SOLR_URL'] ))
 		{
@@ -456,7 +479,7 @@ class ConfigManager
 		{
 			$nl->item( 0 )->parentNode->removeChild( $nl->item( 0 ) );
 		}
-		
+
 		if (! empty( $this->parameters['NO_REPLY'] ))
 		{
 			$nl = $xpath->query( '/project/defines/define[@name="MOD_NOTIFICATION_SENDER"]' );
@@ -468,7 +491,7 @@ class ConfigManager
 				$nl = $xpath->query( '/project/defines' );
 				$nl->item( 0 )->appendChild( $doc->createElement( 'define', $this->parameters['NO_REPLY'] ) )->setAttribute( 'name', 'MOD_NOTIFICATION_SENDER' );
 			}
-			
+
 			list(, $host) = explode( '@', $this->parameters['NO_REPLY'] );
 			$nl = $xpath->query( '/project/defines/define[@name="MOD_NOTIFICATION_SENDER_HOST"]' );
 			if ($nl->length == 1)
@@ -492,22 +515,22 @@ class ConfigManager
 				$nl->item( 0 )->parentNode->removeChild( $nl->item( 0 ) );
 			}
 		}
-		
+
 		if ($doc->save( $this->getProjectConfigFilePath() ) === false)
 		{
 			$this->errors['others'][] = 'Le fichier ' . $this->getProjectConfigFilePath() . ' n\'a pu être écrit.';
 			return false;
 		}
-		
+
 		$this->generateOverrideFolder();
-		
+
 		if (file_exists( PROJECT_HOME_PATH . '/index.php' ))
 		{
 			unlink( PROJECT_HOME_PATH . '/index.php' );
 		}
 		return true;
 	}
-	
+
 	private function generateOverrideFolder()
 	{
 		$from = PROJECT_HOME_PATH . '/install/override';
@@ -531,7 +554,7 @@ class ConfigManager
 			}
 		}
 	}
-	
+
 	private function checkDb()
 	{
 		try
@@ -545,56 +568,60 @@ class ConfigManager
 			{
 				return $this->createDataBase();
 			}
-			$this->errors['DB'] = 'Impossible de se connecter à la base de données';
+			$localeManager = LocaleManager::getInstance();
+			$this->errors['DB'] = $localeManager->getLocales('webinstaller.configmanager.dbConnexionError');
 			return false;
 		}
 		return true;
 	}
-	
+
 	private function createDataBase()
 	{
+		$localeManager = LocaleManager::getInstance();
 		try
 		{
 			$dsn = 'mysql:host=' . $this->parameters['DB_HOST'] . ';port=' . $this->parameters['DB_PORT'];
 			$pdo = new PDO( $dsn, $this->parameters['DB_USER'], $this->parameters['DB_PASSWORD'] );
 			if ($pdo->exec( "create database if not exists `" . $this->parameters['DB_DATABASE'] . "`" ) === false)
 			{
-				$this->errors['DB'] = 'Impossible de créer la base de données';
+				$this->errors['DB'] = $localeManager->getLocales('webinstaller.configmanager.dbCreationError');
 				return false;
 			}
 			return true;
 		} catch ( Exception $e )
 		{
-			$this->errors['DB'] = 'Impossible de se connecter au serveur';
+			$this->errors['DB'] = $localeManager->getLocales('webinstaller.configmanager.dbConnexionError');
 			return false;
 		}
 	}
-	
+
 	private function checkFQDN()
 	{
+		$localeManager = LocaleManager::getInstance();
 		$data = "checkFQDNOK".md5((isset($_SERVER["HTTPS"]) ? "on":"")."/".$_SERVER["HTTP_HOST"]."/".dirname(dirname(__FILE__)));
 		$testFilePath = implode( DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'install', 'checkFQDN.php') );
 		$url = $this->parameters['BASEURL'] . '/install/checkFQDN.php';
 		$cr = curl_init();
-		$options = array(CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 5, 
-			CURLOPT_FOLLOWLOCATION => false, CURLOPT_URL => $url, CURLOPT_POSTFIELDS => null, 
-			CURLOPT_POST => false, CURLOPT_SSL_VERIFYPEER =>false);
+		$options = array(CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 5,
+				CURLOPT_FOLLOWLOCATION => false, CURLOPT_URL => $url, CURLOPT_POSTFIELDS => null,
+				CURLOPT_POST => false, CURLOPT_SSL_VERIFYPEER =>false);
 		curl_setopt_array( $cr, $options );
-		
+
 		$curldata = curl_exec( $cr );
 		$errno = curl_errno( $cr );
 		curl_close( $cr );
-		
+
 		if ($errno || $data != $curldata)
 		{
-			$this->errors['DOMAIN'] = 'Le nom de domaine saisi n\'est pas un domaine valide pour ce projet. Assurez-vous que '.$this->parameters['BASEURL'].' soit accessible à votre serveur';
+			$this->errors['DOMAIN'] = str_replace("{fqdn}", $this->parameters['BASEURL'], $localeManager->getLocales('webinstaller.configmanager.fqdnError'));
 			return false;
 		}
 		return true;
 	}
-	
+
 	private function checkFrameworkPath()
 	{
+		$localeManager = LocaleManager::getInstance();
 		$target = implode(DIRECTORY_SEPARATOR, array($this->getWebeditHome(), 'repository', 'framework', 'framework-' . $this->frameworkRepo));
 		if (is_dir($target))
 		{
@@ -604,20 +631,21 @@ class ConfigManager
 			{
 				return true;
 			}
-			$this->errors['DOMAIN'] = 'Imposible de créer le lien symbolique ' .  $target . ' -> ' . $link;
+			$this->errors['DOMAIN'] = str_replace("{target}", $target, str_replace("{link}", $link, $localeManager->getLocales('webinstaller.configmanager.symlinkError')));
 			return false;
 		}
-		$this->errors['DOMAIN'] = 'la version ' .  $this->frameworkRepo . ' du framework n\est pas disponible';
+		$this->errors['DOMAIN'] = str_replace("{frameworkVersion}", $this->frameworkRepo, $localeManager->getLocales('webinstaller.configmanager.versionError'));
 		return false;
 	}
-	
+
 	private function checkMail()
 	{
+		$localeManager = LocaleManager::getInstance();
 		if (!preg_match('/^[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9.-]*\.[a-z]{2,}$/i', $this->parameters['NO_REPLY']))
 		{
 			if ($this->parameters['SERVER_MAIL'] != 'NOMAIL')
 			{
-				$this->errors['MAIL'] = 'L\'adresse  de l\'expéditeur du site n\'est pas valide';
+				$this->errors['MAIL'] = $localeManager->getLocales('webinstaller.configmanager.invalidMailError');
 				return false;
 			}
 			else
@@ -626,13 +654,13 @@ class ConfigManager
 				$this->parameters['NO_REPLY'] = 'noreply@noreply.fr';
 			}
 		}
-		
+
 		switch ($this->parameters['SERVER_MAIL'])
 		{
 			case 'SENDMAIL' :
 				if (! is_executable( $this->parameters['SENDMAIL_PATH'] ))
 				{
-					$this->errors['MAIL'] = 'Le chemin vers sendmail n\'est pas valide';
+					$this->errors['MAIL'] = $localeManager->getLocales('webinstaller.configmanager.sendmailError');
 					return false;
 				}
 				break;
@@ -649,7 +677,7 @@ class ConfigManager
 				$smtp_conn = @fsockopen( $host, $port, $errno, $errstr, 5 );
 				if (empty( $smtp_conn ))
 				{
-					$this->errors['MAIL'] = 'Impossible de se connecter au serveur SMTP';
+					$this->errors['MAIL'] = $localeManager->getLocales('webinstaller.configmanager.smtpError');
 					return false;
 				} else
 				{
@@ -659,18 +687,19 @@ class ConfigManager
 		}
 		return true;
 	}
-	
+
 	private function checkTmpPath()
 	{
+		$localeManager = LocaleManager::getInstance();
 		$tmpPath = $this->parameters['TMP_PATH'];
 		if (trim($tmpPath) == "")
 		{
-			$this->errors['TMP_PATH'] = "Veuillez renseigner le dossier temporaire";
+			$this->errors['TMP_PATH'] = $localeManager->getLocales('webinstaller.configmanager.emptyTmpPathError');
 			return false;
 		}
 		if (!is_dir($tmpPath) || realpath(dirname(tempnam($tmpPath, "change-webinstall"))) != realpath($tmpPath))
 		{
-			$this->errors['TMP_PATH'] = $tmpPath." n'est pas accessible en écriture";
+			$this->errors['TMP_PATH'] = str_replace("{tmpPath}", $tmpPath, $localeManager->getLocales('webinstaller.configmanager.writeTmpPathError'));
 			return false;
 		}
 		return true;
