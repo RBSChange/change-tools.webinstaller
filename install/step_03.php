@@ -17,7 +17,17 @@ else
 }
 ?>
 <form class="cmxform" action="" method="post">
-	<div class="stepheader"><img src="./ressources/thread_03.png"/></div>
+	<div class="stepheader">
+		<div class="previousStep"><?php echo $localeManager->getLocales('webinstaller.step1.label'); ?></div>
+		<div class="previousArrow">&nbsp;</div>
+		<div class="previousLabel divStep1"><?php echo $localeManager->getLocales('webinstaller.step1.title'); ?></div>
+		<div class="previousStep"><?php echo $localeManager->getLocales('webinstaller.step2.label'); ?></div>
+		<div class="previousArrow">&nbsp;</div>
+		<div class="previousLabel divStep2"><?php echo $localeManager->getLocales('webinstaller.step2.title'); ?></div>
+		<div class="activeStep"><?php echo $localeManager->getLocales('webinstaller.step3.label'); ?></div>
+		<div class="activeArrow">&nbsp;</div>
+		<div class="activeLabel divStep3"><?php echo $localeManager->getLocales('webinstaller.step3.title'); ?></div>
+	</div>
 	<div class="stepcontent">
 		<div style="margin-left:30px">
 			<h3 id="stepTitle"><?php echo $localeManager->getLocales('webinstaller.step3.title'); ?></h3>

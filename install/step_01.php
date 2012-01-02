@@ -15,10 +15,16 @@ if ($systemCheckOk)
 ?>
 <form class="cmxform" action="" method="post">
 	<input type="hidden" name="NEXTSTEP" value="02" id="NEXTSTEP" />
-	<div class="stepheader"><img src="./ressources/thread_01.png" usemap="#mapping_thread"/>
-		<map name="mapping_thread" id="mapping_thread">
-			<area shape="rect" href="javascript:gotoStep('01')" alt="<?php echo $localeManager->getLocales('webinstaller.step1.label'); ?>" title="<?php echo $localeManager->getLocales('webinstaller.step1.label'); ?>" coords="0,0,181,29"/>
-		</map>	
+	<div class="stepheader">
+		<div class="activeStep"><?php echo $localeManager->getLocales('webinstaller.step1.label'); ?></div>
+		<div class="activeArrow">&nbsp;</div>
+		<div class="activeLabel divStep1"><?php echo $localeManager->getLocales('webinstaller.step1.title'); ?></div>
+		<div class="nextStep"><?php echo $localeManager->getLocales('webinstaller.step2.label'); ?></div>
+		<div class="nextArrow">&nbsp;</div>
+		<div class="nextLabel divStep2"><?php echo $localeManager->getLocales('webinstaller.step2.title'); ?></div>
+		<div class="nextStep"><?php echo $localeManager->getLocales('webinstaller.step3.label'); ?></div>
+		<div class="nextArrow">&nbsp;</div>
+		<div class="nextLabel divStep3"><?php echo $localeManager->getLocales('webinstaller.step3.title'); ?></div>
 	</div>
 	<div class="stepcontent">
 		<div class="<?php echo $msgClass; ?>"><p><?php echo $msgText; ?></p></div>

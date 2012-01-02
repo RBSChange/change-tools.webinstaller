@@ -12,9 +12,11 @@ $i18nLocale['webinstaller.step1.configure'] = "Configuration du projet";
 $i18nLocale['webinstaller.step1.configureTitle'] = "Configurer votre projet";
 $i18nLocale['webinstaller.step1.compitibilityNOk'] = "Votre hébergement est incompatible";
 $i18nLocale['webinstaller.step1.label'] = "Etape 1";
+$i18nLocale['webinstaller.step1.title'] = "Compatibilité";
 $i18nLocale['webinstaller.step1.refresh'] = "Rafraîchir";
 
 $i18nLocale['webinstaller.step2.label'] = "Etape 2";
+$i18nLocale['webinstaller.step2.title'] = "Configuration";
 $i18nLocale['webinstaller.step2.configError'] = "Votre configuration comporte des erreurs. Veuillez les corriger.";
 $i18nLocale['webinstaller.step2.configOk'] = "Votre configuration a été validée, vous pouvez désormais installer le projet.";
 $i18nLocale['webinstaller.step2.fqdnAlt'] = "Nom de domaine";
@@ -58,6 +60,7 @@ $i18nLocale['webinstaller.step2.french'] = "Français";
 $i18nLocale['webinstaller.step2.english'] = "Anglais";
 $i18nLocale['webinstaller.step2.german'] = "Allemand";
 
+$i18nLocale['webinstaller.step3.label'] = "Etape 3";
 $i18nLocale['webinstaller.step3.title'] = "Création du projet";
 $i18nLocale['webinstaller.step3.installError'] = "Une erreur est survenue lors de l'installation.";
 $i18nLocale['webinstaller.step3.installOk'] = "Pour des raisons de securité, penser à supprimer le dossier 'install' de votre projet.<br/>Pensez également à accéder rapidement à <a href=\"{fqdn}/admin\" target=\"_blank\">l'interface d'administration</a> pour y définir votre mot de passe principal.";

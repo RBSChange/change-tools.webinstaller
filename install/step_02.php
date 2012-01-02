@@ -17,11 +17,16 @@ else
 ?>
 <form class="cmxform" action="" method="post" id="install_form">
 	<input type="hidden" name="NEXTSTEP" value="03" id="NEXTSTEP" />
-	<div class="stepheader"><img src="./ressources/thread_02.png" usemap="#mapping_thread"/>
-		<map name="mapping_thread" id="mapping_thread">
-			<area shape="rect" href="javascript:gotoStep('01')" alt="<?php echo $localeManager->getLocales('webinstaller.step1.label'); ?>" title="<?php echo $localeManager->getLocales('webinstaller.step1.label'); ?>" coords="0,0,181,29"/>
-			<area shape="rect" href="javascript:gotoStep('02')" alt="<?php echo $localeManager->getLocales('webinstaller.step2.label'); ?>" title="<?php echo $localeManager->getLocales('webinstaller.step2.label'); ?>" coords="182,0,364,29"/>
-		</map>	
+	<div class="stepheader">
+		<div class="previousStep"><?php echo $localeManager->getLocales('webinstaller.step1.label'); ?></div>
+		<div class="previousArrow">&nbsp;</div>
+		<div class="previousLabel divStep1"><?php echo $localeManager->getLocales('webinstaller.step1.title'); ?></div>
+		<div class="activeStep"><?php echo $localeManager->getLocales('webinstaller.step2.label'); ?></div>
+		<div class="activeArrow">&nbsp;</div>
+		<div class="activeLabel divStep2"><?php echo $localeManager->getLocales('webinstaller.step2.title'); ?></div>
+		<div class="nextStep"><?php echo $localeManager->getLocales('webinstaller.step3.label'); ?></div>
+		<div class="nextArrow">&nbsp;</div>
+		<div class="nextLabel divStep3"><?php echo $localeManager->getLocales('webinstaller.step3.title'); ?></div>
 	</div>
 	<div class="stepcontent">
 		<?php if ($configManager->hasError()) { ?>
@@ -92,7 +97,7 @@ else
 			</script>
 		<?php } ?>
 		<div class="section">
-			<img src="./ressources/.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.languageAlt'); ?>" />
+			<img src="./ressources/section_language.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.languageAlt'); ?>" />
 			<div class="sectionfield">
 				<ol>
 					<li><label for="install_default_lang"><?php echo $localeManager->getLocales('webinstaller.step2.language'); ?></label>

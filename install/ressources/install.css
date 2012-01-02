@@ -15,7 +15,6 @@ body {
 	font-style: normal;
 	margin: 0;
 	padding: 0;
-	font-style: normal;
 }
 
 .header {
@@ -288,4 +287,84 @@ span.row_35 {
 #readytouse table td {
 	text-align: center;
 	width: 285px;
+}
+
+div.activeStep,div.activeArrow,div.activeLabel,div.nextStep,div.nextArrow,div.nextLabel,div.previousStep,div.previousArrow,div.previousLabel
+	{
+	height: 29px;
+	font-family: "Trebuchet MS", verdana, arial, sans-serif;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	font-weight: bold;
+}
+
+div.activeStep,div.nextStep,div.previousStep {
+	width: 50px;
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
+div.activeArrow,div.nextArrow,div.previousArrow {
+	width: 17px;
+}
+
+div.activeStep {
+	background: url(/install/ressources/activeStep.jpg);
+	color: black;
+}
+
+div.activeArrow {
+	background: url(/install/ressources/activeArrow.jpg) no-repeat;
+}
+
+div.activeLabel {
+	background: url(/install/ressources/activeLabel.jpg);
+	color: black;
+}
+
+div.nextStep {
+	background: url(/install/ressources/nextStep.jpg);
+	color: #aaa;
+}
+
+div.nextArrow {
+	background: url(/install/ressources/nextArrow.jpg) no-repeat;
+}
+
+div.nextLabel {
+	background: url(/install/ressources/nextLabel.jpg);
+	color: #aaa;
+}
+
+div.previousStep {
+	background: url(/install/ressources/previousStep.jpg);
+	color: gray;
+}
+
+div.previousArrow {
+	background: url(/install/ressources/previousArrow.jpg) no-repeat;
+}
+
+div.previousLabel {
+	background: url(/install/ressources/previousLabel.jpg);
+	color: gray;
+}
+
+div.divStep1 {
+	width: 114px;
+	border-color: #999;
+	border-width: 0px 1px 0px 0px;
+	border-style: solid;
+}
+
+div.divStep2 {
+	width: 115px;
+	border-color: #999;
+	border-width: 0px 1px 0px 0px;
+	border-style: solid;
+}
+
+div.divStep3 {
+	width: 168px;
 }

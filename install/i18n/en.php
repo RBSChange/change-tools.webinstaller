@@ -12,9 +12,11 @@ $i18nLocale['webinstaller.step1.configure'] = "Configuration of the project";
 $i18nLocale['webinstaller.step1.configureTitle'] = "Configure your project";
 $i18nLocale['webinstaller.step1.compitibilityNOk'] = "Your hosting platform is not compatible";
 $i18nLocale['webinstaller.step1.label'] = "Step 1";
+$i18nLocale['webinstaller.step1.title'] = "Compitibility";
 $i18nLocale['webinstaller.step1.refresh'] = "Refresh";
 
 $i18nLocale['webinstaller.step2.label'] = "Step 2";
+$i18nLocale['webinstaller.step2.title'] = "Configuration";
 $i18nLocale['webinstaller.step2.configError'] = "There are errors in your configuration. Please correct them.";
 $i18nLocale['webinstaller.step2.configOk'] = "Your configuration has been verified.  You may now install the project.";
 $i18nLocale['webinstaller.step2.fqdnAlt'] = "Domain name";
@@ -58,6 +60,7 @@ $i18nLocale['webinstaller.step2.french'] = "French";
 $i18nLocale['webinstaller.step2.english'] = "English";
 $i18nLocale['webinstaller.step2.german'] = "German";
 
+$i18nLocale['webinstaller.step3.label'] = "Step 3";
 $i18nLocale['webinstaller.step3.title'] = "Creation of the project";
 $i18nLocale['webinstaller.step3.installError'] = "An error occurred during installation";
 $i18nLocale['webinstaller.step3.installOk'] = "For security reasons, remember to delete your project's 'install' folder.<br/>Also, remember to access the <a href=\"{fqdn}/admin\" target=\"_blank\">administration interface</a> in order to define your main password.";
