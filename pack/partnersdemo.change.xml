@@ -4,98 +4,70 @@
 	xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>partnersdemo</name>
 	<type>change-project</type>
-	<version>3.5.2</version>
+	<version>3.5.3</version>
 	<description>Partners demo</description>
 	<dependencies>
-		<framework>3.5.2</framework>
+		<framework>3.5.3</framework>
 		<modules>
-			<!-- Core modules -->			
-			<module>webservices-3.5.2</module>
-			<module>mailbox-3.5.2</module>
-			<module>contactcard-3.5.2</module>
-			<module>filter-3.5.2</module>
-			<module>form-3.5.2</module>
-			<module>markergas-3.5.2</module>
-			<module>skin-3.5.2</module>
-			<module>useractionlogger-3.5.2</module>
-			<module>uixul-3.5.2</module>
-			<module>list-3.5.2</module>
-			<module>media-3.5.2</module>
-			<module>notification-3.5.2</module>
-			<module>generic-3.5.2</module>
-			<module>preferences-3.5.2</module>
-			<module>mysqlindexer-3.5.2</module>
-			<module>solrsearch-3.5.2</module>
-			<module>rss-3.5.2</module>
-			<module>seo-3.5.2</module>			
-			<module>dashboard-3.5.2</module>			
-			<module>task-3.5.2</module>			
-			<module>theme-3.5.2</module>
-			<module>i18n-3.5.2</module>
-			<module>users-3.5.2</module>
-			<module>website-3.5.2</module>
-			<module>workflow-3.5.2</module>
-			<module>zone-3.5.2</module>
-			<!--module>updater-3.5.3</module-->
-				
 			<!-- e-Commerce modules -->					
-			<module>catalog-3.5.2</module>
-			<module>order-3.5.2</module>
-			<module>customer-3.5.2</module>
-			<module>brand-3.5.2</module>
-			<module>shipping-3.5.2</module>
-			<module>payment-3.5.2</module>
-			<module>featurepacka-3.5.2</module>
-			<module>featurepackb-3.5.2</module>
-			<module>productupdater-3.5.2</module>
-			<!--module>paybox-3.5.3</module-->
-			
+			<module>catalog-3.5.3</module>
+			<module>order-3.5.3</module>
+			<module>customer-3.5.3</module>
+			<module>brand-3.5.3</module>
+			<module>shipping-3.5.3</module>
+			<module>payment-3.5.3</module>
+			<module>featurepacka-3.5.3</module>
+			<module>featurepackb-3.5.3</module>
+			<module>productupdater-3.5.3</module>
+			<module>paybox-3.5.3</module>
+			<module>shoppingmail-3.5.3</module>
+	
 			<!-- Open Source modules -->
-			<module>event-3.5.2</module>
-			<module>bookmarks-3.5.2</module>
-			<module>blog-3.5.2</module>	
-			<module>comment-3.5.2</module>
-			<module>inquiry-3.5.2</module>
-			<module>faq-3.5.2</module>
-			<module>forums-3.5.2</module>
-			<module>photoalbum-3.5.2</module>
-			<module>markergmaps-3.5.2</module>
-			<module>mapping-3.5.2</module>	
-			<module>twitterconnect-3.5.2</module>
-			<module>lexicon-3.5.2</module>
-			<module>privatemessaging-3.5.2</module>			
-			<module>joboffer-3.5.2</module>			
-			<module>sharethis-3.5.2</module>		
-			<module>videos-3.5.2</module>	
-			<module>download-3.5.2</module>	
-			<module>polls-3.5.2</module>	
-			<module>richtext-3.5.2</module>	
+			<module>event-3.5.3</module>
+			<module>bookmarks-3.5.3</module>
+			<module>blog-3.5.3</module>	
+			<module>comment-3.5.3</module>
+			<module>inquiry-3.5.3</module>
+			<module>faq-3.5.3</module>
+			<module>forums-3.5.3</module>
+			<module>photoalbum-3.5.3</module>
+			<module>markergmaps-3.5.3</module>
+			<module>mapping-3.5.3</module>	
+			<module>twitterconnect-3.5.3</module>
+			<module>lexicon-3.5.3</module>
+			<module>privatemessaging-3.5.3</module>			
+			<module>joboffer-3.5.3</module>			
+			<module>sharethis-3.5.3</module>		
+			<module>videos-3.5.3</module>	
+			<module>download-3.5.3</module>	
+			<module>polls-3.5.3</module>	
+			<module>richtext-3.5.3</module>	
 			
 			<!-- Commercial modules -->		
-			<module>googleshopping-3.5.2</module>
-			<module>mysqlstock-3.5.2</module>
-			<module>dashstat-3.5.2</module>
-			<module>emailing-3.5.2</module>
-			<module>productexporter-3.5.2</module>
-			<module>facebookconnect-3.5.2</module>
-			<module>ads-3.5.2</module>
-			<module>survey-3.5.2</module>
-			<module>loyalty-3.5.2</module>
-			<module>productreturns-3.5.2</module>			
-			<module>marketing-3.5.2</module>
-			<module>ecomextended-3.5.2</module>
+			<module>googleshopping-3.5.3</module>
+			<module>mysqlstock-3.5.3</module>
+			<module>dashstat-3.5.3</module>
+			<module>emailing-3.5.3</module>
+			<module>productexporter-3.5.3</module>
+			<module>facebookconnect-3.5.3</module>
+			<module>ads-3.5.3</module>
+			<module>survey-3.5.3</module>
+			<module>loyalty-3.5.3</module>
+			<module>productreturns-3.5.3</module>			
+			<module>marketing-3.5.3</module>
+			<module>ecomextended-3.5.3</module>
 			<!--module>socolissimo-3.5.3</module-->
 			
 			<!-- Pack Performance modules -->
-			<module>atosserver-3.5.2</module>
-			<module>support-3.5.2</module>	
-			<module>synchronizer-3.5.2</module>			
-			<module>privatesales-3.5.2</module>	
-			<module>ecomwebservices-3.5.2</module>
+			<module>atosserver-3.5.3</module>
+			<module>support-3.5.3</module>	
+			<module>synchronizer-3.5.3</module>			
+			<module>privatesales-3.5.3</module>	
+			<module>ecomwebservices-3.5.3</module>
 
 			<!-- Cluster modules -->
-			<module>clustersafe-3.5.2</module>
-			<module>clusterscale-3.5.2</module>
+			<module>clustersafe-3.5.3</module>
+			<module>clusterscale-3.5.3</module>
 
         </modules>
 	</dependencies>
