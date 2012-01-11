@@ -15,7 +15,12 @@
 			<module>customer-3.5.3</module>
 			<module>brand-3.5.3</module>
 			<module>shipping-3.5.3</module>
-			<module>payment-3.5.3</module>
+			<module>payment-3.5.3</module>	
+			<module>featurepacka-3.5.3</module>
+			<module>featurepackb-3.5.3</module>
+			<module>productupdater-3.5.3</module>
+			<module>paybox-3.5.3</module>
+			<module>shoppingmail-3.5.3</module>
 			
 			<!-- Open Source modules -->			
 			<module>event-3.5.3</module>
@@ -29,8 +34,7 @@
 			<module>photoalbum-3.5.3</module>
 			<module>markergmaps-3.5.3</module>
 			<module>mapping-3.5.3</module>
-          		<module>polls-3.5.3</module>	
-			<module>productupdater-3.5.3</module>
+          	<module>polls-3.5.3</module>	
 			<module>twitterconnect-3.5.3</module>
 			<module>lexicon-3.5.3</module>
 			<module>privatemessaging-3.5.3</module>			

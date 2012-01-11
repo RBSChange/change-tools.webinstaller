@@ -5,8 +5,8 @@ mkdir buildproject
 
 cp pack/cmsecomos.change.xml buildproject/change.xml
 
-REMOTE_REPO=http://osrepo.rbschange.fr
-VERSION=3.5.2
+REMOTE_REPO=http://testrepo.rd.devlinux.france.rbs.fr/
+VERSION=3.5.3
 
 echo "
 # Change remote repositories

@@ -65,10 +65,10 @@
 			<module>privatesales-3.5.3</module>	
 			<module>ecomwebservices-3.5.3</module>
 
-			<!-- Cluster modules -->
+			<!-- Cluster modules
 			<module>clustersafe-3.5.3</module>
 			<module>clusterscale-3.5.3</module>
-
+			 -->
         </modules>
 	</dependencies>
 </change>
