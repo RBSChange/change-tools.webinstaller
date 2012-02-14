@@ -3,7 +3,7 @@
 rm -rf buildproject
 mkdir buildproject
 
-cp pack/cmsecomos.change.xml buildproject/change.xml
+cp pack/partnersdemo.change.xml buildproject/change.xml
 
 REMOTE_REPO=http://testrepo.rd.devlinux.france.rbs.fr/
 VERSION=3.5.4
