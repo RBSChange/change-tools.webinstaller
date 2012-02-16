@@ -40,7 +40,9 @@
 			<module>privatemessaging-3.5.4</module>			
 			<module>joboffer-3.5.4</module>			
 			<module>sharethis-3.5.4</module>		
-			<module>videos-3.5.4</module>		
+			<module>videos-3.5.4</module>
+			<module>statictext-3.5.4</module>
+			<module>projectcare-3.5.4</module>
 		</modules>
 	</dependencies>
 </change>

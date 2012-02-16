@@ -42,7 +42,9 @@
 			<module>download-3.5.4</module>	
 			<module>polls-3.5.4</module>	
 			<module>richtext-3.5.4</module>	
-			
+			<module>statictext-3.5.4</module>
+			<module>projectcare-3.5.4</module>
+						
 			<!-- Commercial modules -->		
 			<module>googleshopping-3.5.4</module>
 			<module>mysqlstock-3.5.4</module>

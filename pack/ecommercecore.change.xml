@@ -23,7 +23,8 @@
 			<module>shoppingmail-3.5.4</module>
 
 			<!-- Open Source modules -->
-			<module>comment-3.5.4</module>			
+			<module>comment-3.5.4</module>
+			<module>statictext-3.5.4</module>			
 		</modules>
 	</dependencies>
 </change>

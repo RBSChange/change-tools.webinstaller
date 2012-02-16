@@ -7,6 +7,7 @@
 	<dependencies>
 		<framework>3.5.4</framework>
 		<modules>
+			<module>statictext-3.5.4</module>
 		</modules>
 	</dependencies>
 </change>
