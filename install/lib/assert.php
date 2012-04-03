@@ -86,7 +86,7 @@ function assert_symlink($path)
 	return false;
 }
 
-function assert_frameworksymlink($frameworksRepoVersion = '3.5.4')
+function assert_frameworksymlink($frameworksRepoVersion = '3.5.5')
 {
 	$source = PROJECT_HOME_PATH . DIRECTORY_SEPARATOR . 'repository' .DIRECTORY_SEPARATOR. 'framework' .DIRECTORY_SEPARATOR. 'framework-' . $frameworksRepoVersion;
 	$link = PROJECT_HOME_PATH . DIRECTORY_SEPARATOR . 'framework';

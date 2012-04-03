@@ -4,27 +4,27 @@
 	xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>ecommercecore</name>
 	<type>change-project</type>
-	<version>3.5.4</version>
+	<version>3.5.5</version>
 	<description>e-Commerce Core</description>
 	<dependencies>
-		<framework>3.5.4</framework>
+		<framework>3.5.5</framework>
 		<modules>
 			<!-- e-Commerce modules -->					
-			<module>catalog-3.5.4</module>
-			<module>order-3.5.4</module>
-			<module>customer-3.5.4</module>
-			<module>brand-3.5.4</module>
-			<module>shipping-3.5.4</module>
-			<module>payment-3.5.4</module>	
-			<module>featurepacka-3.5.4</module>
-			<module>featurepackb-3.5.4</module>
-			<module>productupdater-3.5.4</module>
-			<module>paybox-3.5.4</module>
-			<module>shoppingmail-3.5.4</module>
+			<module>catalog-3.5.5</module>
+			<module>order-3.5.5</module>
+			<module>customer-3.5.5</module>
+			<module>brand-3.5.5</module>
+			<module>shipping-3.5.5</module>
+			<module>payment-3.5.5</module>	
+			<module>featurepacka-3.5.5</module>
+			<module>featurepackb-3.5.5</module>
+			<module>productupdater-3.5.5</module>
+			<module>paybox-3.5.5</module>
+			<module>shoppingmail-3.5.5</module>
 
 			<!-- Open Source modules -->
-			<module>comment-3.5.4</module>
-			<module>statictext-3.5.4</module>			
+			<module>comment-3.5.5</module>
+			<module>statictext-3.5.5</module>			
 		</modules>
 	</dependencies>
 </change>

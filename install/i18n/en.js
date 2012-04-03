@@ -4,6 +4,7 @@ var i18nLocale = {
 	"cmd_init_generic_modules" : "Initialisation of the modules",
 	"cmd_init_webapp" : "Initialisation of the web site's files",
 	"cmd_compile_config" : "Compilation of the configuration",
+	"cmd_update_autoload" : "Autoload generation",
 	"cmd_compile_documents" : "Generation of the documents' persistence classes",
 	"cmd_generate_database" : "Generation of the database structure",
 	"cmd_compile_document_filters" : "Compilation of the document filters",

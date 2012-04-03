@@ -75,6 +75,7 @@ var cmds = [
 		{cmd: "init-project --clear", label:i18nLocale.cmd_init_project},
 		{cmd: "init-webapp", label:i18nLocale.cmd_init_webapp},
 		{cmd: "compile-config", label:i18nLocale.cmd_compile_config},
+		{cmd: "update-autoload", label:i18nLocale.cmd_update_autoload},
 		{cmd: "compile-documents", label:i18nLocale.cmd_compile_documents},
 		{cmd: "generate-database", label:i18nLocale.cmd_generate_database},
 		{cmd: "compile-document-filters", label:i18nLocale.cmd_compile_document_filters},

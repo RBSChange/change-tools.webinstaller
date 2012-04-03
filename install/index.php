@@ -41,7 +41,7 @@ define('STEP_SCRIPT_PATH', PROJECT_HOME_PATH . '/install/step_'. $step .'.php');
 			<?php include STEP_SCRIPT_PATH;?>
 		</div>
 		<p class="copyright">
-			RBS Change™ © 2011 <a href="http://www.rbs.fr" target="_blank"
+			RBS Change™ © 2012 <a href="http://www.rbs.fr" target="_blank"
 				title="<?php echo $localeManager->getLocales('webinstaller.index.toRbsSite'); ?>" hreflang="fr"> Ready Business System</a>
 		</p>
 	</div>

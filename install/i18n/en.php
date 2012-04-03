@@ -59,6 +59,7 @@ $i18nLocale['webinstaller.step2.otherLang'] = "Other languages:";
 $i18nLocale['webinstaller.step2.french'] = "French";
 $i18nLocale['webinstaller.step2.english'] = "English";
 $i18nLocale['webinstaller.step2.german'] = "German";
+$i18nLocale['webinstaller.step2.multilingual-help'] = "Select other available languages​​.";
 
 $i18nLocale['webinstaller.step3.label'] = "Step 3";
 $i18nLocale['webinstaller.step3.title'] = "Creation of the project";
