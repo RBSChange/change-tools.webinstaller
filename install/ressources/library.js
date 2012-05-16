@@ -96,6 +96,7 @@ var cmds = [
 		{cmd: "website.compile-bbcodes", label:i18nLocale.cmd_website_compile_bbcodes},
 
 		{cmd: "import-init-data", label:i18nLocale.cmd_import_init_data},
+		{cmd: "compile-config", label:i18nLocale.cmd_compile_config},
 		{cmd: "theme.install", label:i18nLocale.cmd_theme_install},
 		{cmd: "init-patch-db", label:i18nLocale.cmd_init_patch_db}
 ]

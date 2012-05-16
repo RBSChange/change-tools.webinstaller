@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ ! -d themes/webfactory ]; then
-	echo "Missing themes/webfactory directory. Please run get-theme.sh"
+if [ ! -d themes/default ]; then
+	echo "Missing themes/default directory. Please run get-theme.sh"
 	exit 1
 fi
 
@@ -18,5 +18,5 @@ cp pack/change.properties change.properties
 
 
 cp pack/partnersdemo.change.xml change.xml
-rm build/partnersdemo-3.5.5.*
-zip -r build/partnersdemo-3.5.5.zip change.properties change.xml profile config install themes index.php repository
+rm build/partnersdemo-3.6.0.*
+zip -r build/partnersdemo-3.6.0.zip change.properties change.xml profile config install themes index.php repository

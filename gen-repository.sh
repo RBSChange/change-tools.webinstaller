@@ -3,6 +3,9 @@
 rm -rf buildproject
 mkdir buildproject
 
+rm -rf repository
+mkdir repository
+
 cp pack/cmsecomos.change.xml buildproject/change.xml
 
 REMOTE_REPO=http://testrepo.rd.devlinux.france.rbs.fr
@@ -28,7 +31,7 @@ cd buildproject
 echo "build" > profile
 
 echo "*** Download framework-$VERSION from $REMOTE_REPO ***"
-wget $REMOTE_REPO/framework/framework-$VERSION.zip -O framework-$VERSION.zip 2>/dev/null
+curl $REMOTE_REPO/framework/framework-$VERSION.zip -o framework-$VERSION.zip
 
 if [ $? -ne 0 ]; then
   echo "Error downloading framework-$VERSION.zip"

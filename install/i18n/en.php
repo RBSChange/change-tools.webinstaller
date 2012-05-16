@@ -82,14 +82,14 @@ $i18nLocale['webinstaller.configmanager.smtpError'] = "Could not connect to the 
 $i18nLocale['webinstaller.configmanager.emptyTmpPathError'] = "Please enter the temporary folder.";
 $i18nLocale['webinstaller.configmanager.writeTmpPathError'] = "{tmpPath} is not writeable.";
 
-$i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_version'] = "The minimum PHP version is 5.1.6";
+$i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_version'] = "The minimum PHP version is {version}";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_safe_mode'] = "the value of the [safe_mode] configuration variable must be off";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_short_open_tag'] = "the value of the [short_open_tag] configuration variable must be off";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_default_charset'] = "the value of the [default_charset] configuration variable must be utf-8";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_allow_url_fopen'] = "the value of the [allow_url_fopen] configuration variable must be on";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_file_uploads'] = "the value of the [file_uploads] configuration variable must be on";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_magic_quotes_gpc'] = "the value of the [magic_quotes_gpc] configuration variable must be off";
-$i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_memory_limit'] = "the value of the [memory_limit] configuration variable must be at least 64M";
+$i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_memory_limit'] = "the value of the [memory_limit] configuration variable must be at least {memoryLimit}M";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_conf_home_writable'] = "the [{PROJECT_HOME_PATH}] folder is not writeable";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_conf_subdir_home_writable'] = "none of the sub-folders in [{PROJECT_HOME_PATH}] are writeable";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_conf_global_writable'] = "the [{PROJECT_HOME_PATH}/change.xml] file is not writeable";

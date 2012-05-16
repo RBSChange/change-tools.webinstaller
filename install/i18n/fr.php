@@ -82,14 +82,14 @@ $i18nLocale['webinstaller.configmanager.smtpError'] = "Impossible de se connecte
 $i18nLocale['webinstaller.configmanager.emptyTmpPathError'] = "Veuillez renseigner le dossier temporaire.";
 $i18nLocale['webinstaller.configmanager.writeTmpPathError'] = "{tmpPath} n'est pas accessible en écriture.";
 
-$i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_version'] = "La version de php minimum est 5.1.6";
+$i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_version'] = "La version de php minimum est {version}";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_safe_mode'] = "la valeur de la variable de configuration [safe_mode] doit être à off";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_short_open_tag'] = "la valeur de la variable de configuration [short_open_tag] doit être à off";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_default_charset'] = "la valeur de la variable de configuration [default_charset] doit être à utf-8";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_allow_url_fopen'] = "la valeur de la variable de configuration [allow_url_fopen] doit être à on";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_file_uploads'] = "la valeur de la variable de configuration [file_uploads] doit être à on";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_magic_quotes_gpc'] = "la valeur de la variable de configuration [magic_quotes_gpc] doit être à off";
-$i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_memory_limit'] = "la valeur de la variable de configuration [memory_limit] doit être à 64M minimum";
+$i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ini_memory_limit'] = "la valeur de la variable de configuration [memory_limit] doit être à {memoryLimit}M minimum";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_conf_home_writable'] = "le dossier [{PROJECT_HOME_PATH}] n'est pas accessible en écriture";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_conf_subdir_home_writable'] = "l'ensemble des sous-dossiers de [{PROJECT_HOME_PATH}] ne sont pas accessibles en écriture";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_conf_global_writable'] = "le fichier [{PROJECT_HOME_PATH}/change.xml] n'est pas accessible en écriture";

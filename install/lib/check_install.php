@@ -2,10 +2,13 @@
 $systemCheck = array();
 include PROJECT_HOME_PATH . '/install/lib/assert.php';
 
-$systemCheck['php_version'] = assert_php_version('5.2.4');
+define('PHP_VERSION', '5.3.0');
+define('MEMORY_LIMIT', 192);
+
+$systemCheck['php_version'] = assert_php_version(PHP_VERSION);
 $systemCheck['php_ini_safe_mode'] = assert_ini('safe_mode', false);
 $systemCheck['php_ini_file_uploads'] = assert_ini('file_uploads');
-$systemCheck['php_ini_memory_limit'] = assert_ini_size_gt('memory_limit', 64);
+$systemCheck['php_ini_memory_limit'] = assert_ini_size_gt('memory_limit', MEMORY_LIMIT);
 
 $systemCheck['php_conf_home_writable'] = assert_writable(PROJECT_HOME_PATH);
 $systemCheck['php_conf_global_writable'] = assert_writable(PROJECT_HOME_PATH . '/change.xml');
@@ -14,11 +17,11 @@ $systemCheck['php_conf_project_writable'] = assert_writable(PROJECT_HOME_PATH . 
 
 foreach (scandir(PROJECT_HOME_PATH) as $dir)
 {
-	if ($dir == "." || $dir == ".." || !is_dir(PROJECT_HOME_PATH .'/'.$dir))
+	if ($dir == "." || $dir == ".." || !is_dir(PROJECT_HOME_PATH . '/' . $dir))
 	{
 		continue;
 	}
-	if (!assert_writable(PROJECT_HOME_PATH .'/'.$dir))
+	if (!assert_writable(PROJECT_HOME_PATH . '/' . $dir))
 	{
 		$systemCheck['php_conf_subdir_home_writable'] = false;
 		break;
@@ -59,8 +62,9 @@ if ($systemCheck['php_ext_curl'] && $systemCheck['php_conf_home_writable'])
 
 //$systemCheck['error'] = false;
 
+
 $systemCheckOk = true;
-foreach ($systemCheck as $key => $isOk) 
+foreach ($systemCheck as $key => $isOk)
 {
 	$systemCheckOk = $systemCheckOk && $isOk;
 	if (!$systemCheckOk)
@@ -74,104 +78,107 @@ function generateErrorReporting($systemCheck)
 	$localeManager = LocaleManager::getInstance();
 	
 	$result = array();
-	foreach ($systemCheck as $key => $isOk) 
+	foreach ($systemCheck as $key => $isOk)
 	{
-		if ($isOk) {continue;}
-		switch ($key) 
+		if ($isOk)
 		{
-			case 'php_version':
-				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_version');
+			continue;
+		}
+		switch ($key)
+		{
+			case 'php_version' :
+				$result[] = str_replace("{version}", PHP_VERSION, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_version'));
 				break;
-			case 'php_ini_safe_mode':
+			case 'php_ini_safe_mode' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_safe_mode');
 				break;
-			case 'php_ini_short_open_tag':
+			case 'php_ini_short_open_tag' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_short_open_tag');
 				break;
-			case 'php_ini_default_charset':
+			case 'php_ini_default_charset' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_default_charset');
 				break;
-			case 'php_ini_allow_url_fopen':
+			case 'php_ini_allow_url_fopen' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_allow_url_fopen');
 				break;
-			case 'php_ini_file_uploads':
+			case 'php_ini_file_uploads' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_file_uploads');
 				break;
-			case 'php_ini_magic_quotes_gpc':
+			case 'php_ini_magic_quotes_gpc' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_magic_quotes_gpc');
 				break;
-			case 'php_ini_memory_limit':
-				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_memory_limit');
-				break;	
-			case 'php_conf_home_writable':
+			case 'php_ini_memory_limit' :
+				$result[] = str_replace("{memoryLimit}", MEMORY_LIMIT, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_memory_limit'));
+				break;
+			case 'php_conf_home_writable' :
 				echo "#1";
 				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_home_writable'));
 				break;
-			case 'php_conf_subdir_home_writable':
+			case 'php_conf_subdir_home_writable' :
 				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_subdir_home_writable'));
 				break;
-			case 'php_conf_global_writable':
+			case 'php_conf_global_writable' :
 				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_global_writable'));
 				break;
-			case 'php_conf_change_properties_writable':
+			case 'php_conf_change_properties_writable' :
 				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_change_properties_writable'));
 				break;
-			case 'php_conf_project_writable':
+			case 'php_conf_project_writable' :
 				$result[] = str_replace("{PROJECT_HOME_PATH}", PROJECT_HOME_PATH, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_conf_project_writable'));
 				break;
-			case 'php_ext_posix':
+			case 'php_ext_posix' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_posix');
 				break;
-			case 'php_ext_spl':
+			case 'php_ext_spl' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_spl');
 				break;
-			case 'php_ext_reflection':
+			case 'php_ext_reflection' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_reflection');
 				break;
-			case 'php_ext_curl':
+			case 'php_ext_curl' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_curl');
 				break;
-			case 'php_ext_pdo':
+			case 'php_ext_pdo' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_pdo');
 				break;
-			case 'php_ext_xml_dom':
+			case 'php_ext_xml_dom' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xml_dom');
 				break;
-			case 'php_ext_xml_w':
+			case 'php_ext_xml_w' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xml_w');
-				break;				
-			case 'php_ext_xml_r':
+				break;
+			case 'php_ext_xml_r' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xml_r');
-				break;				
-			case 'php_ext_xml_sxml':
+				break;
+			case 'php_ext_xml_sxml' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xml_sxml');
-				break;					
-			case 'php_ext_xsl':
+				break;
+			case 'php_ext_xsl' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xsl');
 				break;
-			case 'php_ext_string_mbstring':
+			case 'php_ext_string_mbstring' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_string_mbstring');
-				break;					
-			case 'php_ext_string_iconv':
+				break;
+			case 'php_ext_string_iconv' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_string_iconv');
-				break;					
-			case 'php_ext_gd':
+				break;
+			case 'php_ext_gd' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_gd');
 				break;
-			case 'php_ext_json':
+			case 'php_ext_json' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_json');
 				break;
-			case 'system_symlink':
+			case 'system_symlink' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.system_symlink');
 				break;
-			case 'system_selfview':
+			case 'system_selfview' :
 				$result[] = str_replace("{SERVER_HTTP_HOST}", $_SERVER["HTTP_HOST"], $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.system_selfview'));
 				break;
-			case 'system_rewrite':
+			case 'system_rewrite' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.system_rewrite');
 				break;
 		}
-		
+	
 	}
 	return $result;
 }
