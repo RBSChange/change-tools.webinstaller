@@ -100,6 +100,7 @@ $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ext_spl'] = "t
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ext_reflection'] = "the [Reflection] extension is not installed";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ext_curl'] = "the [curl] extension is not installed";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ext_pdo'] = "the [pdo] [pdo_mysql] extension is not installed";
+$i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ext_zip'] = "the [zip] extension is not installed";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ext_xml_dom'] = "the [dom] extension is not installed";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ext_xml_w'] = "the [xmlwriter] extension is not installed";
 $i18nLocale['webinstaller.checkinstall.generateErrorReporting.php_ext_xml_r'] = "the [xmlreader] extension is not installed";

@@ -17,8 +17,7 @@
 	php_flag always_populate_raw_post_data off
 	
 	php_value max_execution_time 60
-	php_value memory_limit 192M
-	
+
 	php_value post_max_size 100M
 	php_value upload_max_filesize 100M
 </IfModule>
@@ -34,8 +33,7 @@
 	php_flag always_populate_raw_post_data off
 	
 	php_value max_execution_time 60
-	php_value memory_limit 192M
-	
+
 	php_value post_max_size 100M
 	php_value upload_max_filesize 100M
 </IfModule>

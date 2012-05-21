@@ -37,6 +37,7 @@ $systemCheck['php_ext_spl'] = assert_ext('SPL') || assert_class('ArrayObject');
 $systemCheck['php_ext_reflection'] = assert_ext('Reflection');
 $systemCheck['php_ext_curl'] = assert_ext('curl') || assert_function('curl_init');
 $systemCheck['php_ext_pdo'] = assert_class('PDO') && assert_ext('pdo_mysql');
+$systemCheck['php_ext_zip'] = assert_class('ZipArchive');
 
 $systemCheck['php_ext_xml_dom'] = assert_class('DOMDocument');
 $systemCheck['php_ext_xml_w'] = assert_class('xmlwriter');
@@ -140,6 +141,9 @@ function generateErrorReporting($systemCheck)
 				break;
 			case 'php_ext_pdo' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_pdo');
+				break;
+			case 'php_ext_zip' :
+				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_zip');
 				break;
 			case 'php_ext_xml_dom' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ext_xml_dom');
