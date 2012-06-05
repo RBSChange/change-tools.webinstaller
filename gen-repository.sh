@@ -8,7 +8,7 @@ mkdir repository
 
 cp pack/cmsecomos.change.xml buildproject/change.xml
 
-REMOTE_REPO=http://testrepo.rd.devlinux.france.rbs.fr
+REMOTE_REPO=http://update.rbschange.fr
 VERSION=3.6.0
 
 echo "
