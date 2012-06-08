@@ -4,75 +4,75 @@
 	xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>partnersdemo</name>
 	<type>change-project</type>
-	<version>3.6.0</version>
+	<version>3.6.1</version>
 	<description>Partners demo</description>
 	<dependencies>
-		<framework>3.6.0</framework>
+		<framework>3.6.1</framework>
 		<modules>
 			<!-- e-Commerce modules -->					
-			<module>catalog-3.6.0</module>
-			<module>order-3.6.0</module>
-			<module>customer-3.6.0</module>
-			<module>brand-3.6.0</module>
-			<module>shipping-3.6.0</module>
-			<module>payment-3.6.0</module>
-			<module>productupdater-3.6.0</module>
-			<module>paybox-3.6.0</module>
-			<module>shoppingmail-3.6.0</module>
+			<module>catalog-3.6.1</module>
+			<module>order-3.6.1</module>
+			<module>customer-3.6.1</module>
+			<module>brand-3.6.1</module>
+			<module>shipping-3.6.1</module>
+			<module>payment-3.6.1</module>
+			<module>productupdater-3.6.1</module>
+			<module>paybox-3.6.1</module>
+			<module>shoppingmail-3.6.1</module>
 	
 			<!-- Open Source modules -->
-			<module>event-3.6.0</module>
-			<module>bookmarks-3.6.0</module>
-			<module>blog-3.6.0</module>	
-			<module>comment-3.6.0</module>
-			<module>inquiry-3.6.0</module>
-			<module>faq-3.6.0</module>
-			<module>forums-3.6.0</module>
-			<module>photoalbum-3.6.0</module>
-			<module>markergmaps-3.6.0</module>
-			<module>mapping-3.6.0</module>	
-			<module>twitterconnect-3.6.0</module>
-			<module>lexicon-3.6.0</module>
-			<module>privatemessaging-3.6.0</module>			
-			<module>joboffer-3.6.0</module>			
-			<module>sharethis-3.6.0</module>		
-			<module>videos-3.6.0</module>	
-			<module>download-3.6.0</module>	
-			<module>polls-3.6.0</module>	
-			<module>richtext-3.6.0</module>	
-			<module>statictext-3.6.0</module>
-			<module>projectcare-3.6.0</module>
-			<module>gmaps-3.6.0</module>
-			<module>mysqlnotif-3.6.0</module>
-			<module>testing-3.6.0</module>
+			<module>event-3.6.1</module>
+			<module>bookmarks-3.6.1</module>
+			<module>blog-3.6.1</module>	
+			<module>comment-3.6.1</module>
+			<module>inquiry-3.6.1</module>
+			<module>faq-3.6.1</module>
+			<module>forums-3.6.1</module>
+			<module>photoalbum-3.6.1</module>
+			<module>markergmaps-3.6.1</module>
+			<module>mapping-3.6.1</module>	
+			<module>twitterconnect-3.6.1</module>
+			<module>lexicon-3.6.1</module>
+			<module>privatemessaging-3.6.1</module>			
+			<module>joboffer-3.6.1</module>			
+			<module>sharethis-3.6.1</module>		
+			<module>videos-3.6.1</module>	
+			<module>download-3.6.1</module>	
+			<module>polls-3.6.1</module>	
+			<module>richtext-3.6.1</module>	
+			<module>statictext-3.6.1</module>
+			<module>projectcare-3.6.1</module>
+			<module>gmaps-3.6.1</module>
+			<module>mysqlnotif-3.6.1</module>
+			<module>testing-3.6.1</module>
 									
 			<!-- Commercial modules -->		
-			<module>googleshopping-3.6.0</module>
-			<module>mysqlstock-3.6.0</module>
-			<module>dashstat-3.6.0</module>
-			<module>emailing-3.6.0</module>
-			<module>productexporter-3.6.0</module>
-			<module>facebookconnect-3.6.0</module>
-			<module>ads-3.6.0</module>
-			<module>survey-3.6.0</module>
-			<module>loyalty-3.6.0</module>
-			<module>productreturns-3.6.0</module>			
-			<module>marketing-3.6.0</module>
-			<module>ecomextended-3.6.0</module>
-			<module>socolissimo-3.6.0</module>
-			<module>store-3.6.0</module>
-			<module>mobileapps-3.6.0</module>
+			<module>googleshopping-3.6.1</module>
+			<module>mysqlstock-3.6.1</module>
+			<module>dashstat-3.6.1</module>
+			<module>emailing-3.6.1</module>
+			<module>productexporter-3.6.1</module>
+			<module>facebookconnect-3.6.1</module>
+			<module>ads-3.6.1</module>
+			<module>survey-3.6.1</module>
+			<module>loyalty-3.6.1</module>
+			<module>productreturns-3.6.1</module>			
+			<module>marketing-3.6.1</module>
+			<module>ecomextended-3.6.1</module>
+			<module>socolissimo-3.6.1</module>
+			<module>store-3.6.1</module>
+			<module>mobileapps-3.6.1</module>
 			
 			<!-- Pack Performance modules -->
-			<module>atosserver-3.6.0</module>
-			<module>support-3.6.0</module>	
-			<module>synchronizer-3.6.0</module>			
-			<module>privatesales-3.6.0</module>	
-			<module>ecomwebservices-3.6.0</module>
+			<module>atosserver-3.6.1</module>
+			<module>support-3.6.1</module>	
+			<module>synchronizer-3.6.1</module>			
+			<module>privatesales-3.6.1</module>	
+			<module>ecomwebservices-3.6.1</module>
 
 			<!-- Cluster modules
-			<module>clustersafe-3.6.0</module>
-			<module>clusterscale-3.6.0</module>
+			<module>clustersafe-3.6.1</module>
+			<module>clusterscale-3.6.1</module>
 			 -->
         </modules>
 	</dependencies>
