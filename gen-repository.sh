@@ -22,6 +22,8 @@ LOCAL_REPOSITORY=$PWD/repository
 # PEAR installation. It is recommanded to manage a pear repository dedicated to your Change installations
 PEAR_INCLUDE_PATH=$PWD/buildproject/pear
 
+PROJECT_LICENSE=C4-60396-4FD885EB35018
+
 # By default, WWW_GROUP is setted to 'www-data'.
 # This value is ok for debian and ubuntu distributions for instance
 WWW_GROUP=" > buildproject/change.properties
