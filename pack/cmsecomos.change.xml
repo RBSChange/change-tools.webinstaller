@@ -4,45 +4,46 @@
 	xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>cmsecomos</name>
 	<type>change-project</type>
-	<version>3.6.1</version>
+	<version>3.6.2</version>
 	<description>Open Source CMS e-Commerce</description>
 	<dependencies>
-		<framework>3.6.1</framework>
+		<framework>3.6.2</framework>
 		<modules>
 			<!-- e-Commerce modules -->					
-			<module>catalog-3.6.1</module>
-			<module>order-3.6.1</module>
-			<module>customer-3.6.1</module>
-			<module>brand-3.6.1</module>
-			<module>shipping-3.6.1</module>
-			<module>payment-3.6.1</module>	
-			<module>productupdater-3.6.1</module>
-			<module>paybox-3.6.1</module>
-			<module>shoppingmail-3.6.1</module>
+			<module>catalog-3.6.2</module>
+			<module>order-3.6.2</module>
+			<module>customer-3.6.2</module>
+			<module>brand-3.6.2</module>
+			<module>shipping-3.6.2</module>
+			<module>payment-3.6.2</module>	
+			<module>productupdater-3.6.2</module>
+			<module>paybox-3.6.2</module>
+			<module>shoppingmail-3.6.2</module>
 			
 			<!-- Open Source modules -->			
-			<module>event-3.6.1</module>
-			<module>bookmarks-3.6.1</module>
-			<module>blog-3.6.1</module>	
-			<module>comment-3.6.1</module>
-			<module>inquiry-3.6.1</module>
-			<module>download-3.6.1</module>
-			<module>faq-3.6.1</module>
-			<module>forums-3.6.1</module>
-			<module>photoalbum-3.6.1</module>
-			<module>markergmaps-3.6.1</module>
-			<module>mapping-3.6.1</module>
-          	<module>polls-3.6.1</module>	
-			<module>twitterconnect-3.6.1</module>
-			<module>lexicon-3.6.1</module>
-			<module>privatemessaging-3.6.1</module>			
-			<module>joboffer-3.6.1</module>			
-			<module>sharethis-3.6.1</module>		
-			<module>videos-3.6.1</module>
-			<module>statictext-3.6.1</module>
-			<module>projectcare-3.6.1</module>
-			<module>gmaps-3.6.1</module>
-			<module>mysqlnotif-3.6.1</module>
+			<module>event-3.6.2</module>
+			<module>bookmarks-3.6.2</module>
+			<module>blog-3.6.2</module>	
+			<module>comment-3.6.2</module>
+			<module>inquiry-3.6.2</module>
+			<module>download-3.6.2</module>
+			<module>faq-3.6.2</module>
+			<module>forums-3.6.2</module>
+			<module>photoalbum-3.6.2</module>
+			<module>markergmaps-3.6.2</module>
+			<module>mapping-3.6.2</module>
+	          	<module>polls-3.6.2</module>	
+			<module>twitterconnect-3.6.2</module>
+			<module>lexicon-3.6.2</module>
+			<module>privatemessaging-3.6.2</module>			
+			<module>joboffer-3.6.2</module>			
+			<module>sharethis-3.6.2</module>		
+			<module>videos-3.6.2</module>
+			<module>statictext-3.6.2</module>
+			<module>projectcare-3.6.2</module>
+			<module>gmaps-3.6.2</module>
+			<module>mysqlnotif-3.6.2</module>
+			<module>sample-3.6.2</module>
 		</modules>
 	</dependencies>
 </change>

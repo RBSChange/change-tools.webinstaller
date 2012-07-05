@@ -95,7 +95,70 @@ var cmds = [
 		{cmd: "compile-htaccess", label:i18nLocale.cmd_compile_htaccess},
 		{cmd: "website.compile-bbcodes", label:i18nLocale.cmd_website_compile_bbcodes},
 
+		//{cmd: "import-init-data", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data zone", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data users", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data website", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data media", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data generic", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data dashboard", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data workflow", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data form", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data filter", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data notification", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data contactcard", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data list", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data statictext", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data preferences", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data rss", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data sample", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data skin", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data task", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data theme", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data uixul", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data useractionlogger", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data webservices", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data blog", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data bookmarks", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data comment", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data download", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data event", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data faq", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data forums", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data gmaps", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data i18n", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data joboffer", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data inquiry", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data lexicon", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data photoalbum", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data polls", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data privatemessaging", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data productupdater", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data seo", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data sharethis", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data videos", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data twitterconnect", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data mapping", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data markergmaps", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data markergas", label:i18nLocale.cmd_import_init_data},
+		
+		{cmd: "import-init-data brand", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data shipping", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data payment", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data paybox", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data catalog", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data customer", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data order", label:i18nLocale.cmd_import_init_data},
+		
+		{cmd: "import-init-data projectcare", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data mysqlnotif", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data mysqlindexer", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data updater", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data shoppingmail", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data solrsearch", label:i18nLocale.cmd_import_init_data},
+		
 		{cmd: "import-init-data", label:i18nLocale.cmd_import_init_data},
+		
 		{cmd: "compile-config", label:i18nLocale.cmd_compile_config},
 		{cmd: "theme.install", label:i18nLocale.cmd_theme_install},
 		{cmd: "init-patch-db", label:i18nLocale.cmd_init_patch_db}
@@ -103,18 +166,45 @@ var cmds = [
 
 function addSamples(sampleType)
 {
-	cmds.push({cmd: "import-data website sample.xml", label:i18nLocale.cmd_import_data_website_sample_xml});
-	cmds.push({cmd: "import-data form sample.xml", label:i18nLocale.cmd_import_data_form_sample_xml});	
-	cmds.push({cmd: "import-data users sample.xml", label:i18nLocale.cmd_import_data_users_sample_xml});
+	cmds.push({cmd: "import-data sample website/sample.xml", label:i18nLocale.cmd_import_data_website_sample_xml});
+	cmds.push({cmd: "import-data sample media/sample.xml", label:i18nLocale.cmd_import_data_media_sample_xml});
+	cmds.push({cmd: "import-data sample users/sample.xml", label:i18nLocale.cmd_import_data_users_sample_xml});
+	cmds.push({cmd: "import-data sample workflow/sample.xml", label:i18nLocale.cmd_import_data_workflow_sample_xml});
+	cmds.push({cmd: "import-data sample form/sample.xml", label:i18nLocale.cmd_import_data_form_sample_xml});
+	cmds.push({cmd: "import-data sample notification/sample.xml", label:i18nLocale.cmd_import_data_notification_sample_xml});
+	cmds.push({cmd: "import-data sample contactcard/sample.xml", label:i18nLocale.cmd_import_data_contactcard_sample_xml});
+	cmds.push({cmd: "import-data sample list/sample.xml", label:i18nLocale.cmd_import_data_list_sample_xml});
+	cmds.push({cmd: "import-data sample statictext/sample.xml", label:i18nLocale.cmd_import_data_statictext_sample_xml});
+	cmds.push({cmd: "import-data sample rss/sample.xml", label:i18nLocale.cmd_import_data_rss_sample_xml});
 	
 	switch (sampleType) 
 	{
 	 	case "cmsecomos":
-	 		cmds.push({cmd: "import-data sharethis sample.xml", label:i18nLocale.cmd_import_data_sharethis_sample_xml});
+	 		cmds.push({cmd: "import-data sample sharethis/sample.xml", label:i18nLocale.cmd_import_data_sharethis_sample_xml});
+	 		cmds.push({cmd: "import-data sample forums/sample.xml", label:i18nLocale.cmd_import_data_forums_sample_xml});
+	 		cmds.push({cmd: "import-data sample blog/sample.xml", label:i18nLocale.cmd_import_data_blog_sample_xml});
+	 		cmds.push({cmd: "import-data sample download/sample.xml", label:i18nLocale.cmd_import_data_download_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample faq/sample.xml", label:i18nLocale.cmd_import_data_faq_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample lexicon/sample.xml", label:i18nLocale.cmd_import_data_lexicon_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample inquiry/sample.xml", label:i18nLocale.cmd_import_data_inquiry_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample joboffer/sample.xml", label:i18nLocale.cmd_import_data_joboffer_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample videos/sample.xml", label:i18nLocale.cmd_import_data_videos_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample polls/sample.xml", label:i18nLocale.cmd_import_data_polls_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample event/sample.xml", label:i18nLocale.cmd_import_data_event_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample bookmarks/sample.xml", label:i18nLocale.cmd_import_data_bookmarks_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample privatemessaging/sample.xml", label:i18nLocale.cmd_import_data_privatemessaging_sample_xml}); 
 	 	case "ecommercecore":
-	 		cmds.push({cmd: "import-data catalog default.xml", label:i18nLocale.cmd_import_data_catalog_default_xml});
-	 		cmds.push({cmd: "import-data customer default.xml", label:i18nLocale.cmd_import_data_customer_default_xml});
-	 		cmds.push({cmd: "import-data order default.xml", label:i18nLocale.cmd_import_data_order_default_xml});
+	 		cmds.push({cmd: "import-data sample brand/sample.xml", label:i18nLocale.cmd_import_data_brand_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample shipping/sample.xml", label:i18nLocale.cmd_import_data_shipping_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample payment/sample.xml", label:i18nLocale.cmd_import_data_payment_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample paybox/sample.xml", label:i18nLocale.cmd_import_data_paybox_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample catalog/default.xml", label:i18nLocale.cmd_import_data_catalog_default_xml});
+	 		cmds.push({cmd: "import-data sample catalog/sample.xml", label:i18nLocale.cmd_import_data_catalog_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample customer/default.xml", label:i18nLocale.cmd_import_data_customer_default_xml});
+	 		cmds.push({cmd: "import-data sample order/default.xml", label:i18nLocale.cmd_import_data_order_default_xml});
+	 		cmds.push({cmd: "import-data sample customer/sample.xml", label:i18nLocale.cmd_import_data_customer_sample_xml}); 
+	 		cmds.push({cmd: "import-data sample order/sample.xml", label:i18nLocale.cmd_import_data_order_sample_xml}); 
+	 		cmds.push({cmd: "catalog.compile-catalog --clear", label:i18nLocale.cmd_catalog_compile_catalog});
 			break;
 	}
 }

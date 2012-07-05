@@ -2,10 +2,10 @@
 $systemCheck = array();
 include PROJECT_HOME_PATH . '/install/lib/assert.php';
 
-define('PHP_VERSION', '5.3.0');
-define('MEMORY_LIMIT', 192);
+define('PHP_MIN_VERSION', '5.3.0');
+define('MEMORY_LIMIT', 128);
 
-$systemCheck['php_version'] = assert_php_version(PHP_VERSION);
+$systemCheck['php_version'] = assert_php_version(PHP_MIN_VERSION);
 $systemCheck['php_ini_safe_mode'] = assert_ini('safe_mode', false);
 $systemCheck['php_ini_file_uploads'] = assert_ini('file_uploads');
 $systemCheck['php_ini_memory_limit'] = assert_ini_size_gt('memory_limit', MEMORY_LIMIT);
@@ -88,7 +88,7 @@ function generateErrorReporting($systemCheck)
 		switch ($key)
 		{
 			case 'php_version' :
-				$result[] = str_replace("{version}", PHP_VERSION, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_version'));
+				$result[] = str_replace("{version}", PHP_MIN_VERSION, $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_version'));
 				break;
 			case 'php_ini_safe_mode' :
 				$result[] = $localeManager->getLocales('webinstaller.checkinstall.generateErrorReporting.php_ini_safe_mode');

@@ -35,12 +35,12 @@ class ConfigManager
 	/**
 	 * @var string
 	 */
-	public $productVersion = "3.6.1";
+	public $productVersion = "3.6.2";
 
 	/**
 	 * @var string
 	 */
-	public $frameworkRepo = "3.6.1";
+	public $frameworkRepo = "3.6.2";
 
 	public function getProductTitle()
 	{
@@ -90,9 +90,9 @@ class ConfigManager
 		else
 		{
 			$productName = "CMS Core";
-			$productVersion = "3.6.1";
+			$productVersion = "3.6.2";
 			$productType = "cmscore";
-			$frameworkRepo = "3.6.1";
+			$frameworkRepo = "3.6.2";
 		}
 
 		$this->productName = $productName;

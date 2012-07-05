@@ -6,7 +6,7 @@ mkdir buildproject
 cp pack/partnersdemo.change.xml buildproject/change.xml
 
 REMOTE_REPO=http://testrepo.rd.devlinux.france.rbs.fr
-VERSION=3.5.5
+VERSION=3.6.2
 
 echo "
 # Change remote repositories

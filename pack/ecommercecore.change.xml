@@ -4,25 +4,26 @@
 	xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>ecommercecore</name>
 	<type>change-project</type>
-	<version>3.6.1</version>
+	<version>3.6.2</version>
 	<description>e-Commerce Core</description>
 	<dependencies>
-		<framework>3.6.1</framework>
+		<framework>3.6.2</framework>
 		<modules>
 			<!-- e-Commerce modules -->					
-			<module>catalog-3.6.1</module>
-			<module>order-3.6.1</module>
-			<module>customer-3.6.1</module>
-			<module>brand-3.6.1</module>
-			<module>shipping-3.6.1</module>
-			<module>payment-3.6.1</module>	
-			<module>productupdater-3.6.1</module>
-			<module>paybox-3.6.1</module>
-			<module>shoppingmail-3.6.1</module>
+			<module>catalog-3.6.2</module>
+			<module>order-3.6.2</module>
+			<module>customer-3.6.2</module>
+			<module>brand-3.6.2</module>
+			<module>shipping-3.6.2</module>
+			<module>payment-3.6.2</module>	
+			<module>productupdater-3.6.2</module>
+			<module>paybox-3.6.2</module>
+			<module>shoppingmail-3.6.2</module>
 
 			<!-- Open Source modules -->
-			<module>comment-3.6.1</module>
-			<module>statictext-3.6.1</module>			
+			<module>comment-3.6.2</module>
+			<module>statictext-3.6.2</module>
+			<module>sample-3.6.2</module>			
 		</modules>
 	</dependencies>
 </change>

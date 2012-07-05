@@ -18,5 +18,5 @@ cp pack/change.properties change.properties
 
 
 cp pack/partnersdemo.change.xml change.xml
-rm build/partnersdemo-3.6.1.*
-zip -r build/partnersdemo-3.6.1.zip change.properties change.xml profile config install themes index.php repository
+rm build/partnersdemo-3.6.2.*
+zip -r build/partnersdemo-3.6.2.zip change.properties change.xml profile config install themes index.php repository
