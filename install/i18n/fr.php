@@ -54,12 +54,14 @@ $i18nLocale['webinstaller.step2.installTitle'] = "Installer votre projet";
 $i18nLocale['webinstaller.step2.install'] = "Installation du projet";
 $i18nLocale['webinstaller.step2.languageAlt'] = "Langue du site";
 $i18nLocale['webinstaller.step2.language'] = "Langue principale :";
-$i18nLocale['webinstaller.step2.language-help'] = "Sélectionner la langue principale de votre site et de votre backoffice ainsi que les langues supplémentaires si votre site est multilingue.";
+$i18nLocale['webinstaller.step2.language-help'] = "Sélectionnez la langue principale de votre site et de votre backoffice ainsi que les langues supplémentaires si votre site est multilingue.";
 $i18nLocale['webinstaller.step2.otherLang'] = "Autres langues :";
 $i18nLocale['webinstaller.step2.french'] = "Français";
 $i18nLocale['webinstaller.step2.english'] = "Anglais";
 $i18nLocale['webinstaller.step2.german'] = "Allemand";
-$i18nLocale['webinstaller.step2.multilingual-help'] = "Sélectionner les autres langues disponibles.";
+$i18nLocale['webinstaller.step2.multilingual-help'] = "Sélectionnez les autres langues disponibles.";
+$i18nLocale['webinstaller.step2.key'] = "Clé de licence";
+$i18nLocale['webinstaller.step2.key-help'] = "Saisissez votre clé de licence. ex:C4-xxxxx-xxxxxxxxxxxxx";
 
 $i18nLocale['webinstaller.step3.label'] = "Etape 3";
 $i18nLocale['webinstaller.step3.title'] = "Création du projet";

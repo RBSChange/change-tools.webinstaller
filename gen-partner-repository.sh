@@ -5,7 +5,7 @@ mkdir buildproject
 
 cp pack/partnersdemo.change.xml buildproject/change.xml
 
-REMOTE_REPO=http://testrepo.rd.devlinux.france.rbs.fr
+REMOTE_REPO=http://update.rbschange.fr
 VERSION=3.6.2
 
 echo "
@@ -18,6 +18,8 @@ LOCAL_REPOSITORY=$PWD/repository
 
 # PEAR installation. It is recommanded to manage a pear repository dedicated to your Change installations
 PEAR_INCLUDE_PATH=$PWD/buildproject/pear
+
+PROJECT_LICENSE=C4-56395-4F75CDD4401ED
 
 # By default, WWW_GROUP is setted to 'www-data'.
 # This value is ok for debian and ubuntu distributions for instance

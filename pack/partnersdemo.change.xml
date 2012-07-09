@@ -62,7 +62,6 @@
 			<module>ecomextended-3.6.2</module>
 			<module>socolissimo-3.6.2</module>
 			<module>store-3.6.2</module>
-			<module>mobileapps-3.6.2</module>
 			
 			<!-- Pack Performance modules -->
 			<module>atosserver-3.6.2</module>
@@ -70,11 +69,6 @@
 			<module>synchronizer-3.6.2</module>			
 			<module>privatesales-3.6.2</module>	
 			<module>ecomwebservices-3.6.2</module>
-
-			<!-- Cluster modules
-			<module>clustersafe-3.6.2</module>
-			<module>clusterscale-3.6.2</module>
-			 -->
         </modules>
 	</dependencies>
 </change>

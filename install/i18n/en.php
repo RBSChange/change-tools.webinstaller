@@ -60,6 +60,8 @@ $i18nLocale['webinstaller.step2.french'] = "French";
 $i18nLocale['webinstaller.step2.english'] = "English";
 $i18nLocale['webinstaller.step2.german'] = "German";
 $i18nLocale['webinstaller.step2.multilingual-help'] = "Select other available languages​​.";
+$i18nLocale['webinstaller.step2.key'] = "Licence key";
+$i18nLocale['webinstaller.step2.key-help'] = "Enter your license key. ie:C4-xxxxx-xxxxxxxxxxxxx";
 
 $i18nLocale['webinstaller.step3.label'] = "Step 3";
 $i18nLocale['webinstaller.step3.title'] = "Creation of the project";
