@@ -21,4 +21,4 @@ rm -rf fckeditorbrowser
 rm -rf changeicons
 
 rm -rf changeicons .computedChangeComponents.ser .htaccess change.properties change.xml configdatas.php
-rm -rf changecron.php changescriptexec.php sessionKeepAlive.php site-disabled.php xchrome_controller.php xul_controller.php
+rm -rf changecron.php changecronconsole.php changescriptexec.php sessionKeepAlive.php site-disabled.php xchrome_controller.php xul_controller.php

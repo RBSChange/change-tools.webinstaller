@@ -166,45 +166,13 @@ var cmds = [
 
 function addSamples(sampleType)
 {
-	cmds.push({cmd: "import-data sample website/sample.xml", label:i18nLocale.cmd_import_data_website_sample_xml});
-	cmds.push({cmd: "import-data sample media/sample.xml", label:i18nLocale.cmd_import_data_media_sample_xml});
-	cmds.push({cmd: "import-data sample users/sample.xml", label:i18nLocale.cmd_import_data_users_sample_xml});
-	cmds.push({cmd: "import-data sample workflow/sample.xml", label:i18nLocale.cmd_import_data_workflow_sample_xml});
-	cmds.push({cmd: "import-data sample form/sample.xml", label:i18nLocale.cmd_import_data_form_sample_xml});
-	cmds.push({cmd: "import-data sample notification/sample.xml", label:i18nLocale.cmd_import_data_notification_sample_xml});
-	cmds.push({cmd: "import-data sample contactcard/sample.xml", label:i18nLocale.cmd_import_data_contactcard_sample_xml});
-	cmds.push({cmd: "import-data sample list/sample.xml", label:i18nLocale.cmd_import_data_list_sample_xml});
-	cmds.push({cmd: "import-data sample statictext/sample.xml", label:i18nLocale.cmd_import_data_statictext_sample_xml});
-	cmds.push({cmd: "import-data sample rss/sample.xml", label:i18nLocale.cmd_import_data_rss_sample_xml});
-	
 	switch (sampleType) 
 	{
-	 	case "cmsecomos":
-	 		cmds.push({cmd: "import-data sample sharethis/sample.xml", label:i18nLocale.cmd_import_data_sharethis_sample_xml});
-	 		cmds.push({cmd: "import-data sample forums/sample.xml", label:i18nLocale.cmd_import_data_forums_sample_xml});
-	 		cmds.push({cmd: "import-data sample blog/sample.xml", label:i18nLocale.cmd_import_data_blog_sample_xml});
-	 		cmds.push({cmd: "import-data sample download/sample.xml", label:i18nLocale.cmd_import_data_download_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample faq/sample.xml", label:i18nLocale.cmd_import_data_faq_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample lexicon/sample.xml", label:i18nLocale.cmd_import_data_lexicon_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample inquiry/sample.xml", label:i18nLocale.cmd_import_data_inquiry_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample joboffer/sample.xml", label:i18nLocale.cmd_import_data_joboffer_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample videos/sample.xml", label:i18nLocale.cmd_import_data_videos_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample polls/sample.xml", label:i18nLocale.cmd_import_data_polls_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample event/sample.xml", label:i18nLocale.cmd_import_data_event_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample bookmarks/sample.xml", label:i18nLocale.cmd_import_data_bookmarks_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample privatemessaging/sample.xml", label:i18nLocale.cmd_import_data_privatemessaging_sample_xml}); 
-	 	case "ecommercecore":
-	 		cmds.push({cmd: "import-data sample brand/sample.xml", label:i18nLocale.cmd_import_data_brand_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample shipping/sample.xml", label:i18nLocale.cmd_import_data_shipping_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample payment/sample.xml", label:i18nLocale.cmd_import_data_payment_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample paybox/sample.xml", label:i18nLocale.cmd_import_data_paybox_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample catalog/default.xml", label:i18nLocale.cmd_import_data_catalog_default_xml});
-	 		cmds.push({cmd: "import-data sample catalog/sample.xml", label:i18nLocale.cmd_import_data_catalog_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample customer/default.xml", label:i18nLocale.cmd_import_data_customer_default_xml});
-	 		cmds.push({cmd: "import-data sample order/default.xml", label:i18nLocale.cmd_import_data_order_default_xml});
-	 		cmds.push({cmd: "import-data sample customer/sample.xml", label:i18nLocale.cmd_import_data_customer_sample_xml}); 
-	 		cmds.push({cmd: "import-data sample order/sample.xml", label:i18nLocale.cmd_import_data_order_sample_xml}); 
-	 		cmds.push({cmd: "catalog.compile-catalog --clear", label:i18nLocale.cmd_catalog_compile_catalog});
+		case "cmsecomos":
+			cmds.push({cmd: "sample.import full-os", label:i18nLocale.cmd_sample_import_fullos});
+		
+		case "ecommercecore":
+			// TODO
 			break;
 	}
 }

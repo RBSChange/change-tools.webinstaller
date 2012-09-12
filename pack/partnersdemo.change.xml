@@ -9,7 +9,7 @@
 	<dependencies>
 		<framework>3.6.2</framework>
 		<modules>
-			<!-- e-Commerce modules -->					
+			<!-- e-Commerce modules -->
 			<module>catalog-3.6.2</module>
 			<module>order-3.6.2</module>
 			<module>customer-3.6.2</module>
@@ -33,21 +33,21 @@
 			<module>mapping-3.6.2</module>	
 			<module>twitterconnect-3.6.2</module>
 			<module>lexicon-3.6.2</module>
-			<module>privatemessaging-3.6.2</module>			
-			<module>joboffer-3.6.2</module>			
-			<module>sharethis-3.6.2</module>		
-			<module>videos-3.6.2</module>	
-			<module>download-3.6.2</module>	
-			<module>polls-3.6.2</module>	
-			<module>richtext-3.6.2</module>	
+			<module>privatemessaging-3.6.2</module>
+			<module>joboffer-3.6.2</module>
+			<module>sharethis-3.6.2</module>
+			<module>videos-3.6.2</module>
+			<module>download-3.6.2</module>
+			<module>polls-3.6.2</module>
+			<module>richtext-3.6.2</module>
 			<module>statictext-3.6.2</module>
 			<module>projectcare-3.6.2</module>
 			<module>gmaps-3.6.2</module>
 			<module>mysqlnotif-3.6.2</module>
 			<module>testing-3.6.2</module>
-			<!-- <module>sample-3.6.2</module>  -->
-									
-			<!-- Commercial modules -->		
+			<module>sample-3.6.2</module>
+			
+			<!-- Commercial modules -->
 			<module>googleshopping-3.6.2</module>
 			<module>mysqlstock-3.6.2</module>
 			<module>dashstat-3.6.2</module>
@@ -57,7 +57,7 @@
 			<module>ads-3.6.2</module>
 			<module>survey-3.6.2</module>
 			<module>loyalty-3.6.2</module>
-			<module>productreturns-3.6.2</module>			
+			<module>productreturns-3.6.2</module>
 			<module>marketing-3.6.2</module>
 			<module>ecomextended-3.6.2</module>
 			<module>socolissimo-3.6.2</module>
@@ -65,10 +65,10 @@
 			
 			<!-- Pack Performance modules -->
 			<module>atosserver-3.6.2</module>
-			<module>support-3.6.2</module>	
-			<module>synchronizer-3.6.2</module>			
-			<module>privatesales-3.6.2</module>	
+			<module>support-3.6.2</module>
+			<module>synchronizer-3.6.2</module>
+			<module>privatesales-3.6.2</module>
 			<module>ecomwebservices-3.6.2</module>
-        </modules>
+		</modules>
 	</dependencies>
 </change>

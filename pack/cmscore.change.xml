@@ -7,8 +7,8 @@
 	<dependencies>
 		<framework>3.6.2</framework>
 		<modules>
+			<module>projectcare-3.6.2</module>
 			<module>statictext-3.6.2</module>
-			<module>sample-3.6.2</module>
 		</modules>
 	</dependencies>
 </change>

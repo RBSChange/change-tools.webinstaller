@@ -9,7 +9,7 @@
 	<dependencies>
 		<framework>3.6.2</framework>
 		<modules>
-			<!-- e-Commerce modules -->					
+			<!-- e-Commerce modules -->
 			<module>catalog-3.6.2</module>
 			<module>order-3.6.2</module>
 			<module>customer-3.6.2</module>
@@ -23,7 +23,6 @@
 			<!-- Open Source modules -->
 			<module>comment-3.6.2</module>
 			<module>statictext-3.6.2</module>
-			<module>sample-3.6.2</module>			
 		</modules>
 	</dependencies>
 </change>
