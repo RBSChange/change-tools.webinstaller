@@ -170,6 +170,9 @@ function addSamples(sampleType)
 	{
 		case "cmsecomos":
 			cmds.push({cmd: "sample.import full-os", label:i18nLocale.cmd_sample_import_fullos});
+			
+		case "cmscore":
+			cmds.push({cmd: "sample.import core", label:i18nLocale.cmd_sample_import_core});
 		
 		case "ecommercecore":
 			// TODO

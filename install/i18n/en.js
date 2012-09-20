@@ -26,6 +26,7 @@ var i18nLocale = {
 	"cmd_theme_install" : "Import of the themes",
 	"cmd_init_patch_db" : "Initialisation of the patch base",
 	"cmd_sample_import_fullos" : "Creation of the examples for Open Source modules",
+	"cmd_sample_import_core" : "Creation of the examples for Core modules",
 	"cmd_catalog_compile_catalog" : "Compile catalog products",
 	"cmdAction" : "Action",
 	"installFinishTesting" : "Installation complete: availability test...",
