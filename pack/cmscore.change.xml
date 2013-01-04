@@ -2,14 +2,14 @@
 <change xmlns="http://www.rbs.fr/schema/change-project/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>cmscore</name>
 	<type>change-project</type>
-	<version>3.6.2</version>
+	<version>3.6.3</version>
 	<description>CMS Core</description>
 	<dependencies>
-		<framework>3.6.2</framework>
+		<framework>3.6.3</framework>
 		<modules>
-			<module>projectcare-3.6.2</module>
-			<module>statictext-3.6.2</module>
-			<module>sample-3.6.2</module>
+			<module>projectcare-3.6.3</module>
+			<module>statictext-3.6.3</module>
+			<module>sample-3.6.3</module>
 		</modules>
 	</dependencies>
 </change>
