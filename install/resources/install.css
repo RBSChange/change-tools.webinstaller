@@ -19,7 +19,7 @@ body {
 
 .header {
 	height: 39px;
-	background: url(/install/ressources/login-header-bg.png) repeat-x;
+	background: url(/install/resources/login-header-bg.png) repeat-x;
 }
 
 .header span {
@@ -72,7 +72,7 @@ div.stepheader {
 
 div.stepcontent {
 	border: solid 1px #B9B7B8;
-	background: url(/install/ressources/content_bg.png) repeat-y;
+	background: url(/install/resources/content_bg.png) repeat-y;
 	width: 600px;
 	color: black;
 	padding-bottom: 15px;
@@ -85,7 +85,7 @@ div.stepfooter {
 
 div.success {
 	clear: both;
-	background: url(/install/ressources/positive.png) no-repeat #C9E37E;
+	background: url(/install/resources/positive.png) no-repeat #C9E37E;
 	background-position: 5px 8px;
 	color: #435702;
 	font-weight: bold;
@@ -101,7 +101,7 @@ div.success {
 
 div.error {
 	clear: both;
-	background: url(/install/ressources/negative.png) no-repeat #FA9F9C;
+	background: url(/install/resources/negative.png) no-repeat #FA9F9C;
 	background-position: 5px 8px;
 	color: #741819;
 	font-weight: bold;
@@ -167,7 +167,7 @@ form.cmxform ol li {
 }
 
 form.cmxform div.section {
-	background: url(/install/ressources/section_bg.png) no-repeat;
+	background: url(/install/resources/section_bg.png) no-repeat;
 	background-position: left top;
 	margin-top: 5px;
 	margin-left: 18px;
@@ -310,44 +310,44 @@ div.activeArrow,div.nextArrow,div.previousArrow {
 }
 
 div.activeStep {
-	background: url(/install/ressources/activeStep.jpg);
+	background: url(/install/resources/activeStep.jpg);
 	color: black;
 }
 
 div.activeArrow {
-	background: url(/install/ressources/activeArrow.jpg) no-repeat;
+	background: url(/install/resources/activeArrow.jpg) no-repeat;
 }
 
 div.activeLabel {
-	background: url(/install/ressources/activeLabel.jpg);
+	background: url(/install/resources/activeLabel.jpg);
 	color: black;
 }
 
 div.nextStep {
-	background: url(/install/ressources/nextStep.jpg);
+	background: url(/install/resources/nextStep.jpg);
 	color: #aaa;
 }
 
 div.nextArrow {
-	background: url(/install/ressources/nextArrow.jpg) no-repeat;
+	background: url(/install/resources/nextArrow.jpg) no-repeat;
 }
 
 div.nextLabel {
-	background: url(/install/ressources/nextLabel.jpg);
+	background: url(/install/resources/nextLabel.jpg);
 	color: #aaa;
 }
 
 div.previousStep {
-	background: url(/install/ressources/previousStep.jpg);
+	background: url(/install/resources/previousStep.jpg);
 	color: gray;
 }
 
 div.previousArrow {
-	background: url(/install/ressources/previousArrow.jpg) no-repeat;
+	background: url(/install/resources/previousArrow.jpg) no-repeat;
 }
 
 div.previousLabel {
-	background: url(/install/ressources/previousLabel.jpg);
+	background: url(/install/resources/previousLabel.jpg);
 	color: gray;
 }
 

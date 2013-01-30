@@ -37,7 +37,7 @@ if ($systemCheckOk)
 		</div>		
 	</div>	
 	
-	<div class="stepfooter"><img src="./ressources/content_footer_bg.png" /></div>	
+	<div class="stepfooter"><img src="./resources/content_footer_bg.png" /></div>	
 	<p class="download">
 		<a href="javascript:submitStep01(); void 0;" title="<?php echo $localeManager->getLocales('webinstaller.step1.configureTitle'); ?>"><?php echo $localeManager->getLocales('webinstaller.step1.configure'); ?></a>
 	</p>
@@ -51,7 +51,7 @@ else
 ?>
 <form class="cmxform" action="" method="post">
 	<input type="hidden" name="NEXTSTEP" value="01" id="NEXTSTEP" />
-	<div class="stepheader"><img src="./ressources/thread_01.png" usemap="#mapping_thread"/>
+	<div class="stepheader"><img src="./resources/thread_01.png" usemap="#mapping_thread"/>
 		<map name="mapping_thread" id="mapping_thread">
 			<area shape="rect" href="javascript:gotoStep('01')" alt="<?php echo $localeManager->getLocales('webinstaller.step1.label'); ?>" title="<?php echo $localeManager->getLocales('webinstaller.step1.label'); ?>" coords="0,0,181,29"/>
 		</map>
@@ -66,7 +66,7 @@ else
 		?>
 		</ul>		
 	</div>	
-	<div class="stepfooter"><img src="./ressources/content_footer_bg.png" /></div>
+	<div class="stepfooter"><img src="./resources/content_footer_bg.png" /></div>
 	<p class="download">
 		<a href="javascript:gotoStep('01'); void 0;" title="<?php echo $localeManager->getLocales('webinstaller.step1.refresh'); ?>"><?php echo $localeManager->getLocales('webinstaller.step1.refresh'); ?></a>
 	</p>

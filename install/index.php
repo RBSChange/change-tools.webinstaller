@@ -22,9 +22,9 @@ define('STEP_SCRIPT_PATH', PROJECT_HOME_PATH . '/install/step_'. $step .'.php');
 <head>
 <title><?php echo str_replace("{productTitle}", $configManager->getProductTitle(), $localeManager->getLocales('webinstaller.index.title')); ?></title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="/install/ressources/install.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/install/resources/install.css" type="text/css" media="screen" />
 <script src="/install/i18n/<?php echo $localeManager->getLang(); ?>.js" type="text/javascript"></script>
-<script src="/install/ressources/library.js" type="text/javascript"></script>
+<script src="/install/resources/library.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="header">
@@ -35,7 +35,7 @@ define('STEP_SCRIPT_PATH', PROJECT_HOME_PATH . '/install/step_'. $step .'.php');
 	<div class="content">
 		<a href="http://www.rbschange.fr" target="_blank"
 			title="<?php echo $localeManager->getLocales('webinstaller.index.toRbschangeSite'); ?>"> <img class="logo"
-			src="/install/ressources/login-logo.png" />
+			src="/install/resources/login-logo.png" />
 		</a>
 		<div class="panel">
 			<?php include STEP_SCRIPT_PATH;?>

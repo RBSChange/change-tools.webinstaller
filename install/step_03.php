@@ -40,17 +40,17 @@ else
 				<tbody>
 					<tr>
 						<td>
-							<a href="<?php echo $configManager->getParameter('BASEURL')?>/" target="_blank"><img src="./ressources/button_index.png" /><br /><?php echo $localeManager->getLocales('webinstaller.step3.homePage'); ?></a>
+							<a href="<?php echo $configManager->getParameter('BASEURL')?>/" target="_blank"><img src="./resources/button_index.png" /><br /><?php echo $localeManager->getLocales('webinstaller.step3.homePage'); ?></a>
 						</td>
 						<td>
-							<a href="<?php echo $configManager->getParameter('BASEURL')?>/admin" target="_blank"><img src="./ressources/button_admin.png" /><br /><?php echo $localeManager->getLocales('webinstaller.step3.adminPage'); ?></a>
+							<a href="<?php echo $configManager->getParameter('BASEURL')?>/admin" target="_blank"><img src="./resources/button_admin.png" /><br /><?php echo $localeManager->getLocales('webinstaller.step3.adminPage'); ?></a>
 						</td>
 					</tr>	
 				</tbody>
 			</table>
 		</div>
 	</div>	
-	<div class="stepfooter"><img src="./ressources/content_footer_bg.png" /></div>
+	<div class="stepfooter"><img src="./resources/content_footer_bg.png" /></div>
 </form>
 <script type="text/javascript">
 var projectURL = "<?php echo $configManager->getParameter('BASEURL')?>";

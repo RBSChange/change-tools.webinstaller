@@ -95,7 +95,6 @@ var cmds = [
 		{cmd: "compile-htaccess", label:i18nLocale.cmd_compile_htaccess},
 		{cmd: "website.compile-bbcodes", label:i18nLocale.cmd_website_compile_bbcodes},
 
-		//{cmd: "import-init-data", label:i18nLocale.cmd_import_init_data},
 		{cmd: "import-init-data zone", label:i18nLocale.cmd_import_init_data},
 		{cmd: "import-init-data users", label:i18nLocale.cmd_import_init_data},
 		{cmd: "import-init-data website", label:i18nLocale.cmd_import_init_data},
@@ -141,6 +140,7 @@ var cmds = [
 		{cmd: "import-init-data mapping", label:i18nLocale.cmd_import_init_data},
 		{cmd: "import-init-data markergmaps", label:i18nLocale.cmd_import_init_data},
 		{cmd: "import-init-data markergas", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data richtext", label:i18nLocale.cmd_import_init_data},
 		
 		{cmd: "import-init-data brand", label:i18nLocale.cmd_import_init_data},
 		{cmd: "import-init-data shipping", label:i18nLocale.cmd_import_init_data},
@@ -149,6 +149,10 @@ var cmds = [
 		{cmd: "import-init-data catalog", label:i18nLocale.cmd_import_init_data},
 		{cmd: "import-init-data customer", label:i18nLocale.cmd_import_init_data},
 		{cmd: "import-init-data order", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data kiala", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data mondialrelay", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data relaiscolis", label:i18nLocale.cmd_import_init_data},
+		{cmd: "import-init-data icirelais", label:i18nLocale.cmd_import_init_data},
 		
 		{cmd: "import-init-data projectcare", label:i18nLocale.cmd_import_init_data},
 		{cmd: "import-init-data mysqlnotif", label:i18nLocale.cmd_import_init_data},
@@ -170,10 +174,10 @@ function addSamples(sampleType)
 	{
 		case "cmsecomos":
 			cmds.push({cmd: "sample.import full-os", label:i18nLocale.cmd_sample_import_fullos});
-			
+			break;
 		case "cmscore":
 			cmds.push({cmd: "sample.import core", label:i18nLocale.cmd_sample_import_core});
-		
+			break;
 		case "ecommercecore":
 			// TODO
 			break;

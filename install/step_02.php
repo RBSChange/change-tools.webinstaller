@@ -113,7 +113,7 @@ addOnload(function() {install_displaylang(document.getElementById('install_defau
 			</script>
 		<?php } ?>
 		<div class="section">
-			<img src="./ressources/section_language.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.languageAlt'); ?>" />
+			<img src="./resources/section_language.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.languageAlt'); ?>" />
 			<div class="sectionfield">
 				<ol>
 					<li><label for="install_default_lang"><?php echo $localeManager->getLocales('webinstaller.step2.language'); ?></label>
@@ -142,7 +142,7 @@ addOnload(function() {install_displaylang(document.getElementById('install_defau
 			</div>
 		</div>
 		<div class="section">
-			<img src="./ressources/section_domain.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.fqdnAlt'); ?>" />
+			<img src="./resources/section_domain.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.fqdnAlt'); ?>" />
 			<div class="sectionfield">
 				<ol>
 					<li><label for="install_FQDN"><?php echo $localeManager->getLocales('webinstaller.step2.fqdn'); ?></label>
@@ -175,7 +175,7 @@ addOnload(function() {install_displaylang(document.getElementById('install_defau
 			<div class="error"><p><?php echo $configManager->getError('TMP_PATH'); ?></p></div>
 		<?php }?>		
 		<div class="section">
-			<img src="./ressources/section_db.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.dbAlt'); ?>" />
+			<img src="./resources/section_db.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.dbAlt'); ?>" />
 			<div class="sectionfield">
 				<ol>
 					<li><label for="install_DB_HOST"><?php echo $localeManager->getLocales('webinstaller.step2.dbHost'); ?></label>
@@ -207,7 +207,7 @@ addOnload(function() {install_displaylang(document.getElementById('install_defau
 			<div class="error"><p><?php echo $configManager->getError('DB'); ?></p></div>
 		<?php }?>		
 		<div class="section">
-			<img src="./ressources/section_mail.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.mailAlt'); ?>" />
+			<img src="./resources/section_mail.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.mailAlt'); ?>" />
 			<div class="sectionfield">
 				<ol>
 					<li><label for="install_SERVER_MAIL"><?php echo $localeManager->getLocales('webinstaller.step2.mailServer'); ?></label>
@@ -250,7 +250,7 @@ addOnload(function() {install_displaylang(document.getElementById('install_defau
 			<div class="error"><p><?php echo $configManager->getError('MAIL'); ?></p></div>
 		<?php }?>			
 		<div class="section">
-			<img src="./ressources/section_search.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.searchAlt'); ?>" />
+			<img src="./resources/section_search.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.searchAlt'); ?>" />
 			<div class="sectionfield">
 				<ol>
 					<li><label for="install_SOLR_URL"><?php echo $localeManager->getLocales('webinstaller.step2.search'); ?></label>
@@ -263,7 +263,7 @@ addOnload(function() {install_displaylang(document.getElementById('install_defau
 		</div>
 		
 		<div class="section">
-			<img src="./ressources/section_sample.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.sampleAlt'); ?>" />
+			<img src="./resources/section_sample.png" alt="<?php echo $localeManager->getLocales('webinstaller.step2.sampleAlt'); ?>" />
 			<div class="sectionfield">
 				<ol>
 					<li><label for="install_SAMPLES"><?php echo $localeManager->getLocales('webinstaller.step2.sample'); ?></label>
@@ -276,7 +276,7 @@ addOnload(function() {install_displaylang(document.getElementById('install_defau
 		</div>
 		
 	</div>	
-	<div class="stepfooter"><img src="./ressources/content_footer_bg.png" /></div>	
+	<div class="stepfooter"><img src="./resources/content_footer_bg.png" /></div>	
 	<p class="download">
 		<a href="javascript:testStep02(); void 0;" title="<?php echo $localeManager->getLocales('webinstaller.step2.test'); ?>"><?php echo $localeManager->getLocales('webinstaller.step2.test'); ?></a>
 		<?php if ($configManager->isChecked()) { ?>
