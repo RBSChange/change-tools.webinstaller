@@ -211,8 +211,15 @@ function executeCmd(cmdindex)
 	{
 		if (req.readyState == 4) 
 		{
+			var responseText =  req.responseText;
 			
-			cmdElem.innerHTML += "<div id=\"cmd_" + cmdindex + "\">" + req.responseText + "</div>";
+			var n = responseText.search(/fatal error/i);
+			if (n != -1){
+				var fatalErrorOnInstall = document.getElementById('fatalerroroninstall');
+				fatalErrorOnInstall.style.display = 'block';
+			}
+			
+			cmdElem.innerHTML += "<div id=\"cmd_" + cmdindex + "\">" + responseText  + "</div>";
 			cmdElem.scrollTop = cmdElem.scrollHeight;
 			if(req.status == 200)
 			{
@@ -225,6 +232,7 @@ function executeCmd(cmdindex)
 				{
 					readyToUse();
 				}
+				
 			}
 			else
 			{
@@ -232,6 +240,7 @@ function executeCmd(cmdindex)
 				var errorOnInstall = document.getElementById('erroroninstall');
 				errorOnInstall.style.display = 'block';
 			}
+			
 		}
 	};
 	req.send(null);

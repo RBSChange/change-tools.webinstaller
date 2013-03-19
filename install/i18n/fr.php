@@ -66,6 +66,7 @@ $i18nLocale['webinstaller.step2.key-help'] = "Saisissez votre clé de licence. e
 $i18nLocale['webinstaller.step3.label'] = "Etape 3";
 $i18nLocale['webinstaller.step3.title'] = "Création du projet";
 $i18nLocale['webinstaller.step3.installError'] = "Une erreur est survenue lors de l'installation.";
+$i18nLocale['webinstaller.step3.installFatalError'] = "Une erreur non bloquante est survenue lors de l'installation. Merci de vérifier les logs ci-dessus.";
 $i18nLocale['webinstaller.step3.installOk'] = "Pour des raisons de securité, penser à supprimer le dossier 'install' de votre projet.<br/>Pensez également à accéder rapidement à <a href=\"{fqdn}/admin\" target=\"_blank\">l'interface d'administration</a> pour y définir votre mot de passe principal.";
 $i18nLocale['webinstaller.step3.homePage'] = "Accueil du site";
 $i18nLocale['webinstaller.step3.adminPage'] = "Interface d'administration";

@@ -33,6 +33,7 @@ else
 			<h3 id="stepTitle"><?php echo $localeManager->getLocales('webinstaller.step3.title'); ?></h3>
 			<div class="cmdresult" id="cmdresult"></div>
 		</div>
+		<div class="error" id="fatalerroroninstall" style="display: none;"><p><?php echo $localeManager->getLocales('webinstaller.step3.installFatalError'); ?></p></div>
 		<div class="error" id="erroroninstall" style="display: none;"><p><?php echo $localeManager->getLocales('webinstaller.step3.installError'); ?></p></div>
 		<div id="readytouse" style="display: none;">	
 			<div class="success" id="readytousesuccess" ><p><?php echo str_replace("{fqdn}", $configManager->getParameter('BASEURL'), $localeManager->getLocales('webinstaller.step3.installOk'));?></p></div>			
