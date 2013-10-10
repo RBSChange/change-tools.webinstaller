@@ -9,7 +9,7 @@ mkdir repository
 cp pack/cmsecomos.change.xml buildproject/change.xml
 
 REMOTE_REPO=http://update.rbschange.fr
-VERSION=3.6.7
+VERSION=3.6.8
 
 echo "
 # Change remote repositories

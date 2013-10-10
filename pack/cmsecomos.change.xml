@@ -4,51 +4,51 @@
 	xsi:schemaLocation="http://www.rbs.fr/schema/change-project/1.0 http://www.rbschange.fr/static/schema/change-project/1.0.xsd">
 	<name>cmsecomos</name>
 	<type>change-project</type>
-	<version>3.6.7</version>
+	<version>3.6.8</version>
 	<description>Open Source CMS e-Commerce</description>
 	<dependencies>
-		<framework>3.6.7</framework>
+		<framework>3.6.8</framework>
 		<modules>
 			<!-- e-Commerce modules -->					
-			<module>catalog-3.6.7</module>
-			<module>order-3.6.7</module>
-			<module>customer-3.6.7</module>
-			<module>brand-3.6.7</module>
-			<module>shipping-3.6.7</module>
-			<module>payment-3.6.7</module>	
-			<module>productupdater-3.6.7</module>
-			<module>paybox-3.6.7</module>
-			<module>shoppingmail-3.6.7</module>
-			<module>mondialrelay-3.6.7</module>
-			<module>kiala-3.6.7</module>
-			<module>icirelais-3.6.7</module>
-			<module>relaiscolis-3.6.7</module>
+			<module>catalog-3.6.8</module>
+			<module>order-3.6.8</module>
+			<module>customer-3.6.8</module>
+			<module>brand-3.6.8</module>
+			<module>shipping-3.6.8</module>
+			<module>payment-3.6.8</module>	
+			<module>productupdater-3.6.8</module>
+			<module>paybox-3.6.8</module>
+			<module>shoppingmail-3.6.8</module>
+			<module>mondialrelay-3.6.8</module>
+			<module>kiala-3.6.8</module>
+			<module>icirelais-3.6.8</module>
+			<module>relaiscolis-3.6.8</module>
 			
 			<!-- Open Source modules -->			
-			<module>event-3.6.7</module>
-			<module>bookmarks-3.6.7</module>
-			<module>blog-3.6.7</module>	
-			<module>comment-3.6.7</module>
-			<module>inquiry-3.6.7</module>
-			<module>download-3.6.7</module>
-			<module>faq-3.6.7</module>
-			<module>forums-3.6.7</module>
-			<module>photoalbum-3.6.7</module>
-			<module>markergmaps-3.6.7</module>
-			<module>mapping-3.6.7</module>
-			<module>polls-3.6.7</module>	
-			<module>twitterconnect-3.6.7</module>
-			<module>lexicon-3.6.7</module>
-			<module>privatemessaging-3.6.7</module>			
-			<module>joboffer-3.6.7</module>			
-			<module>sharethis-3.6.7</module>		
-			<module>videos-3.6.7</module>
-			<module>statictext-3.6.7</module>
-			<module>projectcare-3.6.7</module>
-			<module>gmaps-3.6.7</module>
-			<module>mysqlnotif-3.6.7</module>
-			<module>sample-3.6.7</module>
-			<module>richtext-3.6.7</module>
+			<module>event-3.6.8</module>
+			<module>bookmarks-3.6.8</module>
+			<module>blog-3.6.8</module>	
+			<module>comment-3.6.8</module>
+			<module>inquiry-3.6.8</module>
+			<module>download-3.6.8</module>
+			<module>faq-3.6.8</module>
+			<module>forums-3.6.8</module>
+			<module>photoalbum-3.6.8</module>
+			<module>markergmaps-3.6.8</module>
+			<module>mapping-3.6.8</module>
+			<module>polls-3.6.8</module>	
+			<module>twitterconnect-3.6.8</module>
+			<module>lexicon-3.6.8</module>
+			<module>privatemessaging-3.6.8</module>			
+			<module>joboffer-3.6.8</module>			
+			<module>sharethis-3.6.8</module>		
+			<module>videos-3.6.8</module>
+			<module>statictext-3.6.8</module>
+			<module>projectcare-3.6.8</module>
+			<module>gmaps-3.6.8</module>
+			<module>mysqlnotif-3.6.8</module>
+			<module>sample-3.6.8</module>
+			<module>richtext-3.6.8</module>
 		</modules>
 	</dependencies>
 </change>
